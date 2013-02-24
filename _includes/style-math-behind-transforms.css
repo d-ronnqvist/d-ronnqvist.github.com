@@ -1,0 +1,41 @@
+.matrixTable {
+	border: 1px solid transparent;
+	border-left: 1px solid #333;
+	border-right: 1px solid #333;
+	border-radius: 10px;
+	display: inline-block;
+	border-spacing: 0;
+	padding: 4px;
+}
+
+#matrixFigure * {
+	vertical-align:middle;
+	margin: 5px;
+}
+
+#matrixFigure {
+	height: 200px;
+	width: 520px !important;
+	padding-top: 70px;
+	padding-left: 45px;
+	padding-right: 0;
+}
+
+.matrixTable td {
+	padding: 3px 8px;
+	letter-spacing: 0px;
+	text-align: center;
+}
+
+#multiplicationText {
+	display: block;
+	padding: 5px;
+	text-align: center;
+	margin: 20px 0;
+	width: 500px;
+	height: 20px;
+}
+
+#matrixFigure sub {
+	margin: 0px;
+}

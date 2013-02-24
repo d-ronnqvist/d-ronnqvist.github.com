@@ -1,6 +1,88 @@
----
-theme :
-  name : twitter
----
-{% include JB/setup %}
-{% include themes/twitter/default.html %}
+<!doctype html>
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  {% if page.id %}
+  <title>{{ page.title }} : {{ site.title }}</title>
+  {% else %}
+  <title>{{ page.title }}</title>
+  {% endif %}
+  <meta name="description" content="{{ site.description | strip_html }}"/>
+  <meta name="viewport" content="width=device-width; initial-scale=1.0"/>
+  <meta name="author" content="David Rönnqvist"/>
+  <meta name="revisit-after" content="3 days"/>
+<!--  <link rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/"/>-->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://ronnqvi.st/feed.xml"/>
+  <link rel="stylesheet" href="/css/screen.css"/>
+  <link rel="icon" type="image/ico" href="/images/favicon.ico"/>
+
+  <meta content="{{ site.title }}" property="og:site_name"/>
+  <meta content="{{ site.url }}/images/suit.png" property="og:image"/>
+  {% if page.id %}
+    <meta content="{{ page.title }}" property="og:title"/>
+    <meta content="{{ site.url }}{{ page.url }}" property="og:url"/>
+    {% if page.description %}
+      <meta content="{{ page.description | strip_html | escape }}" property="og:description"/>
+    {% else %}
+      <meta content="{{ page.content | truncate: 250 | strip_html | escape }}" property="og:description"/>
+    {% endif %}
+  {% else %}
+    <meta content="{{ site.title }}" property="og:title"/>
+    <meta content="{{ site.url }}" property="og:url"/>
+    <meta content="{{ site.description | strip_html | escape}}" property="og:description"/>
+  {% endif %}
+</head>
+
+<body>
+  <div role="container">
+    <header>
+      <div id="logo">
+        <a href="/">
+          <svg id="DR-logo" width="190px" height="130px" xmlns="http://www.w3.org/2000/svg" version="1.1">
+              		<defs>
+          			    <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          			        <stop offset="0%" style="stop-color:hsl(218,25%,88%); stop-opacity:1.0"></stop>			        
+          			        <stop offset="100%" style="stop-color:hsl(218,30%,93%); stop-opacity:1.0"></stop>
+          			    </linearGradient>
+          			</defs>
+          		    <path id="D" d="M1,1 L1,44 L24,44 L24,24 L33,24 C33,24 46,23 56,32 C61,37 66,44 66,55 C66,66 61,73 57,77 C49,86 38,87 34,87 C29,87 24,87 24,87 L24,67 L1,67 L1,109 C1,109 21,109 35,109 C49,110 63,103 73,93 C84,83 89,69 89,55 C89,41 84,26 71,15 C58,3 44,1 35,1 Z" transform="translate(1.5,1.5)"></path>
+          		    <path id="R" d="M66,1 C66,1 81,8 90,24 C94,24 122,24 125,24 C128,24 134,25 138,31 C142,36 143,44 139,51 C135,57 128,59 125,59 C121,59 101,59 101,59 L152,122 L182,122 C182,122 147,78 145,76 C148,74 155,69 160,60 C165,51 166,42 164,32 C162,22 155,13 146,7 C137,1 130,1 126,1 C121,1 66,1 66,1 Z M66,1" transform="translate(1.5,1.5)"></path>
+          		</svg>
+        </a>
+      </div>
+
+      {% unless page.id %}
+        <aside>
+          <span>{{ site.description }}</span>
+        </aside>
+      {% endunless %}
+
+    </header>
+
+    <div id="main" role="main">
+      {{ content }}
+    </div>
+
+    <footer>
+      <!--<section class="credits colophon">
+        <p>
+          <span aria-hidden="true" class="icon-creative-commons"></span>
+          
+          Created by <a href="http://mattt.me">Mattt Thompson</a>, and released under a <a href="http://creativecommons.org/licenses/by-nc/3.0/" rel="license">Creative Commons BY-NC License</a>.
+          
+          <br/>
+          
+          <small>
+            Delightful illustrations by <a href="http://www.conorheelan.com">Conor Heelan</a>.
+          </small>
+        </p>
+      </section>-->
+
+      <aside class="links">
+        <a href="https://twitter.com/nshipster" class="icon-twitter" title="Twitter" aria-hidden="true" ></a>
+        <a href="http://nshipster.com/feed.xml" class="icon-feed" title="RSS" aria-hidden="true"></a>
+      </aside>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,158 @@
+figure .viewBox {
+	display: inline-block;
+	width: 100px;
+	height: 60px;
+	background: -webkit-linear-gradient(top, hsl(38, 100%, 75%), hsl(38, 100%, 50%));
+	position: absolute;
+	top: 145px;
+	left: 245px;
+	padding: 5px;
+	box-shadow: 0px 1px 3px 1px rgba(0,0,50,0.5), inset 0 1px 1px rgba(255,255,255,0.5);
+	font-family: monospace;
+	color: hsl(38, 25%, 25%);
+	border-radius: 4px;
+	font-size: 16px;
+}
+
+figure .marking {
+	background: none;
+	border: 2px dashed black;
+	box-shadow: none;
+	-webkit-transform: translate(-2px, -2px);
+}
+
+.transformBreakdownAnimation {
+-webkit-animation: movingbox 10s ease-in-out;
+-webkit-animation-delay: 1s;
+-webkit-animation-fill-mode: forwards;
+opacity: 0;
+}
+
+.apply45deg {
+-webkit-animation: trt-small-demo 3s ease-in-out;
+-webkit-animation-delay: 1s;
+-webkit-animation-fill-mode: forwards;
+opacity: 0;
+}
+
+.apply135deg {
+-webkit-animation: trt-big-demo 5s ease-in-out;
+-webkit-animation-delay: 1s;
+-webkit-animation-fill-mode: forwards;
+opacity: 0;
+}
+
+.apply135deg-anchor {
+-webkit-animation: trt-big-demo-anchor 5s ease-in-out;
+-webkit-animation-delay: 1s;
+-webkit-animation-fill-mode: forwards;
+opacity: 0;
+}
+
+.pausedAnimation * {
+-webkit-animation-play-state: paused;
+}
+
+.replayAnimation * {
+-webkit-animation: none !important;
+}
+
+@-webkit-keyframes fadeIn {
+to{opacity: 1}
+}
+
+@-webkit-keyframes resetButtonAnimation {
+from {opacity: 0;}
+to{opacity: 1}
+}
+
+@-webkit-keyframes movingbox {
+from{ -webkit-transform: translate(0) scale(0.75); opacity: 0;}
+10%, 25%{-webkit-transform: translate(0); opacity: 1;}
+40%, 60%{-webkit-transform: translateX(-200px)}
+70%, 85%{-webkit-transform: translateX(-200px) rotateZ(-30deg)}
+to{-webkit-transform: translateX(-200px) rotateZ(-30deg) translate(200px); opacity: 1}
+}
+
+@-webkit-keyframes trt-small-demo {
+from{ -webkit-transform: translate(0) scale(0.75); opacity: 0;}
+25%, 50%{-webkit-transform: translate(0); opacity: 1;}
+to{-webkit-transform: translateX(-200px) rotateZ(-30deg) translate(200px); opacity: 1}
+}
+
+@-webkit-keyframes trt-big-demo {
+from{ -webkit-transform: translate(0) scale(0.75); opacity: 0;}
+25%, 50%{-webkit-transform: translate(0); opacity: 1;}
+to{-webkit-transform: translateX(-200px) rotateZ(-135deg) translate(200px); opacity: 1}
+}
+
+@-webkit-keyframes trt-big-demo-anchor {
+from{ -webkit-transform: translateX(50px) scale(0.75); opacity: 0;}
+25%, 50%{-webkit-transform: translate(0); opacity: 1;}
+to{-webkit-transform: rotateZ(-135deg); opacity: 1}
+}
+
+
+#transformSteps {
+	display: inline-block;
+	right: 30px;
+	height: 80%;
+	font-family: monospace;
+	top: 5%;
+	position: absolute;
+	padding-left: 20;
+	border-left: 1px solid #CCD;
+}
+
+#transformSteps > li {
+	margin: 15px 0;
+	list-style: none;
+	opacity: 0.3;
+}
+
+#transformSteps > li:nth-child(1) {
+	margin-top: 60px;
+	-webkit-animation: fadeIn 1s ease;
+	-webkit-animation-delay: 3.25s;
+	-webkit-animation-fill-mode: forwards;
+}
+
+#transformSteps > li:nth-child(2) {
+	-webkit-animation: fadeIn 1s ease;
+	-webkit-animation-delay: 7s;
+	-webkit-animation-fill-mode: forwards;
+}
+
+#transformSteps > li:nth-child(3) {
+	-webkit-animation: fadeIn 1s ease;
+	-webkit-animation-delay: 9.5s;
+	-webkit-animation-fill-mode: forwards;
+}
+
+#transformSteps > li > code {
+	font-size: 20px;
+}
+
+figure .halfcircle {
+	border: 2px dashed #333;
+	width: 400px;
+	height: 400px;
+	
+	position: absolute;
+	left: -105px;
+	top: -20px;
+	border-radius: 100%;
+	-webkit-mask: -webkit-linear-gradient(-113deg, black 35%, transparent 36%);
+}
+
+figure .arrowhead {
+	border: 2px solid #333;
+	border-bottom: none;
+	border-left: none;
+	width: 11px;
+	height: 11px;
+	-webkit-transform:  skew(-10deg, -10deg) rotateZ(-180deg);
+	position: absolute;
+	left: -45px;
+	top: 27px;
+}

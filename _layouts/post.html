@@ -1,5 +1,38 @@
 ---
 layout: default
 ---
-{% include JB/setup %}
-{% include themes/twitter/post.html %}
+
+<article>
+  <header>
+    <h1 class="title">{{ page.title }}</h1>
+  </header>
+
+  {{ content }}
+</article>
+
+<!--<aside>
+  <p>
+    Written by David Rönnqvist<br/>
+    Posted on <time pubdate="{{ page.date }}">{{ page.date | ordinalize }}</time>
+  </p>
+
+  <hr/>
+
+  <p>{{ site.description }}</p>
+
+  <!--<figure id="suit">
+    <figcaption>Though bearing a striking resemblence to Sam Soffes, our lawyers can assure you that resemblance to real persons, living, dead, and/or mustacioed, is purely coincidental.</figcaption>
+  </figure>--*>
+
+
+  <section class="archive">
+    <h1>Archive</h1>
+    <ul>
+      {% for post in site.posts %}
+        {% if post.id != page.id %}
+          <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </section>
+</aside>-->
