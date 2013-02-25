@@ -25,6 +25,14 @@ article {
 	margin: 40px 40px 0 0;
 }
 
+.post-summary h1 {
+	margin-top: 0;
+	width: 85%;
+	line-height: 1.0;
+	font-size: 24px;
+	text-align: left;
+}
+
 #newest-post, 
 #more-posts {
 	text-align: center;
