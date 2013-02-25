@@ -8,6 +8,10 @@ article {
 
 }
 
+#newest-post {
+	margin-top: 30px;
+}
+
 .post-summary {
 	background: hsl(238, 16%, 99%);
 	box-shadow: 0 1px 4px rgba(0,0,0,0.3);
