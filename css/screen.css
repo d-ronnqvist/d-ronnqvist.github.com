@@ -1,30 +1,68 @@
 
 #newest-post {
-	margin-top: 30px;
+	margin-top: 90px;
 }
+
+/*#newest-post .post-summary {
+	padding: 20px;
+}*/
 
 .post-summary {
 	background: hsl(238, 16%, 99%);
-	box-shadow: 0 1px 4px rgba(0,0,0,0.3);
-	border: 1px solid #a6a6af;
-	/*    	width: 500px;*/
-/*	width: 33%;*/
+	box-shadow: 0 0px 4px rgba(0,0,0,0.75);
 	min-width: 280px;
 	max-width: 400px;
 /*	max-height: 300px;*/
 	display: inline-block;
-	padding: 15px;
+	padding: 20px;
 	vertical-align:top;
 	position: relative;
 	margin: 40px 40px 0 0;
+	
+	border: 10px solid hsl(208, 8%, 75%);
 }
 
+#newest-post .post-summary,
+#more-posts .post-link:nth-child(4n+4) .post-summary {
+	border-color: #feba00;
+}
+
+#more-posts .post-link:nth-child(4n+1) .post-summary {
+	border-color: #40a4e5;
+}
+
+
 .post-summary h1 {
-	margin-top: 0;
-	width: 85%;
-	line-height: 1.0;
+	width: 100%;
+	line-height: 100%;
 	font-size: 24px;
 	text-align: left;
+	font-weight: 700;
+	color: #2f3741;
+	margin-bottom: 25px;
+}
+
+.post-link {
+	text-decoration: none;
+	color: #2f3741;
+	display: inline-block;
+}
+
+
+#newest-post h1 {
+	font-size: 34px;
+	letter-spacing: 100%;
+	font-weight: 800;
+	margin-bottom: 50px;
+/*	background: red;*/
+	width: 570px;
+	display: inline-block;
+	margin-top: 0;
+}
+
+#newest-post .post-summary {
+	font-size: 18px;
+	padding: 30px;
 }
 
 #newest-post, 
@@ -44,82 +82,30 @@
 }
 
 .post-summary time {
-position: absolute;
-	right: 10px;
-	top: -7px;
-	/*		background: red;*/
-	/*		display: block;*/
-	/*		border: 1px solid red;*/
-	box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
-	height: 38px;
+	float: right;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 120%;
+	text-align: right;
+	display: inline-block;
 }
-
-time .month,
-time .day {
-	text-align: center;
-	display: block;
-	width: 40px;
-	font-weight: bold;
-	margin: 0;
-	border: 1px solid hsl(208, 3%, 68%);;
-}
-
-time .month {
-	background-color: hsl(0, 55%, 61%);
-	text-transform: uppercase;
-	height: 14px;
-	line-height: 16px;
-	font-size: 11px;
-	color: hsl(228, 7%, 98%);
-	letter-spacing: 1px;
-	vertical-align: middle;
-	
-	border-bottom: none;
-	width: 38px;
-	-webkit-transition: background-color 0.4s ease;
-}
-
-time .day {
-	color: hsl(208, 5%, 44%);
-	background-color: hsl(228, 7%, 98%);
-	position: absolute;
-	font-size: 18px;
-	line-height: 23px;
-	width: 38px;
-	top: 14px;
-	
-	border-top: none;
-	-webkit-transition: color 0.4s ease, border-color 0.4s ease;
-}
-
 
 .center-shadow
 {
 	position:relative;
 }
-.center-shadow:before,
 .center-shadow:after
 {
 	content:"";
 	position:absolute;
 	z-index:-1;
-	/*        -webkit-box-shadow:0 0 10px rgba(0,0,0,0.8);*/
-	box-shadow:0 0 5px rgba(0,0,30,0.8);
+	box-shadow:0 8px 10px rgba(0,0,15,1.0);
 	top:50%;
 	bottom:0;
 	left:10px;
 	right:10px;
-	border-radius:100px / 10px;
+	border-radius:50% / 15px;
 }
-.center-shadow:after
-{
-	right:10px;
-	left:auto;
-	-webkit-transform:skew(8deg) rotate(3deg);
-	transform:skew(8deg) rotate(3deg);
-}
-
-
 
 
 /* 
@@ -191,7 +177,7 @@ em {
 }
 
 /*--[ LINKS ]---------*/
-a {
+article a {
 text-decoration: none;
 color: hsl(208, 66%, 56%);
 }
@@ -297,9 +283,10 @@ article {
 /* Setting the color of the logo */
 #D, #R {
 	fill: #f3f3f7;
+	fill: #40a4e5;
 }
 
-/* @end */
+/* @end 
 
 /* @end */
 
@@ -485,17 +472,34 @@ img {
 /* @group Tags */
 
 .tag {
-padding: 0 5px;
-margin: 2px 8px;
-color: hsl(208, 66%, 56%);
+padding: 0 3px;
+/*margin: 2px 8px;*/
+/*color: hsl(208, 66%, 56%);*/
 display: inline-block;
 height: 22px;
-background-color: hsl(208, 30%, 90%);
+/*background-color: hsl(208, 30%, 90%);*/
 padding-left: 10px;
 position: relative;
+border-left: 1px solid hsl(208, 8%, 60%);
+font-weight: 500;
+font-size: 15px;
 }
 
-.tag:after, .tag:before {
+.tag:first-child {
+	border: none;
+}
+
+.post-summary footer {
+/*	background: red;*/
+	text-align: left;
+	padding-top: 6px;
+	border-top: 1px solid hsl(208, 8%, 60%);
+	color: #2f3741;
+}
+
+
+
+/*.tag:after, .tag:before {
 border: solid transparent;
 content: ' ';
 height: 0;
@@ -514,7 +518,7 @@ top: 0px;
 content: "•";
 color: hsl(228, 16%, 96%);
 top: -2px;
-}
+}*/
 
 /* @end */
 
