@@ -36,6 +36,7 @@
 <body>
   <div role="container">
     <header>
+      {% unless page.id %}
       <div id="logo">
         <a href="/">
           <svg id="DR-logo" width="190px" height="130px" xmlns="http://www.w3.org/2000/svg" version="1.1">
@@ -50,11 +51,6 @@
           		</svg>
         </a>
       </div>
-
-      {% unless page.id %}
-        <aside>
-          <span>{{ site.description }}</span>
-        </aside>
       {% endunless %}
 
     </header>
