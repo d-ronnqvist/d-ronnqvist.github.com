@@ -675,21 +675,6 @@ counter-reset: figure;
 
 
 
-
-/* DAY PAGE BLURB, TAG PAGE BLURB, SEARCH RESULT BLURB */
-#daypageblurb,
-#tagpageblurb,
-#searchresultblurb { color: #777777; font-size: 1.25em; font-style: italic; line-height: 1.2em; margin-bottom: 2.4em; }
-
-
-/* COMMON POST STYLES */
-.post .caption, .post .source { margin-top: 1.5em; }
-
-.photo, .quote, .chat, .audio, .link { display:inherit;}
-
-/* REBLOG NOTES */
-.reblogged { color: #777777; display:block; font-size: 0.833333em; font-style: italic; margin: 1.5em 0; text-align: right; }
-
 /* POST FOOTER */
 .post-footer {
 padding: 0;
@@ -700,25 +685,6 @@ display: inline;
 list-style: none;
 }
 
-/* NOTES */
-#note-container h4 { font-size: 1.3em; line-height: 1.15384615385; margin-bottom: 1.15384615385em; }
-#note-container .notes .note { border-bottom: 1px solid #aaa; margin: 0 0 0.75em; padding: 0 0 0.75em}
-#note-container .notes .avatar { display: none; }
-
-
-/*--[ PAGINATION ]----------------*/
-#pagination { margin: 3em auto 1.5em; width: 32em; }
-#pagination a { margin-right: 1.5em; }
-
-
-/*--[ FOOTER ]--------------------*/
-#footer { border-top: 1px solid #333333; margin: 3em auto 0; padding: 0.75em 0; width: 610px; }
-#footer #search { float: right; }
-#footer #search #keywords { border: 1px solid #777777; padding: 0.25em; }
-#footer #meta-info { margin: 0; }
-#footer #meta-info li { display: inline; font-size: 1.1em; margin-right: 1em; }
-#footer #theme-info { clear: left; margin: 0.75em 0; }
-#footer #theme-info li { color: #777777; display: inline; font-size: 0.75em; margin-right: 1em; }
 
 
 /*#transformSteps {
@@ -829,4 +795,3 @@ height: 20px;
 #matrixFigure sub {
 margin: 0px;
 }*/
-/*--[ CUSTOM CSS ]----------------*/
