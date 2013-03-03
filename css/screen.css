@@ -704,11 +704,6 @@ border-color: hsl(208, 60%, 60%);
 }
 
 
-.permanent-link {
-position: absolute;
-right: -65px;
-top: 45px;
-}
 
 
 .footnotes p {
@@ -719,30 +714,6 @@ top: 45px;
 	margin-bottom: 24px;
 }
 
-
-/*--[ POSTS ]---------------------*/
-#posts {
-padding-top: 20px;
-width: 100%;
-}
-
-#posts .post, article {
-margin-bottom: 100px;
-position: relative;
-counter-reset: figure;
-}
-
-
-
-/* POST FOOTER */
-.post-footer {
-padding: 0;
-}
-
-.post-footer li {
-display: inline;
-list-style: none;
-}
 
 
 
