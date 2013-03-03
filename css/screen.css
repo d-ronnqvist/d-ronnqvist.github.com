@@ -227,30 +227,98 @@ from{ -webkit-transform: translateX(50px) scale(0.75); opacity: 0;}
 to{-webkit-transform: rotateZ(-135deg); opacity: 1}
 }*/
 
-.title {
-	font-size: 40px;
-	-webkit-text-stroke-width: 1px;
-	-webkit-text-stroke-color: #aec0cf;
-
-/*  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(100%, #e6eaf2), color-stop(0%, #d8dee8));*/
-  background-image: -webkit-linear-gradient(#d8dee8,#e6eaf2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-/*  color: #aec0cf;*/
-  position: relative;
-  color: #e6eaf2;
- 	line-height: 0.95;
- 	text-align: left;
+/* Cover everything and hide the overflowing orange and blue rectengles*/
+#main {
+	margin: 0;
+	overflow: hidden;
 }
-.title:after {
-  background: none;
-  content: attr(data-text);
-  left: 0;
-  position: absolute;
-  ;
-  text-shadow: 6px 6px 3px red;
-  top: 0;
-  z-index: -1;
+
+/* Header for posts with a rectangle and shapes for  */
+.title-header {
+	-webkit-transform: rotate(-16.4deg);
+	top: 100px;
+	left: -40px;
+	position: relative;
+	width: 700px;
+	margin-bottom: 200px;
+}
+
+.title-header > h1 {
+	
+ 	color: #303841;
+	text-align: left;
+	font-weight: 900;
+	font-size: 80px;
+	
+	text-align: right;
+	display: block;
+	
+	width: 700px;
+	position: relative;
+/*	top: 20px;*/
+	right: 20px;
+	top: 0;
+	letter-spacing: 0.9;
+/*	background: white;*/
+	padding-right: 20px;
+	margin-right: 20px;
+	;
+	padding-top: 12px;
+	
+ }
+ 
+/* .title:before */
+#top-blue-rect
+ {
+/* 	content: "";*/
+ 	/*background: #ffb900;*/
+ 	background: #4aa5e3;
+ 	color: #303841;
+ 	width: 2750px;
+ 	height: 500px;
+ 	display: inline-block;
+ 	right: 0px;
+ 	top: -500px;
+	position: absolute;
+/*	opacity: 0.5;*/
+ }
+ 
+/*.title:after */
+#top-orange-rect
+{
+/*	content: "";*/
+	color: #303841;
+ 	width: 700px;
+ 	height: 2700px;
+ 	display: inline-block;
+	/*background: #4aa5e3;*/
+	background: #ffb900;
+	display: inline-block;
+/*	 opacity: 0.5;*/
+	position: absolute;
+	right: -700px;
+	top: 0px;
+	
+}
+#top-orange-rect p {
+	font-weight: 100;
+	font-size: 32px;
+	padding: 20px;
+	line-height: 1.3;
+	
+} 
+ 
+#DR-logo {
+position: absolute;
+left: 20px;
+top: 20px;
+z-index: 10;
+}
+
+/* Setting the color of the logo */
+#D, #R {
+	fill: #f3f3f7;
+/*	fill: red;*/
 }
 
 .math {
@@ -358,25 +426,7 @@ width: 230px;
 }
 
 /*--[ LOGO ]---------*/
-#DR-logo {
-position: relative;
-top: 10px;
-/*position: fixed;
-/*				-webkit-transform: scale(4);
-z-index: 10;*/
-}
 
-/* Setting the color of the logo */
-#D, #R {
-fill: hsl(208,25%,85%);
-fill: url(#logo-gradient);
-stroke: hsl(208,25%,75%);
-stroke-width: 1px;
-stroke-linejoin: "miter";
-stroke-miterlimit: 40;
-
--webkit-svg-shadow: 0 1px 0px white/*hsl(208, 100%, 99%)*/;
-}
 
 .permanent-link {
 /*background: red;*/
