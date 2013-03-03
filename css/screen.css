@@ -711,6 +711,15 @@ top: 45px;
 }
 
 
+.footnotes p {
+	margin: 0 0 5px 0;
+}
+
+.footnotes li {
+	margin-bottom: 24px;
+}
+
+
 /*--[ POSTS ]---------------------*/
 #posts {
 padding-top: 20px;
