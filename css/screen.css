@@ -282,8 +282,12 @@ article {
 
 /* Setting the color of the logo */
 #D, #R {
-	fill: #f3f3f7;
 	fill: #40a4e5;
+}
+
+.post-logo #D,
+.post-logo #R {
+	fill: #f3f3f7;
 }
 
 /* @end 
