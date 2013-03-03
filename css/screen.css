@@ -3,6 +3,12 @@
 	margin-top: 90px;
 }
 
+@media screen and (max-width: 1200px) {
+	#newest-post {
+		margin-top: 170px;
+	}
+}
+
 /*#newest-post .post-summary {
 	padding: 20px;
 }*/
