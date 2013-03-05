@@ -246,6 +246,18 @@ article {
 	padding-top: 12px;
 }
 
+@media screen and (max-width: 780px) {
+	.title-header {
+		-webkit-transform: rotate(-16.4deg) scale(0.75); 
+		margin-bottom: 90px;
+		top: 55px;
+	}
+	#DR-logo {
+		-webkit-transform: scale(0.75);
+		-webkit-transform-origin: 0 0;
+	}
+}
+ 
 /* @group Post header blue & orange rectangles */
 
 #top-blue-rect,
