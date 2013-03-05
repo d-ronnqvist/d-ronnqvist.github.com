@@ -152,9 +152,10 @@ body {
 /* @group Headings */
 
 h1, h2 {
-	line-height:1.2em;
+	line-height:1.1em;
 	margin-top:32px;
 	margin-bottom:12px;
+	text-align: left;
 }
 
 h1 {
@@ -168,6 +169,7 @@ h1:first-child {
 h3, h4, h5, h6 {
 	margin-top:12px;
 	margin-bottom:6px;
+	text-align: left;
 }
 
 h5, h6 {
@@ -246,17 +248,7 @@ article {
 	padding-top: 12px;
 }
 
-@media screen and (max-width: 780px) {
-	.title-header {
-		-webkit-transform: rotate(-16.4deg) scale(0.75); 
-		margin-bottom: 90px;
-		top: 55px;
-	}
-	#DR-logo {
-		-webkit-transform: scale(0.75);
-		-webkit-transform-origin: 0 0;
-	}
-}
+
  
 /* @group Post header blue & orange rectangles */
 
@@ -579,6 +571,51 @@ top: -2px;
 
 /* @end */
 
+@media screen and (max-width: 780px) {
+	.title-header {
+		-webkit-transform: rotate(-16.4deg) scale(0.75); 
+		margin-bottom: 90px;
+		top: 55px;
+	}
+	#DR-logo {
+		-webkit-transform: scale(0.75);
+		-webkit-transform-origin: 0 0;
+	}
+}
 
+@media screen and (max-width: 400px) {
+	.title-header {
+		-webkit-transform: rotate(-16.4deg) scale(0.55); 
+		margin-bottom: 10px;
+		top: -10px;
+		left: -200px;
+	}
+	#DR-logo {
+		-webkit-transform: scale(0.5);
+		-webkit-transform-origin: 0 0;
+		top: 10px;
+		left: 10px;
+	}
+	
+	#main {
+		padding: 12px;
+	}
+	
+	pre > code {
+		width: 95%;
+	}
+	
+	blockqoute {
+		text-align: left;
+	}
+	
+	figure {
+		-webkit-transform: scale(0.65);
+		-webkit-transform-origin: 0 0;
+	}
+	figcaption {
+		font-size: 22px;
+	}
+}
 
 
