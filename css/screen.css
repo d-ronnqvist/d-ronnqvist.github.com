@@ -675,4 +675,32 @@ screen and (max-device-width: 480px) {
 	}
 }
 
+@media screen and (max-device-width: 480px) and (orientation:landscape) {
+    .title-header {
+    	-webkit-transform: rotate(-16.4deg) scale(0.65); 
+    	margin-bottom: 10px;
+    	top: -10px;
+    	left: -200px;
+    }
+    #DR-logo {
+    	-webkit-transform: scale(0.6);
+    	-webkit-transform-origin: 0 0;
+    	top: 15px;
+    	left: 15px;
+    }
+}
 
+@media screen and (max-device-width: 480px) and (orientation:portrait) {
+    .title-header {
+    	-webkit-transform: rotate(-16.4deg) scale(0.45); 
+    	margin-bottom: 10px;
+    	top: -10px;
+    	left: -200px;
+    }
+    #DR-logo {
+    	-webkit-transform: scale(0.4);
+    	-webkit-transform-origin: 0 0;
+    	top: 10px;
+    	left: 10px;
+    }
+}
