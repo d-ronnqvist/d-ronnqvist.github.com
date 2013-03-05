@@ -120,7 +120,7 @@ Knowing the frame of vector data seems tricky at first but Core Graphics gives y
 
 As seen in Figure 1 the content of our draw rect implementation _can_ be made accessible. Just like any other content.
 
-<figure style="height: 297px;"><img src="/images/accessibleContent.png" alt="A screenshow of the simulator showing the R shape of my logo being accessible"><figcaption>An illustration of two numbers being added.</figcaption></figure>
+<figure style="height: 297px;"><img src="/images/accessibleContent.png" alt="A screenshot of the iOS Simulator showing the R shape of my logo being accessible"><figcaption>A screenshot of the iOS Simulator showing the R shape of my logo being accessible.</figcaption></figure>
 
 --------------------------
 

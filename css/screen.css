@@ -605,7 +605,7 @@ top: -2px;
 	
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 550px or max-device-width: 480px) {
 	.title-header {
 		-webkit-transform: rotate(-16.4deg) scale(0.55); 
 		margin-bottom: 10px;
