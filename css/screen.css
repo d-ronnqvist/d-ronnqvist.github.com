@@ -581,7 +581,7 @@ top: -2px;
 
 /* @end */
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 800px) {
 	.title-header {
 		-webkit-transform: rotate(-16.4deg) scale(0.75); 
 		margin-bottom: 90px;
@@ -591,9 +591,21 @@ top: -2px;
 		-webkit-transform: scale(0.75);
 		-webkit-transform-origin: 0 0;
 	}
+	
+	#newest-post .post-summary {
+		width: 460px;
+	}
+	#newest-post .post-summary h1 {
+		width: 100%;
+	}
+	#newest-post .post-summary time {
+		display: none;
+	}
+	
+	
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 550px) {
 	.title-header {
 		-webkit-transform: rotate(-16.4deg) scale(0.55); 
 		margin-bottom: 10px;
