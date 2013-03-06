@@ -621,10 +621,6 @@ screen and (max-device-width: 480px) {
 		left: 10px;
 	}
 	
-	.post-summary {
-		width: 400px;
-	}
-	
 	#main {
 		padding: 12px;
 	}
@@ -645,7 +641,6 @@ screen and (max-device-width: 480px) {
 		font-size: 22px;
 	}
 	
-	#newest-post .post-summary,
 	.post-summary {
 		margin: 0;
 		margin-bottom: 25px;
@@ -693,6 +688,20 @@ screen and (max-device-width: 480px) {
     	top: 15px;
     	left: 15px;
     }
+    .post-summary {
+    	width: 440px !important;
+    	min-width: 50px;
+    	max-width: 440px;
+    	margin: 10px 4px;
+    	padding: 25px !important;
+    	
+    }
+    #newest-post {
+    	margin-top: 100px;
+    }
+    #more-posts {
+    	margin-top: 5px;
+    }
 }
 
 @media screen and (max-device-width: 480px) and (orientation:portrait) {
@@ -708,4 +717,16 @@ screen and (max-device-width: 480px) {
     	top: 10px;
     	left: 10px;
     }
+    .post-summary {
+    	width: 246px !important;
+    	padding: 15px !important;
+    	min-width: 50px;
+    	margin: 10px 0;
+    }
+    
+    #more-posts {
+    	margin-top: 5px;
+    	padding: 0;
+    }
+   
 }
