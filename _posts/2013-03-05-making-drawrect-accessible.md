@@ -6,7 +6,7 @@ category:
 tags: [Accessibility, VoiceOver, Custom drawing]
 ---
 
-This week (actually yesterday) at Cocoa Heads Stockholm I had the pleasure of listening to a blind user talk about accessibility on iOS and to also give a presentation on accessibility myself. It was an extremely emotional experience to hear about  the _enabler_ that your app can really be for a disabled user. In the aim of spreading the word about VoiceOver I intent to write several posts explaining how to implement great accessibility in your apps, starting with this post.
+This week (actually yesterday) at Cocoa Heads Stockholm I had the pleasure of listening to a blind user talk about accessibility on iOS and to also give a presentation on accessibility myself. It was an extremely emotional experience to hear about  the _enabler_ that your app can really be for a disabled user. In the aim of spreading the word about VoiceOver I intend to write several posts explaining how to implement great accessibility in your apps, starting with this post.
 
 ---------------
 
@@ -59,7 +59,7 @@ The constructor should be obvious in the context of creating our own accessibili
 > `accessibilityFrame` <br />
 > The frame of the accessibility element, in screen coordinates.
 
-That is actually it. The only thing we need to do to create an accessiblity element for something other than a view is to give it a label and a frame. Note that the label is in screen coordinates. Luckily UIKit has a method for doing this: `convertRect:toView:`.
+That is actually it. The only thing we need to do to create an accessibility element for something other than a view is to give it a label and a frame. Note that the label is in screen coordinates. Luckily UIKit has a method for doing this: `convertRect:toView:`.
 
 So a quick recap and then we’ll look at some actual code.
 
