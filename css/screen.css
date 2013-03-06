@@ -9,7 +9,8 @@
 	}
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 550px), 
+screen and (max-device-width: 480px) {
 	#newest-post {
 		margin-top: 80px;
 	}
@@ -618,6 +619,10 @@ screen and (max-device-width: 480px) {
 		-webkit-transform-origin: 0 0;
 		top: 10px;
 		left: 10px;
+	}
+	
+	.post-summary {
+		width: 400px;
 	}
 	
 	#main {
