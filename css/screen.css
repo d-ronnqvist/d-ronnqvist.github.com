@@ -671,15 +671,7 @@ screen and (max-device-width: 480px) {
 	blockqoute {
 		text-align: left;
 	}
-	
-	figure {
-		-webkit-transform: scale(0.65);
-		-webkit-transform-origin: 0 0;
-	}
-	figcaption {
-		font-size: 22px;
-	}
-	
+		
 	.post-summary {
 		margin: 0;
 		margin-bottom: 25px;
@@ -741,6 +733,14 @@ screen and (max-device-width: 480px) {
     #more-posts {
     	margin-top: 5px;
     }
+    figure {
+    	-webkit-transform: scale(0.95);
+    	-webkit-transform-origin: 0 0;
+    }
+    figcaption {
+    	font-size: 22px;
+    }
+    
 }
 
 @media screen and (max-device-width: 480px) and (orientation:portrait) {
@@ -771,5 +771,11 @@ screen and (max-device-width: 480px) {
     	margin-top: 5px;
     	padding: 0;
     }
-   
+    figure {
+    	-webkit-transform: scale(0.54);
+    	-webkit-transform-origin: 0 0;
+    }
+    figcaption {
+    	font-size: 22px;
+    }
 }
