@@ -779,3 +779,22 @@ screen and (max-device-width: 480px) {
     	font-size: 22px;
     }
 }
+
+@media screen and (min-width: 1600px) {
+	#top-blue-rect {
+		background: #4aa5e3;
+		width: 2750px;
+		height: 1000px;
+		right: 0px;
+		top: -1000px;
+	}
+	 
+	#top-orange-rect {
+		color: #303841;
+	 	width: 1700px;
+	 	height: 3500px;
+		background: #ffb900;
+		right: -1700px;
+		top: 0px;
+	}
+}
