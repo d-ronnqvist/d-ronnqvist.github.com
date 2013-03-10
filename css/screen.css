@@ -717,9 +717,9 @@ screen and (max-device-width: 480px) {
 @media screen and (max-device-width: 480px) and (orientation:landscape) {
     .title-header {
     	-webkit-transform: rotate(-16.4deg) scale(0.65); 
-    	margin-bottom: 10px;
-    	top: 0px;
-    	left: -150px;
+    	margin-bottom: 70px;
+    	top: 25px;
+    	left: -100px;
     }
     #DR-logo {
     	-webkit-transform: scale(0.6);
@@ -746,9 +746,13 @@ screen and (max-device-width: 480px) {
 @media screen and (max-device-width: 480px) and (orientation:portrait) {
     .title-header {
     	-webkit-transform: rotate(-16.4deg) scale(0.45); 
-    	margin-bottom: 10px;
-    	top: -20px;
+    	margin-bottom: 0px;
+    	top: -25px;
     	left: -250px;
+    }
+    .title-header > h1 {
+    	width: 560px;
+    	right: -120px;
     }
     #DR-logo {
     	-webkit-transform: scale(0.4);
