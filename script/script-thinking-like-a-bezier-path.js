@@ -1,3 +1,90 @@
+selected_control_point = 0;
+
+var dragTouch = function(e) {
+	if (!selected_control_point) return;
+	
+	var currentElement = document.getElementById("interactive-curve");
+	var totalOffsetX = 0;
+	var totalOffsetY = 0;
+	do{
+		totalOffsetX += currentElement.offsetLeft;
+		totalOffsetY += currentElement.offsetTop;
+	}
+	while(currentElement = currentElement.offsetParent)
+	
+	var t = e.touches[0];
+	
+	var x = t.pageX - totalOffsetX;
+	var y = t.pageY - totalOffsetY;
+	
+	e.preventDefault();
+		
+	dragSelectedToPoint(x, y);
+}
+
+var drag = function(e) {
+	if (selected_control_point == 0) return;
+	
+	var x = e.offsetX;
+	var y = e.offsetY;
+	
+	dragSelectedToPoint(x, y);
+}
+
+var dragSelectedToPoint = function(x, y) {
+	var svg = document.getElementById("interactive-curve");
+	var height = parseFloat(svg.getAttribute("height"));
+	var width  = parseFloat(svg.getAttribute("width"));
+	
+	var r = parseFloat(document.getElementById("ControlPoint1").getAttribute("r"));
+	r+=4.0;
+
+	if (x < r) x = r;
+	if (y < r) y = r;
+	if (x > width-r) x = width-r;
+	if (y > height-r) y = height-r;
+	
+	
+	
+	selected_control_point.setAttribute("cx", x);
+	selected_control_point.setAttribute("cy", y);
+	
+	var id = selected_control_point.id;
+	var lineId = "line"+id;
+	
+	var line = document.getElementById(lineId);
+	line.setAttribute("x2", x);
+	line.setAttribute("y2", y);
+	
+	var curve = document.getElementById("curve");
+	var path = curve.getAttribute("d");
+	var components = path.split(" ");
+	
+	if (id.slice(-1) == "1") {
+		// first control point
+		components[4] = x
+		components[5] = y
+	} else {
+		// second control point
+		components[6] = x
+		components[7] = y
+	}
+	
+	var path = curve.setAttribute("d", components.join(" "));
+}
+
+var selectElementTouch = function(e) {
+	selected_control_point = event.touches[0].target;
+}
+
+var selectElement = function(e) {
+	selected_control_point = (e && e.target) || (window.event && window.event.srcElement);
+}
+
+var deselectElement = function() {
+	selected_control_point = 0;
+}
+
 var correctInstructions = function() {
 	if ("ontouchstart" in window) {
 		// A touch device

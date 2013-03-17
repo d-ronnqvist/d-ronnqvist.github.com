@@ -260,23 +260,50 @@ There is a little bit of math involved in how the path is drawn between the four
 
 A curve is being added to our path form the current point to an end point. Just like when adding a line to the path, the curve starts off at the current point and ends up at the point we are moving to. In between it first approaches one of the control point the further it comes from the first point, then it slowly starts to steer off towards the second control point until it again starts steering off towards the end point more and more.
 
-> Image
+<figure>
+<div style="margin: auto; width: 550px; height: 380px; display: block; ">
+<svg id="interactive-curve" xmlns="http://www.w3.org/2000/svg" version="1.1" width="550" height="380" onmousemove="drag(event)" ontouchmove="dragTouch(event)" onmouseup="deselectElement()" ontouchended="deselectElement()">
 
-Given a variable **t**, that expresses how far long from start to finish along the curve we have moved, we can set up the following equation to describe the curve. 
+<path d="M130 200 
+		 C 250 90 230 270 420 200" id="curve" stroke="#222E39" stroke-width="6" fill="none"/>
+
+<g stroke="#ffba00" stroke-width="4" fill="none">
+<line id="lineControlPoint1" x1="130" y1="200" x2="250" y2="90" />
+<line id="lineControlPoint2" x1="420" y1="200" x2="230" y2="270" />
+
+</g>
+
+<g stroke="#ffba00" stroke-width="4" fill="white">
+<circle id="ControlPoint1" cx="250"  cy="90"  r="16" onmousedown="selectElement(event)" ontouchstart="selectElementTouch(event)" />
+<circle id="ControlPoint2" cx="230"  cy="270" r="16" onmousedown="selectElement(event)" ontouchstart="selectElementTouch(event)" />
+</g>
+
+<g fill="#222E39" >
+<circle cx="130" cy="200" r="8" />
+<circle cx="420" cy="200" r="8" />
+</g>
+
+		
+</svg>
+</div>
+</figure>
+<figcaption>A curve</figcaption>
+
+Given a variable <span class="math">t</span>, that expresses how far long from start to finish along the curve we have moved, we can set up the following equation to describe the curve. 
  
 start * (1-t)^3 + c1 * t(1-t)^2 + c2 * t^2(1-t) + end * t^3  
  
- When **t** is 0 the curve is at the start point since all the other terms are multiplied by 0. In the same way, when **t** is 1 the curve is at the end point. The interesting thing happens when **t** goes from 0 to 1. Say for example that **t** is **0.1**. In that case the equation becomes
+ When <span class="math">t</span> is 0 the curve is at the start point since all the other terms are multiplied by 0. In the same way, when <span class="math">t</span> is 1 the curve is at the end point. The interesting thing happens when <span class="math">t</span> goes from 0 to 1. Say for example that <span class="math">t</span> is <span class="math">0.1</span>. In that case the equation becomes
  
 start * (0.9)^3 + c1 * 0.1(0.9)^2 + c2 * 0.1^2(0.9) + end * 0.1^3  
  
 start * 0.729 + c1 * 0.081 + c2 * 0.009 + end * 0.001  
  
- At this point the curve takes most of its value from the start point (that it is very close to), a little bit of its value from the first control point and almost nothing from the rest. When **t** increases to **0.2** the values change so that the curve approaches the first control point more and more. 
+ At this point the curve takes most of its value from the start point (that it is very close to), a little bit of its value from the first control point and almost nothing from the rest. When <span class="math">t</span> increases to <span class="math">0.2</span> the values change so that the curve approaches the first control point more and more. 
  
  start * 0.512 + c1 * 0.128 + c2 * 0.032 + end * 0.008
  
-At some point the curves starts approaching the second control point instead and later, as **t** approaches **1**, the curve will starts approaching the end point. It’s matematically simple but gives a smooth curve from one point to another. 
+At some point the curves starts approaching the second control point instead and later, as <span class="math">t</span> approaches <span class="math">1</span>, the curve will starts approaching the end point. It’s mathematically simple but gives a smooth curve from one point to another. 
 
 #### Adding curves to our breakdown list
 
@@ -285,7 +312,7 @@ Curves fit quite nicely in the list of things we can break down a path into. Jus
 > IMage
  
  
- > Add that to our break down reportoar.
+ > Add that to our break down repertoire.
  
  Make a joke about the power of bezier paths being at our fingertips (given the amount of pen and paper we are going to use the first few times)
  
