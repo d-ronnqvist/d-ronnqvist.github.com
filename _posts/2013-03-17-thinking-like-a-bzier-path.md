@@ -262,7 +262,7 @@ A curve is being added to our path form the current point to an end point. Just 
 
 <figure>
 <div style="margin: auto; width: 550px; height: 380px; display: block; ">
-<svg id="interactive-curve" xmlns="http://www.w3.org/2000/svg" version="1.1" width="550" height="380" onmousemove="drag(event)" ontouchmove="dragTouch(event)" onmouseup="deselectElement()" ontouchended="deselectElement()">
+<svg id="interactive-curve" xmlns="http://www.w3.org/2000/svg" version="1.1" width="550" height="380" onmousemove="drag(event)" ontouchmove="dragTouch(event)" onmouseup="deselectElement()" ontouchend="deselectElement()">
 
 <path d="M130 200 
 		 C 250 90 230 270 420 200" id="curve" stroke="#222E39" stroke-width="6" fill="none"/>
