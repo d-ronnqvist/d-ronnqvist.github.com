@@ -268,15 +268,15 @@ A curve is being added to our path form the current point to an end point. Just 
 		 C 250 90 230 270 420 200" id="curve" stroke="#222E39" stroke-width="6" fill="none"/>
 
 <g stroke="#ffba00" stroke-width="4" fill="none">
-<line id="lineControlPoint1" x1="130" y1="200" x2="250" y2="90" />
-<line id="lineControlPoint2" x1="420" y1="200" x2="230" y2="270" />
-
+<line id="lineControlPoint1" x1="130" y1="200" x2="239" y2="101" />
+<line id="lineControlPoint2" x1="420" y1="200" x2="244" y2="265" />
 </g>
 
-<g stroke="#ffba00" stroke-width="4" fill="white">
+<g stroke="#ffba00" stroke-width="4" fill="rgba(255,255,255,0.75)">
 <circle id="ControlPoint1" cx="250"  cy="90"  r="16" onmousedown="selectElement(event)" ontouchstart="selectElementTouch(event)" />
 <circle id="ControlPoint2" cx="230"  cy="270" r="16" onmousedown="selectElement(event)" ontouchstart="selectElementTouch(event)" />
 </g>
+
 
 <g fill="#222E39" >
 <circle cx="130" cy="200" r="8" />

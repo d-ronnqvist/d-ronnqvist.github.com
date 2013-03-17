@@ -44,8 +44,8 @@ var dragSelectedToPoint = function(x, y) {
 	if (x > width-r) x = width-r;
 	if (y > height-r) y = height-r;
 	
-	
-	
+
+
 	selected_control_point.setAttribute("cx", x);
 	selected_control_point.setAttribute("cy", y);
 	
@@ -53,8 +53,14 @@ var dragSelectedToPoint = function(x, y) {
 	var lineId = "line"+id;
 	
 	var line = document.getElementById(lineId);
-	line.setAttribute("x2", x);
-	line.setAttribute("y2", y);
+	
+	var x1 = parseFloat(line.getAttribute("x1"));
+	var y1 = parseFloat(line.getAttribute("y1"));
+	var angle = Math.atan((x1-x)/(y1-y));
+	var sign = 1;
+	if (y>y1) { sign = -1; }
+	line.setAttribute("x2", x+(r-4)*Math.sin(angle)*sign);
+	line.setAttribute("y2", y+(r-4)*Math.cos(angle)*sign);
 	
 	var curve = document.getElementById("curve");
 	var path = curve.getAttribute("d");
