@@ -46,7 +46,7 @@ Now we have all the necessary points and can start translating out sketch into a
 <div style="margin: auto; width: 370px; height: 220px; display: block; padding: 35px 0;">
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="370" height="220">
 
-<rect x="10" y="10" width="350" height="200" fill="none" stroke="#222E39" stroke-width="2" stroke-dasharray="6,8" />
+<path d="M 10 210 L 10 10 L 360 10 L 360 210 Z" fill="none" stroke="#222E39" stroke-width="2" stroke-dasharray="6,8" />
 
 <circle cx="40" cy="40" r="30" stroke="#222E39" stroke-width="2" fill="none" stroke-dasharray="4,5"/>
 <path d="M10 40 L 40 40 L 40 10" stroke="#222E39" stroke-width="2" fill="none" stroke-dasharray="4,5"/>
