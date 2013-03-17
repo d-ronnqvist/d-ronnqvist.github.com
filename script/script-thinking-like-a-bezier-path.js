@@ -1,3 +1,14 @@
+var correctInstructions = function() {
+	if ("ontouchstart" in window) {
+		// A touch device
+		
+		var instruction = document.getElementsByClassName("hintText");
+		for (var i in instruction) {
+			instruction[i].firstChild.nodeValue = "Tap the code below";
+		}
+	}
+}
+
 var leaveCodeFunction = function(rootId) {
 	var root = document.getElementById(rootId)
 
