@@ -119,7 +119,7 @@ By translating the steps we took above, one by one, into their counterparts in c
 </g>
 
 <g id="hoverHint">
-<text x="60" y="90"  fill="#222E39" font-family="Avenir Next" font-size="24" font-weight="500" >Hover the code below</text>
+<text class="hintText" x="60" y="90"  fill="#222E39" font-family="Avenir Next" font-size="24" font-weight="500" >Hover the code below</text>
 <text x="60" y="120" fill="#222E39" font-family="Avenir Next" font-size="24" font-weight="500" >to visualize the path</text>
 <text x="60" y="150" fill="#222E39" font-family="Avenir Next" font-size="24" font-weight="500" >breakdown ...</text>
 
@@ -205,7 +205,7 @@ Let’s look at our revied drawing code.
 </g>
 
 <g id="hoverHint">
-<text x="60" y="90"  fill="#222E39" font-family="Avenir Next" font-size="24" font-weight="500" >Hover the code below</text>
+<text class="hintText" x="60" y="90"  fill="#222E39" font-family="Avenir Next" font-size="24" font-weight="500" >Hover the code below</text>
 <text x="60" y="120" fill="#222E39" font-family="Avenir Next" font-size="24" font-weight="500" >to visualize the path</text>
 <text x="60" y="150" fill="#222E39" font-family="Avenir Next" font-size="24" font-weight="500" >breakdown ...</text>
 
@@ -298,4 +298,4 @@ Curves fit quite nicely in the list of things we can break down a path into. Jus
 
 [^pen&paper]: _Constructing_ a Bézier path is like drawing it. Drawing the shape (filling or stroking it) is somehting slightly different.
 
-<script src="/script/script-thinking-like-a-bezier-path.js" type="text/javascript"> </script>
+<script src="/script/script-thinking-like-a-bezier-path.js" type="text/javascript" onload="correctInstructions()"> </script>
