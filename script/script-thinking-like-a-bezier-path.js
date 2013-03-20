@@ -1,16 +1,27 @@
 selected_control_point = 0;
 
+svg = document.getElementById("interactive-curve");
+height = parseFloat(svg.getAttribute("height"));
+width  = parseFloat(svg.getAttribute("width"));
+
+r = parseFloat(document.getElementById("ControlPoint1").getAttribute("r")) + 4;
+
+curve = document.getElementById("curve");
+
+//lineId = "";
+isFirstPoint = false;
+
 var dragTouch = function(e) {
 	if (!selected_control_point) return;
 	
-	var currentElement = document.getElementById("interactive-curve");
-	var totalOffsetX = 0;
-	var totalOffsetY = 0;
-	do{
-		totalOffsetX += currentElement.offsetLeft;
-		totalOffsetY += currentElement.offsetTop;
-	}
-	while(currentElement = currentElement.offsetParent)
+//	var currentElement = svg;
+//	var totalOffsetX = 0;
+//	var totalOffsetY = 0;
+//	do{
+//		totalOffsetX += currentElement.offsetLeft;
+//		totalOffsetY += currentElement.offsetTop;
+//	}
+//	while(currentElement = currentElement.offsetParent)
 	
 	var t = e.touches[0];
 	
@@ -32,41 +43,35 @@ var drag = function(e) {
 }
 
 var dragSelectedToPoint = function(x, y) {
-	var svg = document.getElementById("interactive-curve");
-	var height = parseFloat(svg.getAttribute("height"));
-	var width  = parseFloat(svg.getAttribute("width"));
-	
-	var r = parseFloat(document.getElementById("ControlPoint1").getAttribute("r"));
-	r+=4.0;
-
 	if (x < r) x = r;
 	if (y < r) y = r;
 	if (x > width-r) x = width-r;
 	if (y > height-r) y = height-r;
 	
-
-
-	selected_control_point.setAttribute("cx", x);
-	selected_control_point.setAttribute("cy", y);
+	var local_control_point = selected_control_point;
+	var local_line = line;
+	var local_curve = curve;
 	
-	var id = selected_control_point.id;
-	var lineId = "line"+id;
+	local_control_point.setAttribute("cx", x);
+	local_control_point.setAttribute("cy", y);
 	
-	var line = document.getElementById(lineId);
+//	var id = selected_control_point.id;
+//	var lineId = "line"+id;
 	
-	var x1 = parseFloat(line.getAttribute("x1"));
-	var y1 = parseFloat(line.getAttribute("y1"));
+//	var line = document.getElementById(lineId);
+	
+	var x1 = parseFloat(local_line.getAttribute("x1"));
+	var y1 = parseFloat(local_line.getAttribute("y1"));
 	var angle = Math.atan((x1-x)/(y1-y));
 	var sign = 1;
 	if (y>y1) { sign = -1; }
-	line.setAttribute("x2", x+(r-4)*Math.sin(angle)*sign);
-	line.setAttribute("y2", y+(r-4)*Math.cos(angle)*sign);
+	local_line.setAttribute("x2", x+(r-4)*Math.sin(angle)*sign);
+	local_line.setAttribute("y2", y+(r-4)*Math.cos(angle)*sign);
 	
-	var curve = document.getElementById("curve");
-	var path = curve.getAttribute("d");
+	var path = local_curve.getAttribute("d");
 	var components = path.split(" ");
 	
-	if (id.slice(-1) == "1") {
+	if (isFirstPoint) {
 		// first control point
 		components[4] = x
 		components[5] = y
@@ -76,15 +81,32 @@ var dragSelectedToPoint = function(x, y) {
 		components[7] = y
 	}
 	
-	var path = curve.setAttribute("d", components.join(" "));
+	local_curve.setAttribute("d", components.join(" "));
 }
 
 var selectElementTouch = function(e) {
 	selected_control_point = event.touches[0].target;
+	var id = selected_control_point.id
+	isFirstPoint = (id.slice(-1) == "1");
+	var lineId = "line"+id;
+	line = document.getElementById(lineId);
+	
+	var currentElement = svg;
+	totalOffsetX = 0;
+	totalOffsetY = 0;
+	do{
+		totalOffsetX += currentElement.offsetLeft;
+		totalOffsetY += currentElement.offsetTop;
+	}
+	while(currentElement = currentElement.offsetParent)
 }
 
 var selectElement = function(e) {
 	selected_control_point = (e && e.target) || (window.event && window.event.srcElement);
+	var id = selected_control_point.id
+	isFirstPoint = (id.slice(-1) == "1");
+	var lineId = "line"+id;
+	line = document.getElementById(lineId);
 }
 
 var deselectElement = function() {
