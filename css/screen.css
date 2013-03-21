@@ -498,7 +498,7 @@ pre > code {
 	padding: 5px 7px;
 	line-height: 16px;
 	font-size: 14px;
-	white-space: pre-line;
+/*	white-space: pre-line;*/
 	text-align: left;
 	width: 605px;
 	position: relative;
