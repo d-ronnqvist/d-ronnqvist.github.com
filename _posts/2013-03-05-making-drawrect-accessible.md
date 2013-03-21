@@ -109,7 +109,8 @@ Images are commonly draw into a rect using `drawInRect:` so we already know the 
 Knowing the frame of vector data seems tricky at first but Core Graphics gives you great help. If the data is in a `CGPathRef` then the frame containing the entire path (AKA the bounding box) can be retrieved using `CGPathGetBoundingBox( path );`. If, on the other hand the vector drawing consists of multiple shapes already being added to the graphics context then the bounding box for the path of the context can be retrieved using `CGContextGetPathBoundingBox( context );` In either case we now know the frame and can create an accessibility element for it.
 
     // The accessibility elements for a vector shape
-    UIAccessibilityElement *dElement = [[UIAccessibilityElement alloc] initWithAccessibilityContainer:self];
+    UIAccessibilityElement *dElement = 
+        [[UIAccessibilityElement alloc] initWithAccessibilityContainer:self];
     dElement.accessibilityLabel = @"D";
     dElement.accessibilityHint = @"The letter D in the DR logo.";
     dElement.accessibilityFrame = 
