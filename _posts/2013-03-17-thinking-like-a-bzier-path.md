@@ -146,28 +146,28 @@ This is the construction of a shape in the termonology of a Bézier path. We are
 <span id="hover0"><span class="uibezier">UIBezierPath *path = <span class="codeHighlight">[UIBezierPath bezierPath]</span>;</span><span class="cgpath hidden">CGMutablePathRef path = <span class="codeHighlight">CGPathCreateMutable()</span>;</span>
 </span><span id="hover1"><span class="uibezier">[path <span class="codeHighlight">moveToPoint</span>:lowerLeftCorner];</span><span class="cgpath hidden"><span class="codeHighlight">CGPathMoveToPoint</span>(path, NULL, 
                   lowerLeftCorner.x, lowerLeftCorner.y);</span>
-</span><span id="hover2"><span class="uibezier">[path <span class="codeHighlight">addLineToPoint</span>:upperLeftBeforeArc];</span><span class="cgpath hidden"><span class="codeHighlight">CGPathAddLineToPoint</span>(path, NULL, 
-                     upperLeftBeforeArc.x, upperLeftBeforeArc.y);</span>
-</span><span id="hover3"><span class="uibezier">[path <span class="codeHighlight">addArcWithCenter</span>:upperLeftCircleCenter
+</span><span id="hover2"><span class="uibezier">[path <span class="codeHighlight">addLineToPoint</span>:beforeLeftArc];</span><span class="cgpath hidden"><span class="codeHighlight">CGPathAddLineToPoint</span>(path, NULL, 
+                     beforeLeftArc.x, beforeLeftArc.y);</span>
+</span><span id="hover3"><span class="uibezier">[path <span class="codeHighlight">addArcWithCenter</span>:leftCircleCenter
                 <span class="codeHighlight">radius</span>:smallRadius
             <span class="codeHighlight">startAngle</span>:straightLeftAngle
               <span class="codeHighlight">endAngle</span>:straightUpAngle
              <span class="codeHighlight">clockwise</span>:YES];</span><span class="cgpath hidden"><span class="codeHighlight">CGPathAddArc</span>(path, NULL,
-             upperLeftCircleCenter.x, upperLeftCircleCenter.y,
+             leftCircleCenter.x, leftCircleCenter.y,
              smallRadius,        // radius
              straightLeftAngle,  // start angle
              straightUpAngle,    // end angle
              NO);                // clockwise</span>
 </span><span id="hover4"><span class="uibezier">[path <span class="codeHighlight">addLineToPoint</span>:upperRightCorner];</span><span class="cgpath hidden"><span class="codeHighlight">CGPathAddLineToPoint</span>(path, NULL, 
                      upperRightCorner.x, upperRightCorner.y);</span>
-</span><span id="hover5"><span class="uibezier">[path <span class="codeHighlight">addLineToPoint</span>:lowerRightBeforeArc];</span><span class="cgpath hidden"><span class="codeHighlight">CGPathAddLineToPoint</span>(path, NULL, 
-                     lowerRightBeforeArc.x, lowerRightBeforeArc.y);</span>
-</span><span id="hover6"><span class="uibezier">[path <span class="codeHighlight">addArcWithCenter</span>:lowerRightCircleCenter
+</span><span id="hover5"><span class="uibezier">[path <span class="codeHighlight">addLineToPoint</span>:beforeRightArc];</span><span class="cgpath hidden"><span class="codeHighlight">CGPathAddLineToPoint</span>(path, NULL, 
+                     beforeRightArc.x, beforeRightArc.y);</span>
+</span><span id="hover6"><span class="uibezier">[path <span class="codeHighlight">addArcWithCenter</span>:rightCircleCenter
                 <span class="codeHighlight">radius</span>:largeRadius
             <span class="codeHighlight">startAngle</span>:straightRightAngle
               <span class="codeHighlight">endAngle</span>:straightDownAngle
              <span class="codeHighlight">clockwise</span>:YES];</span><span class="cgpath hidden"><span class="codeHighlight">CGPathAddArc</span>(path, NULL,
-             lowerRightCircleCenter.x, lowerRightCircleCenter.y,
+             rightCircleCenter.x, rightCircleCenter.y,
              largeRadius,        // radius
              straightRightAngle, // start angle
              straightDownAngle,  // end angle
@@ -232,24 +232,24 @@ Let’s look at our revised drawing code.
 <span id="hover0"><span class="uibezier">UIBezierPath *path = <span class="codeHighlight">[UIBezierPath bezierPath]</span>;</span><span class="cgpath hidden">CGMutablePathRef path = <span class="codeHighlight">CGPathCreateMutable()</span>;</span>
 </span><span id="hover1"><span class="uibezier">[path <span class="codeHighlight">moveToPoint</span>:lowerLeftCorner];</span><span class="cgpath hidden"><span class="codeHighlight">CGPathMoveToPoint</span>(path, NULL,
                   lowerLeftCorner.x, lowerLeftCorner.y);</span>
-</span><span id="hover2"><span class="uibezier">[path <span class="codeHighlight">addArcWithCenter</span>:upperLeftCircleCenter
+</span><span id="hover2"><span class="uibezier">[path <span class="codeHighlight">addArcWithCenter</span>:leftCircleCenter
                 <span class="codeHighlight">radius</span>:smallRadius
             <span class="codeHighlight">startAngle</span>:straightLeftAngle
               <span class="codeHighlight">endAngle</span>:straightUpAngle
              <span class="codeHighlight">clockwise</span>:YES];</span><span class="cgpath hidden"><span class="codeHighlight">CGPathAddArc</span>(path, NULL,
-             upperLeftCircleCenter.x, upperLeftCircleCenter.y,
+             leftCircleCenter.x, leftCircleCenter.y,
              smallRadius,        // radius
              straightLeftAngle,  // start angle
              straightUpAngle,    // end angle
              NO);                // clockwise</span>
 </span><span id="hover3"><span class="uibezier">[path <span class="codeHighlight">addLineToPoint</span>:upperRightCorner];</span><span class="cgpath hidden"><span class="codeHighlight">CGPathAddLineToPoint</span>(path, NULL, 
                      upperRightCorner.x, upperRightCorner.y);</span>
-</span><span id="hover4"><span class="uibezier">[path <span class="codeHighlight">addArcWithCenter</span>:lowerRightCircleCenter
+</span><span id="hover4"><span class="uibezier">[path <span class="codeHighlight">addArcWithCenter</span>:rightCircleCenter
                 <span class="codeHighlight">radius</span>:largeRadius
             <span class="codeHighlight">startAngle</span>:straightRightAngle
               <span class="codeHighlight">endAngle</span>:straightDownAngle
              <span class="codeHighlight">clockwise</span>:YES];</span><span class="cgpath hidden"><span class="codeHighlight">CGPathAddArc</span>(path, NULL,
-             lowerRightCircleCenter.x, lowerRightCircleCenter.y,
+             rightCircleCenter.x, rightCircleCenter.y,
              largeRadius,        // radius
              straightRightAngle, // start angle
              straightDownAngle,  // end angle
