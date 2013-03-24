@@ -352,7 +352,7 @@ pre > .math {
 figure {
 background: white;
 width: 550px;
-min-height: 270px;
+min-height: 100px;
 margin: 24px auto 55px;
 
 border: 1px solid #AAA;

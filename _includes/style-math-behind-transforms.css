@@ -8,18 +8,18 @@
 	padding: 4px;
 }
 
-#matrixFigure * {
+.matrixFigure * {
 	vertical-align:middle;
 	margin: 5px;
 }
 
-#matrixFigure {
+/*#matrixFigure {
 	height: 200px;
 	width: 520px !important;
 	padding-top: 70px;
 	padding-left: 45px;
 	padding-right: 0;
-}
+}*/
 
 .matrixTable td {
 	padding: 3px 8px;
