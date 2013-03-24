@@ -14,6 +14,7 @@ isFirstPoint = false;
 var dragTouch = function(e) {
 	if (!selected_control_point) return;
 	
+	
 //	var currentElement = svg;
 //	var totalOffsetX = 0;
 //	var totalOffsetY = 0;
@@ -29,8 +30,12 @@ var dragTouch = function(e) {
 	var y = t.pageY - totalOffsetY;
 	
 	e.preventDefault();
-		
-	dragSelectedToPoint(x, y);
+	
+	if (selected_control_point.id == "sliderKnob") {
+		dragSliderToPoint(x);
+	} else {
+		dragSelectedToPoint(x, y);
+	}
 }
 
 var drag = function(e) {
@@ -39,7 +44,37 @@ var drag = function(e) {
 	var x = e.offsetX;
 	var y = e.offsetY;
 	
-	dragSelectedToPoint(x, y);
+	if (selected_control_point.id == "sliderKnob") {
+		dragSliderToPoint(x);
+	} else {
+		dragSelectedToPoint(x, y);
+	}
+}
+
+var dragSliderToPoint = function(x) {
+	if (x < 50) x = 50;
+	if (x > 500) x = 500;
+	
+	var sx = 190; var sy = 80;
+	var ex = 420; var ey = 250;
+	
+	var c1x = -30; var c1y = 350;
+	var c2x = 450; var c2y = -20;
+	
+	var t = (x-50)/450;
+	
+	var px = sx*Math.pow(1-t, 3) + 3*c1x*t*Math.pow(1-t, 2) + 3*c2x*Math.pow(t,2)*(1-t) + ex*Math.pow(t, 3);
+	var py = sy*Math.pow(1-t, 3) + 3*c1y*t*Math.pow(1-t, 2) + 3*c2y*Math.pow(t,2)*(1-t) + ey*Math.pow(t, 3);
+	
+	var point = document.getElementById("pathPoint");
+	point.setAttribute("cx", px);
+	point.setAttribute("cy", py);
+	
+	var text = document.getElementById("sliderText");
+	text.setAttribute("x", x-27);
+	text.firstChild.nodeValue = "t = "+t.toFixed(2);
+	
+	selected_control_point.setAttribute("cx", x);
 }
 
 var dragSelectedToPoint = function(x, y) {
@@ -103,6 +138,7 @@ var selectElementTouch = function(e) {
 
 var selectElement = function(e) {
 	selected_control_point = (e && e.target) || (window.event && window.event.srcElement);
+	
 	var id = selected_control_point.id
 	isFirstPoint = (id.slice(-1) == "1");
 	var lineId = "line"+id;

@@ -203,6 +203,12 @@ em {
 	padding: 0 2px;
 }
 
+strong {
+	font-weight: 500;
+}
+
+
+
 /*--[ LINKS ]---------*/
 article a {
 text-decoration: none;
@@ -327,8 +333,18 @@ article {
 /*	font-size: 14px;*/
 	background-color: #fcfcfc;
 	border-radius: 3px;
-	padding: 1px 3px
+	padding: 1px 3px;
 	-webkit-hyphens: none;
+	
+	
+}
+
+pre > .math {
+/*	width: %;*/
+	padding: 7px 10px;
+	margin: 10px 15px;
+	font-size: 15px;
+	display: block;
 }
 
 /* @group Figures */
@@ -372,6 +388,7 @@ figcaption {
 	text-align: center;
 	counter-increment: figure;
 	padding: 10px;
+	margin-bottom: 25px;
 }
 
 figcaption:before {
@@ -482,7 +499,7 @@ content: "”";
 /* @group Code */
 
 /* Inline code*/
-p code {
+p code, li code {
 font-size: 14px;
 background-color: #fcfcfc;
 border-radius: 3px;
