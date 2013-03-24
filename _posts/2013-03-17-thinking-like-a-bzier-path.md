@@ -93,7 +93,7 @@ or their counterparts for CGPath's:
 - `CGPathAddLineToPoint()` 
 - `CGPathAddArc()`
   
-This is the construction of a shape in the termonology of a Bézier path. We are thinking like a Bézier path. By translating the steps we took above, one by one, into their counterparts in code we have the necessary code to draw this shape. 
+This is the construction of a shape in the terminology of a Bézier path. We are thinking like a Bézier path. By translating the steps we took above, one by one, into their counterparts in code we have the necessary code to draw this shape. 
 
 
 
