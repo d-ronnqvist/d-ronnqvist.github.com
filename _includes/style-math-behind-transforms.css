@@ -29,13 +29,13 @@
 
 #multiplicationText {
 	display: block;
-	padding: 5px;
+	padding: 5px 0 ;
 	text-align: center;
 	margin: 20px 0;
 	width: 500px;
 	height: 20px;
 }
 
-#matrixFigure sub {
+.matrixFigure sub {
 	margin: 0px;
 }
