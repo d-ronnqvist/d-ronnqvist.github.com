@@ -12,19 +12,19 @@ Rounded corners is a very common visual style on iOS. Since every view on iOS is
 
     myView.layer.cornerRadius = myCornerRadius;
 
-But that wont work if we only want to round one corner. The `cornerRadius` property on [`CALayer`][calayer] is not like CSS. There is no `topLeftCornerRadius` or equivalent property. This cannot be done with a simple property change. We can however create a [`UIBezeirPath`][uibezierpath] that is a rectangle with any combination of corners rounded. That path can then be used to either mask our layer or be drawn directly inside `drawRect:`.
+But that wont work if we only want to round one corner. The `cornerRadius` property on [`CALayer`][calayer] is not like CSS. There is no `topLeftCornerRadius` or equivalent property. This cannot be done with a simple property change. We can however create a [`UIBezierPath`][uibezierpath] that is a rectangle with any combination of corners rounded. That path can then be used to either mask our layer or be drawn directly inside `drawRect:`.
 
     UIBezierPath *path = 
         [UIBezierPath bezierPathWithRoundedRect:rect
                               byRoundingCorners:UIRectCornerTopLeft 
                                     cornerRadii:CGSizeMake(radius, radius)
 
-But what if we wanted to round two corners with two different radii? Looking at [the documentation for `UIBezeirPath`][uibezierpath] there is no convenience method that seems to do that for us. We need to construct the path ourselves and to do that we need to think like a Bézier path.
+But what if we wanted to round two corners with two different radii? Looking at [the documentation for `UIBezierPath`][uibezierpath] there is no convenience method that seems to do that for us. We need to construct the path ourselves and to do that we need to think like a Bézier path.
 
 # Break down of a Bézier path
 Construction of a Bézeir path is very similar to using pen and paper to draw the same shape[^pen&paper]. So if you want to follow along at home I suggest you grab a pen and paper.
 
- Lets start by drawing the full path. In my example I’m going to draw a rectangle with a smaller rounded corner in the upper left and a bigger rounded corner in the upper right.
+ Lets start by drawing the full path. In my example I’m going to draw a rectangle with a smaller rounded corner in the upper left and a bigger rounded corner in the lower right.
 
 <figure>
 <div style="margin: auto; width: 370px; height: 220px; display: block; padding: 35px 0;">
