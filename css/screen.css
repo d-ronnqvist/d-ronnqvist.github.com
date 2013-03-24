@@ -223,7 +223,7 @@ article {
 	text-align: justify;
 	margin: 0 auto;
 	max-width: 610px;
-	min-width: 300px;
+	min-width: 296px;
 	width: 100%;
 	position: relative;
 
@@ -498,14 +498,20 @@ content: "”";
 
 /* @group Code */
 
+code, .math {
+	-webkit-hyphens: none;
+	word-wrap: break-word;
+}
+
 /* Inline code*/
 p code, li code {
-font-size: 14px;
-background-color: #fcfcfc;
-border-radius: 3px;
-padding: 1px 3px;
--webkit-hyphens: none;
+	font-size: 14px;
+	background-color: #fcfcfc;
+	border-radius: 3px;
+	padding: 1px 3px;
 }
+
+
 
 /* Code block */
 article > pre > code {
@@ -518,7 +524,8 @@ article > pre > code {
 	font-size: 14px;
 /*	white-space: pre-line;*/
 	text-align: left;
-	width: 605px;
+/*	width: 605px;*/
+	width: -webkit-calc(100% - 5px);
 	position: relative;
 	left: -5px;
 }
@@ -796,9 +803,6 @@ screen and (max-device-width: 480px) {
     figure {
     	-webkit-transform: scale(0.54);
     	-webkit-transform-origin: 0 0;
-    }
-    figcaption {
-    	font-size: 22px;
     }
 }
 
