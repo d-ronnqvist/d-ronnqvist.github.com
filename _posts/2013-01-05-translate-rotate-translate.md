@@ -18,14 +18,15 @@ When you apply a transform to a view the coordinates of that views corners gets 
 
 Don’t worry! You don’t need to understand matrixes to apply transforms as long as you know that order matters. The animations below illustrate how the order of translating and rotating makes a difference.
 
-<figure id="transformBreakdown"><div class="resetButton" onclick="resetAnimation(this)" style="-webkit-animation-delay: 11s;">◀◀</div>
+<figure id="transformBreakdown" style="height: 270px;"><div class="resetButton" onclick="resetAnimation(this)" style="-webkit-animation-delay: 11s;">◀◀</div>
 <div class="viewBox marking">begin</div>
 <div class="viewBox marking" style="-webkit-transform: translate(-2px, -2px) translateX(-200px) rotateZ(-30deg) translate(200px)">end</div>
 <svg><path d="M 322,80 a 40,120 0 0 1 27,100" fill="none" stroke="black" stroke-width="2" stroke-dasharray="5,5" transform="translate(-50,3)"></path><path d="M -5,8 L 0,0 L 5,8" fill="none" stroke="black" stroke-width="2" transform="translate(271, 81) rotate(-35 0 0)"></path></svg><div class="viewBox transformBreakdownAnimation">view</div>			
   <ol id="transformSteps"><li><code>translate</code></li>
     <li><code>rotate</code></li>
     <li><code>translate</code></li>
-  </ol><figcaption>A view being translated, rotated and translated back.</figcaption></figure>
+  </ol></figure>
+  <figcaption>A view being translated, rotated and translated back.</figcaption>
 
 ## Creating such a transform in code
 
@@ -35,12 +36,12 @@ You can create a new rotation transform by calling `CATransform3DMakeRotation(�
 
     CGFloat thirtyDegrees = 30.0 * M_PI / 180.0;
     CGFloat distanceToRotationPoint = 100.0;
-    CATransform3D externalRotation = 
+    CATransform3D rotation = 
         CATransform3DMakeTranslation(-distanceToRotationPoint, 0.0, 0.0);
-    externalRotation = 
-        CATransform3DRotate(externalRotation, -thirtyDegrees, 0.0, 0.0, 1.0);
-    externalRotation = 
-        CATransform3DTranslate(externalRotation, distanceToRotationPoint, 0.0, 0.0);
+    rotation = 
+        CATransform3DRotate(rotation, -thirtyDegrees, 0.0, 0.0, 1.0);
+    rotation = 
+        CATransform3DTranslate(rotation, distanceToRotationPoint, 0.0, 0.0);
     
 If we set that as the transform of our view we will see that it has moved to the correct position, just as if it was rotated around a pointer other than its center. 
 
@@ -48,18 +49,19 @@ If we set that as the transform of our view we will see that it has moved to the
 
 Being able to set a rotation transform is cool and all but we want to animate the rotation as well. So we create a basic animation from the identity matrix (meaning no transformation) to our translate-rotate-translate transform and add it to a layer.
    
-    CABasicAnimation *rotate = [CABasicAnimation animationWithKeyPath:@"transform"];
+    CABasicAnimation *rotate = 
+        [CABasicAnimation animationWithKeyPath:@"transform"];
     rotate.fromValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
     rotate.toValue = [NSValue valueWithCATransform3D:externalRotation];
     rotate.duration = 1.0;    
     
     [rotatingLayer addAnimation:rotate forKey:@"myRotationAnimation"];
 
-<figure><div class="resetButton" onclick="resetAnimation(this)" style="-webkit-animation-delay: 3s;">◀◀</div>
+<figure style="height: 270px;"><div class="resetButton" onclick="resetAnimation(this)" style="-webkit-animation-delay: 3s;">◀◀</div>
 <div class="viewBox marking">begin</div>
 <div class="viewBox marking" style="-webkit-transform: translate(-2px, -2px) translateX(-200px) rotateZ(-30deg) translate(200px)">end</div>
-<svg><path d="M 322,80 a 40,120 0 0 1 27,100" fill="none" stroke="black" stroke-width="2" stroke-dasharray="5,5" transform="translate(-50,3)"></path><path d="M -5,8 L 0,0 L 5,8" fill="none" stroke="black" stroke-width="2" transform="translate(271, 81) rotate(-35 0 0)"></path></svg><div class="viewBox apply45deg">view</div>			
-<figcaption>Animating to the translate-rotate-translate transform.</figcaption></figure>
+<svg><path d="M 322,80 a 40,120 0 0 1 27,100" fill="none" stroke="black" stroke-width="2" stroke-dasharray="5,5" transform="translate(-50,3)"></path><path d="M -5,8 L 0,0 L 5,8" fill="none" stroke="black" stroke-width="2" transform="translate(271, 81) rotate(-35 0 0)"></path></svg><div class="viewBox apply45deg">view</div></figure>
+<figcaption>Animating to the translate-rotate-translate transform.</figcaption>
    
 Something is not right. It may not look very strange for small rotation like this one but if we slow down the animation a little and make a rotation of more than <span class="math"><sup>π</sup>/<sub>2</sub></span> (90º) it will be obvious what is happening. The view moves from the start position to the end position in _a straight line_! It doesn't rotate around that point, it's just strange. 
 
@@ -70,8 +72,8 @@ Something is not right. It may not look very strange for small rotation like thi
 <div class="halfcircle"> </div>
 <div class="arrowhead"> </div>
 <div class="viewBox apply135deg">view</div>	
-</div>		
-<figcaption>Animating a bigger rotation to see what is wrong.</figcaption></figure>
+</div></figure>	
+<figcaption>Animating a bigger rotation to see what is wrong.</figcaption>
 
 ## Making it work
 
@@ -82,8 +84,14 @@ Let's look at alternatives. There is a property on the view layer called the anc
 To counter the frame moving we can change the position of the layer to the point we are rotating around. That way the view/layer will appear in the same frame as before.
 
     CGPoint rotationPoint = // The point we are rotating around
-    CGPoint anchorPoint = CGPointMake((rotationPoint.x-CGRectGetMinX(view.frame))/CGRectGetWidth(view.frame),
-                                      (rotationPoint.y-CGRectGetMinY(view.frame))/CGRectGetHeight(view.bounds));
+    
+    CGFloat minX   = CGRectGetMinX(view.frame);
+    CGFloat minY   = CGRectGetMinY(view.frame);
+    CGFloat width  = CGRectGetWidth(view.frame);
+    CGFloat height = CGRectGetHeight(view.frame);
+    
+    CGPoint anchorPoint =  CGPointMake((rotationPoint.x-minX)/width,
+                                       (rotationPoint.y-minY)/height);
     
     view.layer.anchorPoint = anchorPoint;
     view.layer.position = rotationPoint; 
@@ -92,7 +100,8 @@ If we are using Auto Layout it becomes a bit more complicated. The answers to [t
 
 Now that have changed the point we are transforming relative to, we don't have to translate back and forth so the animation code becomes very simple.
 
-    CABasicAnimation *rotate = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    CABasicAnimation *rotate = 
+        [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
     rotate.toValue = @(-M_PI_2); // The angle we are rotating to
     rotate.duration = 1.0;
     
@@ -107,8 +116,8 @@ And the view finally rotates around the point we were expecting it to.
 <div class="halfcircle"> </div>
 <div class="arrowhead"> </div>
 <div class="viewBox apply135deg-anchor" style="-webkit-transform-origin-x: -145px">view</div>	
-</div>		
-<figcaption>Finally rotating around the point we wanted.</figcaption></figure>
+</div></figure>
+<figcaption>Finally rotating around the point we wanted.</figcaption>
 
 <script src="/script/script-translate-rotate-translate.js" type="text/javascript" onload="checkVisibility()"> </script>
 <script>var body = document.getElementsByTagName("body")[0]; body.onscroll=checkVisibility(); body.onresize=checkVisibility();</script>
