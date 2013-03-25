@@ -611,6 +611,14 @@ top: -2px;
 
 /* @end */
 
+.autoscaled-svg { 
+	position:absolute; top:0; left:0;
+	margin: 50px;
+	height:-webkit-calc(100% - 100px); 
+	width:-webkit-calc(100% - 100px);
+/*	background: rgba(25,250,120,0.5);*/
+}
+
 @media screen and (max-device-width: 1024px) {
     .post-summary {
     	padding: 15px;
@@ -766,10 +774,7 @@ screen and (max-device-width: 480px) {
     	-webkit-transform: scale(0.95);
     	-webkit-transform-origin: 0 0;
     }
-    figcaption {
-    	font-size: 22px;
-    }
-    
+   
 }
 
 @media screen and (max-device-width: 480px) and (orientation:portrait) {
@@ -801,10 +806,48 @@ screen and (max-device-width: 480px) {
     	padding: 0;
     }
     figure {
-    	-webkit-transform: scale(0.54);
-    	-webkit-transform-origin: 0 0;
+    	width: 100%;
+/*    	padding: 7px;*/
     }
+    figure > div {
+/*    	width: 80%;*/
+/*    	width: -webkit-calc(100% - 20px) !important;*/
+/*    	-webkit-transform: scale(0.54);*/
+/*    	-webkit-transform-origin: 0 0;*/
+    }
+    
+    figure  code {
+    	width: 100%;
+    	font-size: 14px;
+    }
+    
+    .autoscaled-svg { 
+    	position:absolute; top:0; left:0;
+    	margin: 5px;
+    	height:-webkit-calc(100% - 10px); 
+    	width:-webkit-calc(100% - 10px);
+	}
+	
+	figure > div {
+		max-height: 300px;
+	}
+	
+	figure > div  {
+		margin: 10px;
+		display:-webkit-box;
+		-webkit-box-sizing: border-box;
+	    -webkit-box-pack:center;
+	    -webkit-box-align:center;
+	    }
+	figure > div > div {
+		display:-webkit-box !important;
+		-webkit-box-sizing: border-box;
+		-webkit-box-pack:center;
+		-webkit-box-align:center;
+	}    
 }
+
+
 
 @media screen and (min-width: 1600px) {
 	#top-blue-rect {

@@ -27,13 +27,15 @@ Construction of a Bézier path is very similar to using pen and paper to draw th
  Lets start by drawing the full path. In my example I’m going to draw a rectangle with a smaller rounded corner in the upper left and a bigger rounded corner in the lower right.
 
 <figure>
-<div style="margin: auto; width: 370px; height: 220px; display: block; padding: 35px 0;">
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="370" height="220">
+<div style="margin-bottom: 60%;">
+<div style="margin: auto; width: 100%; height: 0px;">
+<svg class="autoscaled-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 370 220" width="100%">
 <path d="M10 210 L 10 40 
 		 A 30 30, 0, 0, 1, 40 10
 		 L 360 10 L 360 130
 		 A 80 80, 0, 0, 1, 280 210 Z" stroke="#222E39" stroke-width="2" fill="#4594D9"/>
 </svg>
+</div>
 </div>
 </figure>
 <figcaption>The shape of a rectangle with one small rounded corner and one large rounded corner.</figcaption>
@@ -43,8 +45,9 @@ The path consists of a few straight lines and two arcs. We start by sketching ou
 Now we have all the necessary points and can start translating out sketch into a Bézier path. You can visualize the path as we go on another sheet of paper. It should look something like this for now:
 
 <figure>
-<div style="margin: auto; width: 370px; height: 220px; display: block; padding: 35px 0;">
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="370" height="220">
+<div style="margin-bottom: 60%;">
+<div style="margin: auto; width: 100%; height: 0px;">
+<svg class="autoscaled-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 370 220" width="100%">
 
 <path d="M 10 210 L 10 10 L 360 10 L 360 210 Z" fill="none" stroke="#222E39" stroke-width="2" stroke-dasharray="6,8" />
 
@@ -69,6 +72,7 @@ Now we have all the necessary points and can start translating out sketch into a
 </g>
 
 </svg>
+</div>
 </div>
 </figure>
 <figcaption>The path broken down into its basic components. <span style="color: #4594D9; text-shadow: 0 1px 1px rgba(0,0,0,0.5);">Blue circles</span> are where the path changes from line to line or line to arc. <span style="color: #ffba00; text-shadow: 0 1px 1px rgba(0,0,0,0.5);">Orange dots</span> are the center of the circles that define the rounded corners.</figcaption>
@@ -359,13 +363,15 @@ Given a variable <span class="math">t</span>, that expresses how far long from s
 Curves fit nicely in the list of things that we can break down a path into. Just like a line it goes from the current point _to another point_. On its way there it approaches (but doesn't reach) the two control points. Just remember that two control points can at most do an “S”-shape. If the curve wiggles three times it’s actually more than one curve and need to be broken down into more than one curve. With curves added to our repertoire we would be able to break down a path that looks like this. 
  
  <figure>
- <div style="margin: auto; width: 370px; height: 240px; display: block; padding: 35px 0;">
- <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="370" height="240">
+<div style="margin-bottom: 65%;">
+<div style="margin: auto; width: 100%; height: 0px;">
+<svg class="autoscaled-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 370 240" width="100%">
  <path d="M10 210 L 10 40 
  		 A 30 30, 0, 0, 1, 40 10
  		 L 360 10 L 360 130
  		 C 360 260, 220 100, 10 210 Z" stroke="#222E39" stroke-width="2" fill="#4594D9"/>
  </svg>
+ </div>
  </div>
  </figure>
  <figcaption>The same shape as before but with a curve for the bottom right corner.</figcaption>
@@ -376,8 +382,9 @@ And if we did, our breakdown would look something like this. The method for crea
 - `CGPathAddCurveToPoint( ... )` for CGPath.
 
 <figure>
-<div style="margin: auto; width: 370px; height: 270px; display: block; padding: 35px 0;">
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="370" height="270">
+<div style="margin-bottom: 73%;">
+<div style="margin: auto; width: 100%; height: 0px;">
+<svg class="autoscaled-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 370 270" width="100%">
 
 <path d="M 10 210 L 10 10 L 360 10 L 360 130
          C 360 260, 220 100, 10 210 Z" fill="none" stroke="#222E39" stroke-width="2" stroke-dasharray="6,8" />
@@ -407,6 +414,7 @@ And if we did, our breakdown would look something like this. The method for crea
 
 
 </svg>
+</div>
 </div>
 </figure>
 <figcaption>The curve path broken down into its basic components.</figcaption>
