@@ -124,7 +124,7 @@
 	}
 	
 	.segment {
-		width: 100%;
+		width: -webkit-calc(100% - 16px);
 		border: 1px solid hsl(238, 7%, 75%);
 	}
 	
