@@ -17,7 +17,7 @@ But that wont work if we only want to round one corner. The `cornerRadius` prope
     UIBezierPath *path = 
         [UIBezierPath bezierPathWithRoundedRect:rect
                               byRoundingCorners:UIRectCornerTopLeft 
-                                    cornerRadii:CGSizeMake(radius, radius)
+                                    cornerRadii:CGSizeMake(radius, radius)];
 
 But what if we wanted to round two corners with two different radii? Looking at [the documentation for `UIBezierPath`][uibezierpath] there is no convenience method that seems to do that for us. We need to construct the path ourselves and to do that we need to think like a Bézier path.
 
