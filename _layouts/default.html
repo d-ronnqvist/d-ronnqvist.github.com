@@ -12,7 +12,7 @@
   <meta name="author" content="David Rönnqvist"/>
   <meta name="revisit-after" content="3 days"/>
 <!--  <link rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/"/>-->
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://ronnqvi.st/feed.xml"/>
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://ronnqvi.st/atom.xml"/>
   <link rel="stylesheet" href="/css/screen.css"/>
   <link rel="icon" type="image/ico" href="/images/favicon.ico"/>
 
@@ -34,11 +34,11 @@
 </head>
 
 <body>
-  <div role="container">
+  <div id="container" role="container">
     <header>
       {% unless page.id %}
       <div id="logo">
-        <a href="/">
+        <a href="/" aria-label="DR logo. Goes back to main page.">
           <svg id="DR-logo" width="190px" height="130px" xmlns="http://www.w3.org/2000/svg" version="1.1">
               		<defs>
           			    <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -57,28 +57,35 @@
 
     <div id="main" role="main">
       {{ content }}
-    </div>
+    
 
-    <footer>
-      <!--<section class="credits colophon">
-        <p>
-          <span aria-hidden="true" class="icon-creative-commons"></span>
-          
-          Created by <a href="http://mattt.me">Mattt Thompson</a>, and released under a <a href="http://creativecommons.org/licenses/by-nc/3.0/" rel="license">Creative Commons BY-NC License</a>.
-          
-          <br/>
-          
-          <small>
-            Delightful illustrations by <a href="http://www.conorheelan.com">Conor Heelan</a>.
-          </small>
-        </p>
-      </section>-->
-
-      <aside class="links">
-        <a href="https://twitter.com/nshipster" class="icon-twitter" title="Twitter" aria-hidden="true" ></a>
-        <a href="http://nshipster.com/feed.xml" class="icon-feed" title="RSS" aria-hidden="true"></a>
-      </aside>
+    <footer style="height: 55px;">
+      <a id="rss-link" href="http://ronnqvi.st/atom.xml" aria-hidden="true" title="RSS">
+        <svg id="rss-logo" width="55px" height="55px" xmlns="http://www.w3.org/2000/svg" version="1.1">
+        {% if page.id %}
+        <g fill="#4594D9">
+        {% else %}
+        <g fill="#ffba00">
+        {% endif %}
+        <path d="M 0 55 L 15 55 
+		         A 15 15, 0,0,0 0 40 Z"></path>
+        <path d="M 25 55 L 35 55 
+		         A 35 35, 0,0,0 0 20 L 0 30 
+		         A 25 25 0,0,1 25 55 Z"></path>
+        <path d="M 44 55 L 55 55 
+		         A 55 55, 0,0,0 0 0 L 0 10 
+		         A 45 45 0,0,1 45 55 Z"></path>
+        </g>
+        </svg>
+      </a>
     </footer>
+    {% if page.id %}
+    <footer class="post-footer">
+    	<div id="bottom-orange-rect"><a href="https://twitter.com/davidronnqvist">@davidronnqvist</a></div>
+    </footer>
+    {% endif %}
+    
+    </div>
   </div>
 </body>
 </html>

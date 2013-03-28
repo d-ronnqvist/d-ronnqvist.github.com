@@ -226,13 +226,19 @@ article {
 	min-width: 296px;
 	width: 100%;
 	position: relative;
-
+	
+	margin-bottom: 85px;
 }
 
 /* Cover everything and hide the overflowing orange and blue rectengles*/
 #main {
 	margin: 0;
 	overflow: hidden;
+}
+
+#container {
+	min-height:100%;
+	position: relative;
 }
 
 /* @group Post header */
@@ -274,9 +280,42 @@ article {
 /* @group Post header blue & orange rectangles */
 
 #top-blue-rect,
-#top-orange-rect {
+#top-orange-rect,
+#bottom-orange-rect {
 	position: absolute;
 	display: inline-block;
+}
+
+.post-footer {
+	bottom: 160px;
+	left: -webkit-calc(50% - 200px);
+	position: relative;
+	width: 1500px;
+	height: 300px;
+	margin-top: 1000px;
+	background: blue;
+	overflow: hidden;
+	display: inline;
+}
+
+#bottom-orange-rect {
+	-webkit-transform: rotate(-16.4deg);
+	width: 1200px;
+	height: 300px;
+	overflow: visible;
+	background: #ffb900;
+	padding: 15px;
+	padding-left: 500px;
+	font-size: 20px;
+	font-weight: 400;
+}
+
+#bottom-orange-rect a:link,
+#bottom-orange-rect a:active,
+#bottom-orange-rect a:visited,
+#bottom-orange-rect a:hover {
+	text-decoration: none;
+	color: hsl(208, 25%, 18%);
 }
 
 #top-blue-rect {
@@ -313,6 +352,13 @@ article {
 	left: 20px;
 	top: 20px;
 	z-index: 10;
+}
+
+#rss-link {
+	position: absolute;
+	left: 20px;
+	bottom: 20px;
+	height: 55px;
 }
 
 /* Setting the color of the logo */
@@ -756,6 +802,23 @@ screen and (max-device-width: 480px) {
     	top: 15px;
     	left: 15px;
     }
+    #rss-link {
+    	-webkit-transform: scale(0.6);
+    	-webkit-transform-origin: 0% 100%;
+    	bottom: 15px;
+    	left: 15px;
+    }
+    .post-footer {
+    	-webkit-transform: scale(0.65); 
+    	margin-bottom: 70px;
+    	bottom: 150px;
+    	left: 50px;
+    }
+    #bottom-orange-rect {
+    	padding-left: 300px;
+    	padding-top: 5px;
+    	font-size: 18px;
+    }
     .post-summary {
     	width: 440px !important;
     	min-width: 50px;
@@ -804,6 +867,23 @@ screen and (max-device-width: 480px) {
     	-webkit-transform-origin: 0 0;
     	top: 10px;
     	left: 10px;
+    }
+    #rss-link {
+    	-webkit-transform: scale(0.7);
+    	-webkit-transform-origin: 0% 100%;
+    	bottom: 15px;
+    	left: 15px;
+    }
+    .post-footer {
+    	-webkit-transform: scale(0.65); 
+    	margin-bottom: 70px;
+    	bottom: 170px;
+    	left: 50px;
+    }
+    #bottom-orange-rect {
+    	padding-left: 150px;
+    	padding-top: 5px;
+    	font-size: 16px;
     }
     .post-summary {
     	width: 246px !important;
