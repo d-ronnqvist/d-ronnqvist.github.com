@@ -4,12 +4,14 @@ svg = document.getElementById("interactive-curve");
 height = parseFloat(svg.getAttribute("height"));
 width  = parseFloat(svg.getAttribute("width"));
 
-r = parseFloat(document.getElementById("ControlPoint1").getAttribute("r")) + 4;
+r = parseFloat(document.getElementById("ControlPoint1").getAttribute("r"));
 
 curve = document.getElementById("curve");
 
 //lineId = "";
 isFirstPoint = false;
+
+previousScaleFactor = 1;
 
 var dragTouch = function(e) {
 	if (!selected_control_point) return;
@@ -52,8 +54,12 @@ var drag = function(e) {
 }
 
 var dragSliderToPoint = function(x) {
-	if (x < 50) x = 50;
-	if (x > 500) x = 500;
+	var minSliderX = 50  * previousScaleFactor;
+	var maxSliderX = 500 * previousScaleFactor;
+	
+
+	if (x < minSliderX) x = minSliderX;
+	if (x > maxSliderX) x = maxSliderX;
 	
 	var sx = 190; var sy = 80;
 	var ex = 420; var ey = 250;
@@ -61,7 +67,16 @@ var dragSliderToPoint = function(x) {
 	var c1x = -30; var c1y = 350;
 	var c2x = 450; var c2y = -20;
 	
-	var t = (x-50)/450;
+	var t = (x-minSliderX)/(maxSliderX-minSliderX);
+	
+	sx*=previousScaleFactor;
+	sy*=previousScaleFactor;
+	ex*=previousScaleFactor;
+	ey*=previousScaleFactor;
+	c1x*=previousScaleFactor;
+	c1y*=previousScaleFactor;
+	c2x*=previousScaleFactor;
+	c2y*=previousScaleFactor;
 	
 	var px = sx*Math.pow(1-t, 3) + 3*c1x*t*Math.pow(1-t, 2) + 3*c2x*Math.pow(t,2)*(1-t) + ex*Math.pow(t, 3);
 	var py = sy*Math.pow(1-t, 3) + 3*c1y*t*Math.pow(1-t, 2) + 3*c2y*Math.pow(t,2)*(1-t) + ey*Math.pow(t, 3);
@@ -70,18 +85,20 @@ var dragSliderToPoint = function(x) {
 	point.setAttribute("cx", px);
 	point.setAttribute("cy", py);
 	
+	var halfScale = (1+previousScaleFactor)/2;
 	var text = document.getElementById("sliderText");
-	text.setAttribute("x", x-27);
+	text.setAttribute("x", x-29*halfScale);
 	text.firstChild.nodeValue = "t = "+t.toFixed(2);
 	
 	selected_control_point.setAttribute("cx", x);
 }
 
 var dragSelectedToPoint = function(x, y) {
-	if (x < r) x = r;
-	if (y < r) y = r;
-	if (x > width-r) x = width-r;
-	if (y > height-r) y = height-r;
+	var rMargin = r+4/previousScaleFactor;
+	if (x < rMargin) x = rMargin;
+	if (y < rMargin) y = rMargin;
+	if (x > width-rMargin) x = width-rMargin;
+	if (y > height-rMargin) y = height-rMargin;
 	
 	var local_control_point = selected_control_point;
 	var local_line = line;
@@ -89,31 +106,26 @@ var dragSelectedToPoint = function(x, y) {
 	
 	local_control_point.setAttribute("cx", x);
 	local_control_point.setAttribute("cy", y);
-	
-//	var id = selected_control_point.id;
-//	var lineId = "line"+id;
-	
-//	var line = document.getElementById(lineId);
-	
+		
 	var x1 = parseFloat(local_line.getAttribute("x1"));
 	var y1 = parseFloat(local_line.getAttribute("y1"));
 	var angle = Math.atan((x1-x)/(y1-y));
 	var sign = 1;
 	if (y>y1) { sign = -1; }
-	local_line.setAttribute("x2", x+(r-4)*Math.sin(angle)*sign);
-	local_line.setAttribute("y2", y+(r-4)*Math.cos(angle)*sign);
+	local_line.setAttribute("x2", x+(r)*Math.sin(angle)*sign);
+	local_line.setAttribute("y2", y+(r)*Math.cos(angle)*sign);
 	
 	var path = local_curve.getAttribute("d");
 	var components = path.split(" ");
 	
 	if (isFirstPoint) {
 		// first control point
-		components[4] = x
-		components[5] = y
+		components[4] = x/previousScaleFactor;
+		components[5] = y/previousScaleFactor;
 	} else {
 		// second control point
-		components[6] = x
-		components[7] = y
+		components[6] = x/previousScaleFactor;
+		components[7] = y/previousScaleFactor;
 	}
 	
 	local_curve.setAttribute("d", components.join(" "));
@@ -153,9 +165,80 @@ var correctInstructions = function() {
 	if ("ontouchstart" in window) {
 		// A touch device
 		
+		document.addEventListener("orientationchange", updateOrientation);
+		updateOrientation();
+		
 		var instruction = document.getElementsByClassName("hintText");
 		for (var i in instruction) {
 			instruction[i].firstChild.nodeValue = "Tap the code below";
+		}
+	}
+}
+
+
+
+function updateOrientation() {
+//	switch(window.orientation) {
+//		case 0: // portrait, home bottom
+//		case 180: // portrait, home top
+//			alert("portrait H: "+$(window).height()+" W: "+$(window).width());       
+//			break;
+//		case -90: // landscape, home left
+//		case 90: // landscape, home right
+//			alert("landscape H: "+$(window).height()+" W: "+$(window).width());
+//			break;
+//	}
+//}
+//
+//var resizeSVG = function() {
+
+	var svg = document.getElementById("interactive-curve");
+	var svg2 = document.getElementById("interactive-slider");
+	var fig = svg.parentNode.parentNode;
+	var scaleFactor = fig.clientWidth / parseFloat(svg.getAttribute("width"));
+	
+	if (previousScaleFactor != 1) {
+		scaleSVGElements(svg, 1/previousScaleFactor);
+		scaleSVGElements(svg2, 1/previousScaleFactor);
+	}
+	
+	scaleSVGElements(svg, scaleFactor);
+	scaleSVGElements(svg2, scaleFactor);
+	
+	previousScaleFactor = scaleFactor;
+	
+	height = parseFloat(svg.getAttribute("height"))*scaleFactor;
+	width  = parseFloat(svg.getAttribute("width"))*scaleFactor;
+	r = parseFloat(document.getElementById("ControlPoint1").getAttribute("r"));
+}
+
+var scaleSVGElements = function(svg, factor) {
+	var halfScale = (1+factor)/2;
+
+	for (var i in svg.childNodes) {
+		var node = svg.childNodes[i];
+		if (node.nodeType != 3) {
+			if (node.tagName == "path") { 
+				node.setAttribute('transform-origin', '0%, 0%');
+				node.setAttribute("transform", "scale("+factor+")")
+			} else if (node.tagName == "g") {
+				node.setAttribute("stroke-width", parseFloat(node.getAttribute("stroke-width"))*halfScale);
+				scaleSVGElements(node, factor);
+			} else if (node.tagName == "line") {
+				node.setAttribute("x1", parseFloat(node.getAttribute("x1"))*factor);
+				node.setAttribute("y1", parseFloat(node.getAttribute("y1"))*factor);
+				node.setAttribute("x2", parseFloat(node.getAttribute("x2"))*factor);
+				node.setAttribute("y2", parseFloat(node.getAttribute("y2"))*factor);
+			} else if (node.tagName == "circle") {
+				node.setAttribute("cx", parseFloat(node.getAttribute("cx"))*factor);
+				node.setAttribute("cy", parseFloat(node.getAttribute("cy"))*factor);
+				node.setAttribute("r", parseFloat(node.getAttribute("r"))*halfScale);
+				
+			} else if (node.tagName == "text") {
+				node.setAttribute("x", parseFloat(node.getAttribute("x"))*factor);
+				node.setAttribute("y", parseFloat(node.getAttribute("y"))*factor);
+				node.setAttribute("font-size", parseFloat(node.getAttribute("font-size"))*halfScale);
+			}
 		}
 	}
 }

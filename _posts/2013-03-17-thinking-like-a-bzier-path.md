@@ -275,7 +275,8 @@ There is a little bit of math involved in how the path is drawn between the four
 Just like when adding a line to a path, the _curve_ starts off at the current point and ends up at the point we are moving to. Between the start and end points the curve first approaches one of the control points then slowly starts to steer off towards the second control point until it again starts steering off towards the end point. You can see an example curve in **Figure 5** below. Try dragging the two control points around to see how the curve changes.
 
 <figure>
-<div style="margin: auto; width: 550px; height: 380px; display: block; ">
+<div style="margin-bottom: 70%;">
+<div style="margin: auto; width: 100%; height: 0px;">
 <svg id="interactive-curve" xmlns="http://www.w3.org/2000/svg" version="1.1" width="550" height="380" onmousemove="drag(event)" ontouchmove="dragTouch(event)" onmouseup="deselectElement()" ontouchend="deselectElement()">
 
 <path d="M130 200 
@@ -302,6 +303,7 @@ Just like when adding a line to a path, the _curve_ starts off at the current po
 		
 </svg>
 </div>
+</div>
 </figure>
 <figcaption>A curve with all four points that define it (start and end points in black and control points in orange). You can drag the control points around to see how it affects the curve. </figcaption>
 
@@ -319,8 +321,9 @@ Given a variable <span class="math">t</span>, that expresses how far long from s
  At this point the curve takes most of its value from the start point (that it is very close to), a little bit of its value from the first control point and almost nothing from the rest. Unless you are calculating the exact point for a given <span class="math">t</span> there is no need to do these calculations yourself but having seen them can be helpful when trying to understand curves. 
 
 <figure>
-<div style="margin: auto; width: 550px; height: 380px; display: block; ">
-<svg id="interactive-curve" xmlns="http://www.w3.org/2000/svg" version="1.1" width="550" height="380" onmousemove="drag(event)" ontouchmove="dragTouch(event)" onmouseup="deselectElement()" ontouchend="deselectElement()">
+<div style="margin-bottom: 70%;">
+<div style="margin: auto; width: 100%; height: 0px;">
+<svg id="interactive-slider" xmlns="http://www.w3.org/2000/svg" version="1.1" width="550" height="380" onmousemove="drag(event)" ontouchmove="dragTouch(event)" onmouseup="deselectElement()" ontouchend="deselectElement()">
 
 <defs>
     <linearGradient id="knobGradient" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -354,6 +357,7 @@ Given a variable <span class="math">t</span>, that expresses how far long from s
 
 		
 </svg>
+</div>
 </div>
 </figure>
 <figcaption>The point along a curve for a given <span class="math">t</span>. Try dragging the slider around.</figcaption>
@@ -429,3 +433,4 @@ Taking the code above and modifying it to use a curve instead of the second arc 
 [^pen&paper]: _Constructing_ a Bézier path is like drawing it. Drawing the shape (filling or stroking it) is somehting slightly different.
 
 <script src="/script/script-thinking-like-a-bezier-path.js" type="text/javascript" onload="correctInstructions()"> </script>
+
