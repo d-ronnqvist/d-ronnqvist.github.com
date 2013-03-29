@@ -239,6 +239,8 @@ article {
 #container {
 	min-height:100%;
 	position: relative;
+	margin: 0;
+	padding: 0;
 }
 
 /* @group Post header */
@@ -473,16 +475,15 @@ and (orientation:portrait) {
 	
 	}
 	
-	#container {
-	margin-left: 99px;
-	margin-right: 0px;
-	}
-	
 	.permanent-link {
 	right: -53px !important;
 	-webkit-transform: scale(.8) translateY(-10px);
 	-webkit-transform-origin:0% 0%;
 	
+	}
+	
+	.post-footer {
+		left: 130px;
 	}
 	
 	.date {
