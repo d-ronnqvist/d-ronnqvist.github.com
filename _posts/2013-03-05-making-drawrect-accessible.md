@@ -121,7 +121,7 @@ Knowing the frame of vector data seems tricky at first but Core Graphics gives y
 
 As seen in Figure 1 the content of our `drawRect:` implementation _can_ be made accessible. Just like any other content.
 
-<figure style="height: 297px;"><img src="/images/accessibleContent.png" alt="A screenshot of the iOS Simulator showing the R shape of my logo being accessible"></figure>
+<figure style="width: 100%;"><img src="/images/accessibleContent.png" alt="A screenshot of the iOS Simulator showing the R shape of my logo being accessible"></figure>
 <figcaption>A screenshot of the iOS Simulator showing the R shape of my logo being accessible.</figcaption>
 
 --------------------------
