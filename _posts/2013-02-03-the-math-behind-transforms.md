@@ -137,7 +137,7 @@ The best way to understand matrix multiplication is to start with the empty resu
 
 <figure class="matrixFigure" style="width: 590px;">
 <div style="margin: 20px; width: 560px; height: 220px; display: inline-block; padding: 45px 0px 5px;">
-<table id="matrixOne" class="matrixTable"><tbody><tr><td>A<sub>1,1</sub></td>
+<table id="matrixOne" class="matrixTable" style="margin-left: 50px;"><tbody><tr><td>A<sub>1,1</sub></td>
 <td>A<sub>1,2</sub></td>
 </tr><tr><td>A<sub>2,1</sub></td>
 <td>A<sub>2,2</sub></td>
