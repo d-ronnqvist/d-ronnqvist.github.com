@@ -26,29 +26,89 @@ In "normal" math, that everyone should be familiar with, we have numbers. Someti
 
 Addition of two numbers can be illustrated as drawing an arrow with the length of the first number from origo and another arrow with the length of the second number beginning at the end of the first arrow. The sum of the two numbers is the arrow that goes from origo to the end of the second arrow. This can be seen in the image below (with <span class="math">a = 2</span> and <span class="math">b = 3</span>). 
 
-<figure><div style="margin: auto; width: 500px; height: 200px; display: block; padding: 35px 0;">
-<svg xmlns="http://www.w3.org/2000/svg" height="250px" version="1.1"><g transform="scale(1.6) translate(5, 20)"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><line x1="10" y1="30" x2="280" y2="30" stroke="#222E39" stroke-width="2"></line><line x1="30" y1="30" x2="280" y2="30" stroke="#222E39" stroke-width="10" stroke-dasharray="2, 23"></line><line x1="80" y1="32" x2="280" y2="32" stroke="#222E39" stroke-width="16" stroke-dasharray="2, 123"></line><path d="M290 30 l-12 -8 l0 16 Z"></path><text x="20" y="18" fill="#222E39" style="word-spacing: 9px;" font-family="Avenir Next" font-weight="500">-2 -1</text><text x="76" y="18" fill="#222E39" style="word-spacing: 11px;" font-family="Avenir Next" font-weight="500">0&nbsp;1 2&nbsp;3 4&nbsp;5 6&nbsp;7</text><line x1="80" y1="53" x2="125" y2="53" stroke="#4594D9" stroke-width="2"></line><path d="M130 53 l-8 -6 l0 12 Z" fill="#4594D9"></path><text x="100" y="50" fill="#4594D9" font-family="Avenir Next" font-weight="500">a</text><line x1="130" y1="53" x2="200" y2="53" stroke="#4594D9" stroke-width="2"></line><path d="M205 53 l-8 -6 l0 12 Z" fill="#4594D9"></path><text x="160" y="50" fill="#4594D9" font-family="Avenir Next" font-weight="500">b</text><line x1="80" y1="70" x2="200" y2="70" stroke="#4594D9" stroke-width="2"></line><path d="M205 70 l-8 -6 l0 12 Z" fill="#4594D9"></path><text x="125" y="85" fill="#4594D9" font-family="Avenir Next" font-weight="500">a+b</text></svg></g></svg></div></figure>
+<figure>
+<div style="margin-bottom: 45%;">
+<div style="margin: auto; width: 100%; height: 0px;">
+<svg class="autoscaled-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 300 100" width="100%">
+<line x1="10" y1="30" x2="280" y2="30" stroke="#222E39" stroke-width="2"></line>
+<line x1="30" y1="30" x2="280" y2="30" stroke="#222E39" stroke-width="10" stroke-dasharray="2, 23"></line>
+<line x1="80" y1="32" x2="280" y2="32" stroke="#222E39" stroke-width="16" stroke-dasharray="2, 123"></line>
+<path d="M290 30 l-12 -8 l0 16 Z"></path>
+<text x="20" y="18" fill="#222E39" style="word-spacing: 9px;" font-family="Avenir Next" font-weight="500">-2 -1</text>
+<text x="76" y="18" fill="#222E39" style="word-spacing: 11px;" font-family="Avenir Next" font-weight="500">0&nbsp;1 2&nbsp;3 4&nbsp;5 6&nbsp;7</text>
+<line x1="80" y1="53" x2="125" y2="53" stroke="#4594D9" stroke-width="2"></line>
+<path d="M130 53 l-8 -6 l0 12 Z" fill="#4594D9"></path>
+<text x="100" y="50" fill="#4594D9" font-family="Avenir Next" font-weight="500">a</text>
+<line x1="130" y1="53" x2="200" y2="53" stroke="#4594D9" stroke-width="2"></line>
+<path d="M205 53 l-8 -6 l0 12 Z" fill="#4594D9"></path>
+<text x="160" y="50" fill="#4594D9" font-family="Avenir Next" font-weight="500">b</text>
+<line x1="80" y1="70" x2="200" y2="70" stroke="#4594D9" stroke-width="2"></line>
+<path d="M205 70 l-8 -6 l0 12 Z" fill="#4594D9"></path>
+<text x="125" y="85" fill="#4594D9" font-family="Avenir Next" font-weight="500">a+b</text>
+</svg></div></div></figure>
 <figcaption>An illustration of two numbers being added.</figcaption>
 
 The same works for negative numbers (for example <span class="math">a = 4</span> and <span class="math">b = -6</span>) as can be seen below. 
 
-<figure><div style="margin: auto; width: 500px; height: 220px; display: block; padding: 35px 0;">
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1"><g transform="scale(1.6) translate(5, 20)"><line x1="10" y1="30" x2="280" y2="30" stroke="#222E39" stroke-width="2"></line><line x1="30" y1="30" x2="280" y2="30" stroke="#222E39" stroke-width="10" stroke-dasharray="2, 23"></line><line x1="80" y1="32" x2="280" y2="32" stroke="#222E39" stroke-width="16" stroke-dasharray="2, 123"></line><path d="M290 30 l-12 -8 l0 16 Z"></path><text x="20" y="18" fill="#222E39" style="word-spacing: 9px;" font-family="Avenir Next" font-weight="500">-2 -1</text><text x="76" y="18" fill="#222E39" style="word-spacing: 11px;" font-family="Avenir Next" font-weight="500">0&nbsp;1 2&nbsp;3 4&nbsp;5 6&nbsp;7</text><line x1="80" y1="53" x2="175" y2="53" stroke="#4594D9" stroke-width="2"></line><path d="M180 53 l-8 -6 l0 12 Z" fill="#4594D9"></path><text x="125" y="50" fill="#4594D9" font-family="Avenir Next" font-weight="500">a</text><line x1="35" y1="60" x2="180" y2="60" stroke="#4594D9" stroke-width="2"></line><path d="M30 60 l8 -6 l0 12 Z" fill="#4594D9"></path><text x="105" y="75" fill="#4594D9" font-family="Avenir Next" font-weight="500">b</text><line x1="80" y1="80" x2="35" y2="80" stroke="#4594D9" stroke-width="2"></line><path d="M30 80 l8 -6 l0 12 Z" fill="#4594D9"></path><text x="43" y="95" fill="#4594D9" font-family="Avenir Next" font-weight="500">a+b</text></g></svg></div></figure>
+<figure><div style="margin-bottom: 50%;">
+<div style="margin: auto; width: 100%; height: 0px;">
+<svg class="autoscaled-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 300 100" width="100%">
+<line x1="10" y1="30" x2="280" y2="30" stroke="#222E39" stroke-width="2"></line>
+<line x1="30" y1="30" x2="280" y2="30" stroke="#222E39" stroke-width="10" stroke-dasharray="2, 23"></line>
+<line x1="80" y1="32" x2="280" y2="32" stroke="#222E39" stroke-width="16" stroke-dasharray="2, 123"></line>
+<path d="M290 30 l-12 -8 l0 16 Z"></path>
+<text x="20" y="18" fill="#222E39" style="word-spacing: 9px;" font-family="Avenir Next" font-weight="500">-2 -1</text>
+<text x="76" y="18" fill="#222E39" style="word-spacing: 11px;" font-family="Avenir Next" font-weight="500">0&nbsp;1 2&nbsp;3 4&nbsp;5 6&nbsp;7</text>
+<line x1="80" y1="53" x2="175" y2="53" stroke="#4594D9" stroke-width="2"></line>
+<path d="M180 53 l-8 -6 l0 12 Z" fill="#4594D9"></path>
+<text x="125" y="50" fill="#4594D9" font-family="Avenir Next" font-weight="500">a</text>
+<line x1="35" y1="60" x2="180" y2="60" stroke="#4594D9" stroke-width="2"></line>
+<path d="M30 60 l8 -6 l0 12 Z" fill="#4594D9"></path>
+<text x="105" y="75" fill="#4594D9" font-family="Avenir Next" font-weight="500">b</text>
+<line x1="80" y1="80" x2="35" y2="80" stroke="#4594D9" stroke-width="2"></line>
+<path d="M30 80 l8 -6 l0 12 Z" fill="#4594D9"></path>
+<text x="43" y="95" fill="#4594D9" font-family="Avenir Next" font-weight="500">a+b</text>
+</svg></div></div></figure>
 <figcaption>An illustration of two numbers being subtracted.</figcaption>
 
 In a similar fashion we can represent multiplication as taking either of the arrows and adding it to the end of _itself_ the same number of times as the length of the other arrow.
 
 It gets a bit silly drawing numbers like this when we all know how to add simple numbers so let's take things one step further. If we call the line that we drew arrows along an _axis_ and we add another axis perpendicular to the one we already had then we get a _plane_. Any point on this plane can now be defined by two coordinates, one for each axis. We call the horizontal axis the x-axis and the vertical axis the y-axis. Now we can describe any point on this plane by its x and y value. This plane is just like the screen of our devices. 
 
-<figure><div style="margin: auto; width: 500px; height: 480px; display: block; padding: 35px 0;">
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1"><g transform="scale(1.35) translate(55, 16)"><line x1="10" y1="225" x2="280" y2="225" stroke="#222E39" stroke-width="2"></line><line x1="30" y1="225" x2="280" y2="225" stroke="#222E39" stroke-width="10" stroke-dasharray="2, 23"></line><line x1="80" y1="225" x2="280" y2="225" stroke="#222E39" stroke-width="20" stroke-dasharray="2, 123"></line><path d="M290 225 l-12 -8 l0 16 Z"></path><line x1="81" y1="300" x2="81" y2="30" stroke="#222E39" stroke-width="2"></line><line x1="81" y1="276" x2="81" y2="40" stroke="#222E39" stroke-width="10" stroke-dasharray="2, 23"></line><line x1="81" y1="226" x2="81" y2="40" stroke="#222E39" stroke-width="20" stroke-dasharray="2, 123"></line><path d="M81 20 l-8 12 l16 0 Z"></path><line x1="81" y1="225" x2="155" y2="126" stroke="#4594D9" stroke-width="3"></line><circle cx="155" cy="126" r="4" fill="black"></circle><path d="M155 126 l-12 -7 l0 14 Z" fill="#4594D9" transform="rotate(-53.13 155 126)"></path><text x="162" y="130" fill="#4594D9" font-family="Avenir Next" font-size="20" font-weight="500">(x, y)</text><text x="20" y="250" fill="#222E39" style="word-spacing: 6px;" font-family="Avenir Next" font-weight="500">-2 -1</text><text x="101" y="250" fill="#222E39" style="word-spacing: 11px;" font-family="Avenir Next" font-weight="500">1&nbsp;2 3&nbsp;4 5&nbsp;6 7</text><text x="65" y="40" fill="#222E39" style="writing-mode: tb; glyph-orientation-vertical: 0;" font-family="Avenir Next" font-weight="500" letter-spacing="3px">7654321</text><text x="59" y="256" fill="#222E39" style="word-spacing: 9px;" font-family="Avenir Next" font-weight="500">-1</text><text x="59" y="280" fill="#222E39" style="word-spacing: 9px;" font-family="Avenir Next" font-weight="500">-2</text></g></svg></div></figure>
+<figure>
+<div style="margin-bottom: 100%;">
+<div style="margin: auto; width: 100%; height: 0px;">
+<svg class="autoscaled-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 300 300" width="100%">
+<line x1="10" y1="225" x2="280" y2="225" stroke="#222E39" stroke-width="2"></line>
+<line x1="30" y1="225" x2="280" y2="225" stroke="#222E39" stroke-width="10" stroke-dasharray="2, 23"></line>
+<line x1="80" y1="225" x2="280" y2="225" stroke="#222E39" stroke-width="20" stroke-dasharray="2, 123"></line>
+<path d="M290 225 l-12 -8 l0 16 Z"></path>
+<line x1="81" y1="300" x2="81" y2="30" stroke="#222E39" stroke-width="2"></line>
+<line x1="81" y1="276" x2="81" y2="40" stroke="#222E39" stroke-width="10" stroke-dasharray="2, 23"></line>
+<line x1="81" y1="226" x2="81" y2="40" stroke="#222E39" stroke-width="20" stroke-dasharray="2, 123"></line>
+<path d="M81 20 l-8 12 l16 0 Z"></path>
+<line x1="81" y1="225" x2="155" y2="126" stroke="#4594D9" stroke-width="3"></line>
+<circle cx="155" cy="126" r="4" fill="black"></circle>
+<path d="M155 126 l-12 -7 l0 14 Z" fill="#4594D9" transform="rotate(-53.13 155 126)"></path>
+<text x="162" y="130" fill="#4594D9" font-family="Avenir Next" font-size="20" font-weight="500">(x, y)</text>
+<text x="20" y="250" fill="#222E39" style="word-spacing: 6px;" font-family="Avenir Next" font-weight="500">-2 -1</text>
+<text x="101" y="250" fill="#222E39" style="word-spacing: 11px;" font-family="Avenir Next" font-weight="500">1&nbsp;2 3&nbsp;4 5&nbsp;6 7</text>
+<text x="65" y="40" fill="#222E39" style="writing-mode: tb; glyph-orientation-vertical: 0;" font-family="Avenir Next" font-weight="500" letter-spacing="3px">7654321</text>
+<text x="59" y="256" fill="#222E39" style="word-spacing: 9px;" font-family="Avenir Next" font-weight="500">-1</text>
+<text x="59" y="280" fill="#222E39" style="word-spacing: 9px;" font-family="Avenir Next" font-weight="500">-2</text>
+</svg></div></div></figure>
 <figcaption>An arrow pointing to a coordinate in a 2D plane.</figcaption>
 
 The arrow in this plane is unlike the arrows along the line above since they require two numbers to describe instead of one. We call these new arrows _vectors_ and the old arrows _scalars_. If we want to we can draw the same scalars as we did before along the x-axis but when that arrow is represented in this plane it is no longer a scalar. Instead it is a vector with a y-coordinate of 0. 
 
 Just as we did with the scalars we can represent the addition of two vectors as placing either of them at the point of the other. The result of the addition is the vector that points to the same point as the second vector now does. You may notice that vector addition works by adding the two x components together into a new x component and the y components together into a new y component. It works in both directions, adding either vector to the other, you can try it on a piece of paper if you want to. 
 
-<figure><div style="margin: auto; width: 500px; height: 480px; display: block; padding: 35px 0;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><g transform="scale(1.35) translate(55, 16)"><line x1="10" y1="225" x2="280" y2="225" stroke="#222E39" stroke-width="2"></line><line x1="30" y1="225" x2="280" y2="225" stroke="#222E39" stroke-width="10" stroke-dasharray="2, 23"></line><line x1="80" y1="225" x2="280" y2="225" stroke="#222E39" stroke-width="20" stroke-dasharray="2, 123"></line><path d="M290 225 l-12 -8 l0 16 Z"></path><line x1="81" y1="300" x2="81" y2="30" stroke="#222E39" stroke-width="2"></line><line x1="81" y1="276" x2="81" y2="40" stroke="#222E39" stroke-width="10" stroke-dasharray="2, 23"></line><line x1="81" y1="226" x2="81" y2="40" stroke="#222E39" stroke-width="20" stroke-dasharray="2, 123"></line><path d="M81 20 l-8 12 l16 0 Z"></path><text x="20" y="250" fill="#222E39" style="word-spacing: 6px;" font-family="Avenir Next" font-weight="500">-2 -1</text><text x="101" y="250" fill="#222E39" style="word-spacing: 11px;" font-family="Avenir Next" font-weight="500">1&nbsp;2 3&nbsp;4 5&nbsp;6 7</text><text x="65" y="40" fill="#222E39" style="writing-mode: tb; glyph-orientation-vertical: 0;" font-family="Avenir Next" font-weight="500" letter-spacing="3px">7654321</text><text x="59" y="256" fill="#222E39" style="word-spacing: 9px;" font-family="Avenir Next" font-weight="500">-1</text><text x="59" y="280" fill="#222E39" style="word-spacing: 9px;" font-family="Avenir Next" font-weight="500">-2</text><line x1="81" y1="225" x2="176" y2="154" stroke="#4594D9" stroke-width="3"></line><path d="M180 151 l-12 -7 l0 14 Z" fill="#4594D9" transform="rotate(-36.86989 180 151)"></path><line x1="180" y1="151" x2="105" y2="101" stroke="#4594D9" stroke-width="3"></line><path d="M105 101 l-12 -7 l0 14 Z" fill="#4594D9" transform="rotate(-146.3099 105 101)"></path><text x="150" y="172" fill="#4594D9" font-family="Avenir Next" font-size="20" font-weight="500" style="writing-mode: tb; glyph-orientation-vertical: 0;" letter-spacing="-21px">→a</text><text x="147" y="90" fill="#4594D9" font-family="Avenir Next" font-size="20" font-weight="500" style="writing-mode: tb; glyph-orientation-vertical: 0;" letter-spacing="-17px">→b</text><line x1="81" y1="225" x2="105" y2="101" stroke="#4594D9" stroke-width="3"></line><circle cx="105" cy="101" r="4" fill="black"></circle><path d="M105 101 l-12 -7 l0 14 Z" fill="#4594D9" transform="rotate(-78.69 105 101)"></path><text x="46" y="154" fill="#4594D9" stroke="white" stroke-width="4" font-family="Avenir Next" font-size="20" font-weight="500" letter-spacing="5px">→→</text><text x="46" y="154" fill="#4594D9" font-family="Avenir Next" font-size="20" font-weight="500" letter-spacing="5px">→→</text><text x="50" y="165" fill="#4594D9" stroke="white" stroke-width="4" font-family="Avenir Next" font-size="20" font-weight="500">a+b</text><text x="50" y="165" fill="#4594D9" font-family="Avenir Next" font-size="20" font-weight="500">a+b</text></g></svg></div></figure>
+<figure>
+<div style="margin-bottom: 100%;">
+<div style="margin: auto; width: 100%; height: 0px;">
+<svg class="autoscaled-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 300 300" width="100%">
+<line x1="10" y1="225" x2="280" y2="225" stroke="#222E39" stroke-width="2"></line><line x1="30" y1="225" x2="280" y2="225" stroke="#222E39" stroke-width="10" stroke-dasharray="2, 23"></line><line x1="80" y1="225" x2="280" y2="225" stroke="#222E39" stroke-width="20" stroke-dasharray="2, 123"></line><path d="M290 225 l-12 -8 l0 16 Z"></path><line x1="81" y1="300" x2="81" y2="30" stroke="#222E39" stroke-width="2"></line><line x1="81" y1="276" x2="81" y2="40" stroke="#222E39" stroke-width="10" stroke-dasharray="2, 23"></line><line x1="81" y1="226" x2="81" y2="40" stroke="#222E39" stroke-width="20" stroke-dasharray="2, 123"></line><path d="M81 20 l-8 12 l16 0 Z"></path><text x="20" y="250" fill="#222E39" style="word-spacing: 6px;" font-family="Avenir Next" font-weight="500">-2 -1</text><text x="101" y="250" fill="#222E39" style="word-spacing: 11px;" font-family="Avenir Next" font-weight="500">1&nbsp;2 3&nbsp;4 5&nbsp;6 7</text><text x="65" y="40" fill="#222E39" style="writing-mode: tb; glyph-orientation-vertical: 0;" font-family="Avenir Next" font-weight="500" letter-spacing="3px">7654321</text><text x="59" y="256" fill="#222E39" style="word-spacing: 9px;" font-family="Avenir Next" font-weight="500">-1</text><text x="59" y="280" fill="#222E39" style="word-spacing: 9px;" font-family="Avenir Next" font-weight="500">-2</text><line x1="81" y1="225" x2="176" y2="154" stroke="#4594D9" stroke-width="3"></line><path d="M180 151 l-12 -7 l0 14 Z" fill="#4594D9" transform="rotate(-36.86989 180 151)"></path><line x1="180" y1="151" x2="105" y2="101" stroke="#4594D9" stroke-width="3"></line><path d="M105 101 l-12 -7 l0 14 Z" fill="#4594D9" transform="rotate(-146.3099 105 101)"></path><text x="150" y="172" fill="#4594D9" font-family="Avenir Next" font-size="20" font-weight="500" style="writing-mode: tb; glyph-orientation-vertical: 0;" letter-spacing="-21px">→a</text><text x="147" y="90" fill="#4594D9" font-family="Avenir Next" font-size="20" font-weight="500" style="writing-mode: tb; glyph-orientation-vertical: 0;" letter-spacing="-17px">→b</text><line x1="81" y1="225" x2="105" y2="101" stroke="#4594D9" stroke-width="3"></line><circle cx="105" cy="101" r="4" fill="black"></circle><path d="M105 101 l-12 -7 l0 14 Z" fill="#4594D9" transform="rotate(-78.69 105 101)"></path><text x="46" y="154" fill="#4594D9" stroke="white" stroke-width="4" font-family="Avenir Next" font-size="20" font-weight="500" letter-spacing="5px">→→</text><text x="46" y="154" fill="#4594D9" font-family="Avenir Next" font-size="20" font-weight="500" letter-spacing="5px">→→</text><text x="50" y="165" fill="#4594D9" stroke="white" stroke-width="4" font-family="Avenir Next" font-size="20" font-weight="500">a+b</text><text x="50" y="165" fill="#4594D9" font-family="Avenir Next" font-size="20" font-weight="500">a+b</text>
+</svg></div></div></figure>
 <figcaption>An illustration of two vectors being added together.</figcaption>
 
 Adding one vector to itself over and over is just like the multiplication we did with scalars. In a plane like this we call it scalar multiplication since we are multiplying our vector with a scalar. 
@@ -242,8 +302,38 @@ The common flat rotation is done around the z-axis so z-values for the rotated p
 To figure out how the x and y values change in a rotation around the z-axis we look at the two vectors (1,0,0) and (0,1,0). If we draw a circle in the center of our x,y-plane with the same radius as the distance to our points, we expect the points to move along the edge of this circle. We can easily imagine a counter-clockwise rotation of θ for both of these vectors and draw two new vectors that point to our expected end result. Basic trigonometry (sine and cosine) helps us express how the new points relate to the old points. 
 
 <figure>
-<div style="margin: auto; width: 520px; height: 400px; display: block; padding: 35px 0;">
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1"><g transform="scale(1.15) translate(30 20)"><g transform="translate(50 0)"><line x1="10" y1="175" x2="280" y2="175" stroke="#222E39" stroke-width="2"></line><path d="M290 175 l-12 -8 l0 16 Z"></path><line x1="131" y1="300" x2="131" y2="30" stroke="#222E39" stroke-width="2"></line><path d="M131 20 l-8 12 l16 0 Z"></path><circle cx="131" cy="175" r="100" stroke="#222E39" stroke-width="2" fill="none" stroke-dasharray="8,10"></circle><path d="M161 175 q 0 -8 -3 -14" stroke="#222E39" stroke-width="2" fill="none"></path><path d="M161 175 q 0 -8 -3 -14" stroke="#222E39" stroke-width="2" fill="none" transform="rotate(-90 131 175)"></path><line x1="217.6" y1="175" x2="217.6" y2="125" stroke="rgb(255,171,25)" stroke-width="2" stroke-dasharray="6,8 "></line><line x1="131" y1="125" x2="217.6" y2="125" stroke="rgb(255,171,25)" stroke-width="2" stroke-dasharray="6,8 "></line><line x1="81" y1="175" x2="81" y2="88.4" stroke="rgb(255,171,25)" stroke-width="2" stroke-dasharray="6,8 "></line><line x1="131" y1="88.4" x2="81" y2="88.4" stroke="rgb(255,171,25)" stroke-width="2" stroke-dasharray="6,8 "></line><line x1="131" y1="175" x2="227" y2="175" stroke="#4594D9" stroke-width="3"></line><path d="M231 175 l-12 -7 l0 14 Z" fill="#4594D9"></path><text x="235" y="202" fill="#4594D9" font-family="Avenir Next" font-size="20" font-weight="500">(1, 0, 0)</text><line x1="131" y1="175" x2="131" y2="78" stroke="#4594D9" stroke-width="3"></line><path d="M131 75 l-12 -7 l0 14 Z" fill="#4594D9" transform="rotate(-90 131 75)"></path><text x="135" y="70" fill="#4594D9" font-family="Avenir Next" font-size="20" font-weight="500">(0, 1, 0)</text><g transform="rotate(-30 131 175)"><line x1="131" y1="175" x2="227" y2="175" stroke="rgb(255,171,25)" stroke-width="3"></line><path d="M231 175 l-12 -7 l0 14 Z" fill="rgb(255,171,25)"></path><line x1="131" y1="175" x2="131" y2="78" stroke="rgb(255,171,25)" stroke-width="3"></line><path d="M131 75 l-12 -7 l0 14 Z" fill="rgb(255,171,25)" transform="rotate(-90 131 75)"></path></g><text x="165" y="172" fill="#222E39" font-family="Avenir Next" font-size="20" font-weight="500">θ</text><text x="115" y="142" fill="#222E39" font-family="Avenir Next" font-size="20" font-weight="500">θ</text><text x="222" y="120" fill="rgb(255,171,25)" font-family="Avenir Next" font-size="20" font-weight="500">(cos θ, sin θ, 0)</text></g><text x="0" y="80" fill="rgb(255,171,25)" font-family="Avenir Next" font-size="20" font-weight="500">(-sin θ, cos θ, 0)</text></g></svg></div></figure>
+<div style="margin-bottom: 95%;">
+<div style="margin: auto; width: 100%; height: 0px;">
+<svg class="autoscaled-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 350 300" width="100%">
+<g transform="translate(35, 0)">
+<line x1="10" y1="175" x2="280" y2="175" stroke="#222E39" stroke-width="2"></line>
+<path d="M290 175 l-12 -8 l0 16 Z"></path>
+<line x1="131" y1="300" x2="131" y2="30" stroke="#222E39" stroke-width="2"></line>
+<path d="M131 20 l-8 12 l16 0 Z"></path>
+<circle cx="131" cy="175" r="100" stroke="#222E39" stroke-width="2" fill="none" stroke-dasharray="8,10"></circle>
+<path d="M161 175 q 0 -8 -3 -14" stroke="#222E39" stroke-width="2" fill="none"></path>
+<path d="M161 175 q 0 -8 -3 -14" stroke="#222E39" stroke-width="2" fill="none" transform="rotate(-90 131 175)"></path>
+<line x1="217.6" y1="175" x2="217.6" y2="125" stroke="rgb(255,171,25)" stroke-width="2" stroke-dasharray="6,8 "></line>
+<line x1="131" y1="125" x2="217.6" y2="125" stroke="rgb(255,171,25)" stroke-width="2" stroke-dasharray="6,8 "></line>
+<line x1="81" y1="175" x2="81" y2="88.4" stroke="rgb(255,171,25)" stroke-width="2" stroke-dasharray="6,8 "></line>
+<line x1="131" y1="88.4" x2="81" y2="88.4" stroke="rgb(255,171,25)" stroke-width="2" stroke-dasharray="6,8 "></line>
+<line x1="131" y1="175" x2="227" y2="175" stroke="#4594D9" stroke-width="3"></line>
+<path d="M231 175 l-12 -7 l0 14 Z" fill="#4594D9"></path>
+<text x="235" y="202" fill="#4594D9" font-family="Avenir Next" font-size="20" font-weight="500">(1, 0, 0)</text>
+<line x1="131" y1="175" x2="131" y2="78" stroke="#4594D9" stroke-width="3"></line>
+<path d="M131 75 l-12 -7 l0 14 Z" fill="#4594D9" transform="rotate(-90 131 75)"></path>
+<text x="135" y="70" fill="#4594D9" font-family="Avenir Next" font-size="20" font-weight="500">(0, 1, 0)</text>
+<g transform="rotate(-30 131 175)">
+<line x1="131" y1="175" x2="227" y2="175" stroke="rgb(255,171,25)" stroke-width="3"></line>
+<path d="M231 175 l-12 -7 l0 14 Z" fill="rgb(255,171,25)"></path>
+<line x1="131" y1="175" x2="131" y2="78" stroke="rgb(255,171,25)" stroke-width="3"></line>
+<path d="M131 75 l-12 -7 l0 14 Z" fill="rgb(255,171,25)" transform="rotate(-90 131 75)"></path>
+</g>
+<text x="165" y="172" fill="#222E39" font-family="Avenir Next" font-size="20" font-weight="500">θ</text>
+<text x="115" y="142" fill="#222E39" font-family="Avenir Next" font-size="20" font-weight="500">θ</text>
+<text x="170" y="115" fill="rgb(255,171,25)" font-family="Avenir Next" font-size="20" font-weight="500">(cos θ, sin θ, 0)</text>
+<text x="0" y="80" fill="rgb(255,171,25)" font-family="Avenir Next" font-size="20" font-weight="500">(-sin θ, cos θ, 0)</text>
+</g></svg></div></div></figure>
 <figcaption>The rotation of two vectors</figcaption>
 
 The transformed x-only-vector gives the values for the first column of our rotation matrix and the transformed y-only-vector gives us the values for the second column of our rotation matrix. The third or fourth columns don’t alter the transformed vector so these are the same as for an identity matrix. The resulting rotation matrix is thus:
@@ -350,8 +440,12 @@ One way of thinking about it is that the views we are transforming are a few hun
 
 Another way of thinking about this is to image that the screen is a certain distance, d, from where we are looking (abstractly speaking). The distance is in some made up unit which is not at all related to how far our eyes are from the screen in real life. Since the screen is two dimensional everything needs to be projected onto that screen. The point we are looking from and the point we are looking at stays fixed in 3D space but we can decide how far off the screen is. If we move the screen closer to us then we get more perspective  and if we move it away from us then we get less perspective.
 
-<figure><div style="margin: auto; width: 520px; height: 260px; display: block; padding: 45px 0 5px;">
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1"><g transform="scale(1.25) translate(15 0)"><line x1="10" y1="100" x2="350" y2="100" stroke="#222E39" stroke-width="2"></line><path d="M355 100 l-12 -8 l0 16 Z"></path><line x1="50" y1="100" x2="300" y2="40" stroke="rgb(255,171,25)" stroke-width="2" stroke-dasharray="8,10"></line><line x1="170" y1="125" x2="170" y2="20" stroke="rgb(255,171,25)" stroke-width="2"></line><line x1="300" y1="100" x2="300" y2="40" stroke="#4594D9" stroke-width="6"></line><line x1="170" y1="100" x2="170" y2="70" stroke="#4594D9" stroke-width="4"></line><text x="360" y="115" fill="#222E39" font-family="Avenir Next" font-size="20" font-weight="500">z</text><text x="290" y="115" fill="#4594D9" font-family="Avenir Next" font-size="20" font-weight="500" transform="rotate(45 290 115)">object</text><text x="170" y="115" fill="#4594D9" font-family="Avenir Next" font-size="20" font-weight="500" transform="rotate(45 170 115)">projection</text><text x="90" y="40" fill="rgb(255,171,25)" font-family="Avenir Next" font-size="20" font-weight="400">“screen”</text><circle cx="50" cy="100" r="5" fill="#222E39"></circle><text x="40" y="85" fill="#222E39" font-family="Avenir Next" font-size="20" font-weight="500">us</text><path d="M50 130 q0 10 30 10 q30 0 30 10 q0 -10 30 -10 q30 0 30 -10" stroke="#222E39" stroke-width="2" fill="none"></path><text x="103" y="170" fill="#222E39" font-family="Avenir Next" font-size="20" font-weight="500">d</text></g></svg></div></figure>
+<figure>
+<div style="margin-bottom: 60%;">
+<div style="margin: auto; width: 100%; height: 0px;">
+<svg class="autoscaled-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 360 180" width="100%">
+<line x1="10" y1="100" x2="350" y2="100" stroke="#222E39" stroke-width="2"></line><path d="M355 100 l-12 -8 l0 16 Z"></path><line x1="50" y1="100" x2="300" y2="40" stroke="rgb(255,171,25)" stroke-width="2" stroke-dasharray="8,10"></line><line x1="170" y1="125" x2="170" y2="20" stroke="rgb(255,171,25)" stroke-width="2"></line><line x1="300" y1="100" x2="300" y2="40" stroke="#4594D9" stroke-width="6"></line><line x1="170" y1="100" x2="170" y2="70" stroke="#4594D9" stroke-width="4"></line><text x="360" y="115" fill="#222E39" font-family="Avenir Next" font-size="20" font-weight="500">z</text><text x="290" y="115" fill="#4594D9" font-family="Avenir Next" font-size="20" font-weight="500" transform="rotate(45 290 115)">object</text><text x="170" y="115" fill="#4594D9" font-family="Avenir Next" font-size="20" font-weight="500" transform="rotate(45 170 115)">projection</text><text x="90" y="40" fill="rgb(255,171,25)" font-family="Avenir Next" font-size="20" font-weight="400">“screen”</text><circle cx="50" cy="100" r="5" fill="#222E39"></circle><text x="40" y="85" fill="#222E39" font-family="Avenir Next" font-size="20" font-weight="500">us</text><path d="M50 130 q0 10 30 10 q30 0 30 10 q0 -10 30 -10 q30 0 30 -10" stroke="#222E39" stroke-width="2" fill="none"></path><text x="103" y="170" fill="#222E39" font-family="Avenir Next" font-size="20" font-weight="500">d</text>
+</svg></div></div></figure>
 <figcaption>The size of an object on our “screen”.</figcaption>
 
 The constant for our perspective depends on the distance to our screen as <sup>-1</sup>/<sub>d</sub>. This is just the same as we had before. It is only another explanation of what that value means. A greater denumerator means a greater distance to the screen which means less perspective. As mentioned above, it turns out that 500 units is a suitable distance to the “screen”.
