@@ -1,0 +1,287 @@
+<style>
+
+.view {
+	margin: 0;
+	padding: 5px;
+/*	display: inline-block;*/
+	background-color: #33a2e7;
+/*	-webkit-transition: background 0.2s ease-in-out 0s;*/
+}
+
+.view .view {
+	background-image: -webkit-linear-gradient(-90deg, rgba(255,255,255,0.25), rgba(255,255,255,0.0) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.1) 100%);
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+}
+
+.modal {
+	background-color: #ffbb00;
+}
+.ignored {
+	background-color: #bac0c4;
+	
+/*	-webkit-filter: grayscale(100%);*/
+}
+
+#mainWindow {
+	/*width: -webkit-calc(100% - 190px);
+	height: 280px;*/
+	width: 100%;
+	height: 100%;
+
+	vertical-align: middle;
+	position: relative;
+	display: inline-block;
+	background: transparent;
+	border-radius:6px;
+}
+
+#leftPane {
+	width: -webkit-calc(30% - 10px);
+	height: -webkit-calc(100% - 10px);
+	top: 0;
+	left: 0;
+	position: absolute;
+}
+
+#mainPane {
+	width: -webkit-calc(70% - 10px);
+	height: -webkit-calc(100% - 10px);
+	top: 0;
+	right: 0;
+	position: absolute;
+
+}
+
+.navBar, #toolBar {
+	width: -webkit-calc(100% - 10px);
+	height: -webkit-calc(9% - 10px);
+}
+
+.navBar {
+	top: 0;
+}
+
+.navContent, #toolBar {
+	margin-top: 5px;
+}
+
+.leftButton, 
+.button {
+	margin-top: 1px;
+	height: -webkit-calc(60% - 6px);
+	width: 20px;
+	border-radius: 2px;
+}
+
+.button {
+	float: right;
+	margin-left: 7px;
+}
+
+.leftButton {
+	float: left;
+}
+
+#toolBar {
+	bottom: -5px;
+}
+
+#mainPane .navContent {
+	width: -webkit-calc(100% - 0px);
+	height: -webkit-calc(91% - 5px);
+	bottom: 0;
+	padding: 0;
+}
+
+#leftPane .navContent {
+	width: -webkit-calc(100% - 10px);
+	height: -webkit-calc(82% - 20px);
+
+}
+
+.cell {
+	width: -webkit-calc(90% - 10px);;
+	height: -webkit-calc(15% - 10px);;
+	margin-left: 5%;
+	margin-top: 0;
+}
+
+.cell:first-child {
+	margin-top: 15px;
+}
+
+.gridCell {
+	height: -webkit-calc(30% - 10px);;
+	width: -webkit-calc(20% - 10px);;
+	margin: 15px;
+	display: inline-block;
+	position: static;
+}
+
+#alert {
+	position: absolute;
+	width: -webkit-calc(30% - 10px);;
+	height: 65px;/*-webkit-calc(12% - 10px);;*/
+	left: -webkit-calc(50% - 40px);
+	top: -webkit-calc(50% - 32px);
+	box-shadow: 0px 3px 10px 1px rgba(0,0,0,0.5);
+}
+
+#alert .button {
+	position: absolute;
+	width: -webkit-calc(75% - 10px);;
+	bottom: 7px;
+	height: 10px;
+	margin-left: -webkit-calc(12.5% - 5px);;
+	
+	float: none;
+}
+
+.views {
+	position: relative;
+	display: inline-block;
+	width: -webkit-calc(100% - 190px);
+	height: 280px;
+}
+
+.hierarchy .viewHeirarchy:before {
+	content: "";
+	left: -20px;
+	position: absolute;
+	top: 0;
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.5);
+	background-color: #33a2e7;
+	border: 1px solid rgba(0,0,0,0.25);
+}
+
+.hierarchy .modal:before {
+	background-color: #ffbb00 !important;
+}
+
+.hierarchy .ignored:before {
+	background-color: #b9bfc5 !important;
+}
+
+.hierarchy .ignored {
+	color: #b9bfc5;
+}
+
+.hierarchy .viewHeirarchy {
+	position: relative !important;
+	background: none;
+	left: 19px;
+	font-size: 13px;
+	width: 120px;
+	overflow: visible;
+	text-align: left;
+	margin: 1px;
+	border-radius: 4px;
+}
+
+.hierarchy {
+	width: 160px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.hierarchy > .viewHeirarchy {
+	background: transparent !important;
+}
+
+figure {
+	padding: 15px;
+}
+
+@media screen and (max-device-width: 480px) and (orientation:portrait) {
+.hierarchy, #mainWindow {
+	display: block;
+}
+
+figure {
+	padding: 5px;
+	left: -5px;
+}
+
+.views {
+	width: -webkit-calc(100% - 15px);
+	height: 230px;
+	margin-left: 5px;
+}
+}
+
+</style>
+<figure>
+<div class="hierarchy">
+<div class="viewHeirarchy" id="mainWindowH">Split view
+	<div class="viewHeirarchy" id="leftPaneH">Master
+		<div class="viewHeirarchy" id="leftNavH">Navigation bar
+			<div class="viewHeirarchy" id="backH">Back</div>
+			<div class="viewHeirarchy" id="button1H">Button</div>
+		</div>
+		<div class="viewHeirarchy" id="content1H">Table view
+			<div class="viewHeirarchy" id="cell1H">Cell</div>
+			<div class="viewHeirarchy" id="cell2H">Cell</div>
+			<div class="viewHeirarchy" id="cell3H">Cell</div>
+		</div>
+		<div class="viewHeirarchy" id="toolBarH">Toolbar
+			<div class="viewHeirarchy" id="button2H">Button</div>
+		</div>
+	</div>
+	<div class="viewHeirarchy" id="mainPaneH">Detail
+		<div class="viewHeirarchy" id="mainNavH">Navigation bar
+			<div class="viewHeirarchy" id="button3H">Button</div>
+			<div class="viewHeirarchy" id="button4H">Button</div>
+
+		</div>
+		<div class="viewHeirarchy" id="content2H">Collection view
+			<div class="viewHeirarchy" id="grid1H">Cell</div>
+			<div class="viewHeirarchy" id="grid2H">Cell</div>
+			<div class="viewHeirarchy" id="grid3H">Cell</div>
+			<div class="viewHeirarchy" id="grid4H">Cell</div>
+		</div>
+	</div>	
+</div>
+<div class="viewHeirarchy" id="alertH">Alert
+    <div class="viewHeirarchy" id="button5H">Button</div>
+</div>
+</div>
+
+<div class="views">
+<div class="view" id="mainWindow">
+	<div class="view" id="leftPane">
+		<div class="view navBar" id="leftNav">
+			<div class="view leftButton" id="back"> </div>
+			<div class="view button" id="button1"> </div>
+		</div>
+		<div class="view navContent" id="content1">
+			<div class="view cell" id="cell1"> </div>
+			<div class="view cell" id="cell2"> </div>
+			<div class="view cell" id="cell3"> </div>
+		</div>
+		<div class="view" id="toolBar">
+			<div class="view leftButton" id="button2"> </div>
+		</div>
+	</div>
+	<div class="view" id="mainPane">
+		<div class="view navBar" id="mainNav">
+			<div class="view button" id="button3"> </div>
+			<div class="view button" id="button4"> </div>
+
+		</div>
+		<div class="view navContent" id="content2">
+			<div class="view gridCell" id="grid1"> </div>
+			<div class="view gridCell" id="grid2"> </div>
+			<div class="view gridCell" id="grid3"> </div>
+			<div class="view gridCell" id="grid4"> </div>
+		</div>
+	</div>
+
+</div>
+<div class="view" id="alert">
+	<div class="view button" id="button5"> </div>
+</div>
+</div>
+</figure>
