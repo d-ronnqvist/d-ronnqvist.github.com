@@ -27,7 +27,7 @@ Nodes, instances of `SCNNode`, are the backbone of a scene. Think of them like a
 
 There resemblance to layer hierarchies in 2D is obvious. 
 
-Nodes are positioned relative to their parent node using the `position` property which unlike its 2D equivalent takes a `SCNVector3` instead of a `CGPoint`. Don’t let the vector name scare you, it’s just a 3D coordinate <span class=“math”>(x, y, z)</span>[^vectors]. The `transform` property takes a normal `CATransform3D` (transforms were 3D even in the 2D world of layers) but there is also convenience properties for the `scale` and `rotation` that automatically change when the transform is set and vice versa. There is also a 3D equivalent to the anchor point called the `pivot` that influences position and transform just like the anchor point does.
+Nodes are positioned relative to their parent node using the `position` property which unlike its 2D equivalent takes a `SCNVector3` instead of a `CGPoint`. Don’t let the vector name scare you, it’s just a 3D coordinate <span class="math">(x, y, z)</span>[^vectors]. The `transform` property takes a normal `CATransform3D` (transforms were 3D even in the 2D world of layers) but there is also convenience properties for the `scale` and `rotation` that automatically change when the transform is set and vice versa. There is also a 3D equivalent to the anchor point called the `pivot` that influences position and transform just like the anchor point does.
 
 A node in itself is nothing but an empty container but each node has properties to have a geometry, a light, or a camera attached to it.
 
