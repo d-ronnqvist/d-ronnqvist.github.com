@@ -156,7 +156,7 @@ If you haven’t already I recommend you take a look at [what Jeff LaMache has a
 
 
 
-[LaMarchePost]: http://iphonedevelopment.blogspot.se/search/label/SceneKit (An Introduction to SceneKit by Jeff LaMarche)
+[LaMarchePost]: http://iphonedevelopment.blogspot.se/2012/08/an-introduction-to-scenekit.html (An Introduction to SceneKit by Jeff LaMarche)
 
 [LaMarcheCode]: https://github.com/jlamarche/SceneKitFun (SceneKit example code by Jeff LaMarche)
 
