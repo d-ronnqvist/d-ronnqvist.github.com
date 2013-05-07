@@ -40,9 +40,6 @@ A scene is displayed in a `SCNView`. The node hierarchy is attached to the scene
     self.scene = scene;
     
 	// A camera
-    // --------
-    // The camera is moved back and up from the center of the scene
-    // and then rotated so that it looks down to the center
 	SCNNode *cameraNode = [SCNNode node];
 	cameraNode.camera = [SCNCamera camera];
 	cameraNode.position = SCNVector3Make(0, 15, 30);
@@ -53,9 +50,6 @@ A scene is displayed in a `SCNView`. The node hierarchy is attached to the scene
     [scene.rootNode addChildNode:cameraNode];
 	
     // A spotlight
-    // ------------
-    // The spotlight is positioned right next to the camera
-    // so it is offset slightly and added to the camera node
     SCNLight *spotLight = [SCNLight light];
     spotLight.type = SCNLightTypeSpot;
     spotLight.color = [NSColor redColor];
@@ -66,9 +60,6 @@ A scene is displayed in a `SCNView`. The node hierarchy is attached to the scene
     [cameraNode addChildNode:spotLightNode];
     
     // A square box
-    // ------------
-    // A square box is positioned in the center of the scene (default)
-    // and given a small rotation around Y to highlight the perspective.
     CGFloat boxSide = 15.0;
     SCNBox *box = [SCNBox boxWithWidth:boxSide
                                 height:boxSide
