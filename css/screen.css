@@ -264,7 +264,14 @@ article {
 
 /* Header for posts with a rectangle and shapes for  */
 .title-header {
+
+
+	transform: rotate(-16.4deg);
+	-moz-transform: rotate(-16.4deg);
+	-ms-transform: rotate(-16.4deg);
 	-webkit-transform: rotate(-16.4deg);
+	-o-transform: rotate(-16.4deg);
+
 	top: 100px;
 	left: -40px;
 	position: relative;
@@ -317,7 +324,12 @@ article {
 }
 
 #bottom-orange-rect {
+
+	transform: rotate(-16.4deg);
+	-moz-transform: rotate(-16.4deg);
+	-ms-transform: rotate(-16.4deg);
 	-webkit-transform: rotate(-16.4deg);
+	-o-transform: rotate(-16.4deg);
 	width: 1200px;
 	height: 300px;
 	overflow: visible;
@@ -452,8 +464,18 @@ and (max-device-width : 1024px)
 and (orientation:landscape) {
 	/* iPad styles */
 	#about-me {
+
+	transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	-ms-transform: scale(0.8);
 	-webkit-transform: scale(0.8);
-	-webkit-transform-origin:100% 0%;
+	-o-transform: scale(0.8);
+
+	transform-origin: 100% 0%;
+	-moz-transform-origin: 100% 0%;
+	-ms-transform-origin: 100% 0%;
+	-webkit-transform-origin: 100% 0%;
+	-o-transform-origin: 100% 0%;
 	width: 230px !important;
 	
 	}
@@ -469,16 +491,36 @@ and (orientation:portrait) {
 	}
 	
 	#about-me {
+
+	transform: scale(.48) translateX(-5px) translateY(1px);
+	-moz-transform: scale(.48) translateX(-5px) translateY(1px);
+	-ms-transform: scale(.48) translateX(-5px) translateY(1px);
 	-webkit-transform: scale(.48) translateX(-5px) translateY(1px);
-	-webkit-transform-origin:100% 0%;
+	-o-transform: scale(.48) translateX(-5px) translateY(1px);
+
+	transform-origin: 100% 0%;
+	-moz-transform-origin: 100% 0%;
+	-ms-transform-origin: 100% 0%;
+	-webkit-transform-origin: 100% 0%;
+	-o-transform-origin: 100% 0%;
 	width: 180px !important;
 	
 	}
 	
 	.permanent-link {
 	right: -53px !important;
+
+	transform: scale(.8) translateY(-10px);
+	-moz-transform: scale(.8) translateY(-10px);
+	-ms-transform: scale(.8) translateY(-10px);
 	-webkit-transform: scale(.8) translateY(-10px);
-	-webkit-transform-origin:0% 0%;
+	-o-transform: scale(.8) translateY(-10px);
+
+	transform-origin: 0% 0%;
+	-moz-transform-origin: 0% 0%;
+	-ms-transform-origin: 0% 0%;
+	-webkit-transform-origin: 0% 0%;
+	-o-transform-origin: 0% 0%;
 	
 	}
 	
@@ -488,8 +530,18 @@ and (orientation:portrait) {
 	
 	.date {
 	right: -53px !important;
+
+	transform: scale(.8);
+	-moz-transform: scale(.8);
+	-ms-transform: scale(.8);
 	-webkit-transform: scale(.8);
-	-webkit-transform-origin:0% 0%;
+	-o-transform: scale(.8);
+
+	transform-origin: 0% 0%;
+	-moz-transform-origin: 0% 0%;
+	-ms-transform-origin: 0% 0%;
+	-webkit-transform-origin: 0% 0%;
+	-o-transform-origin: 0% 0%;
 	
 	}
 }
@@ -687,13 +739,28 @@ top: -2px;
 
 @media screen and (max-width: 800px) {
 	.title-header {
-		-webkit-transform: rotate(-16.4deg) scale(0.75); 
+	
+	transform: rotate(-16.4deg) scale(0.75);
+	-moz-transform: rotate(-16.4deg) scale(0.75);
+	-ms-transform: rotate(-16.4deg) scale(0.75);
+	-webkit-transform: rotate(-16.4deg) scale(0.75);
+	-o-transform: rotate(-16.4deg) scale(0.75); 
 		margin-bottom: 90px;
 		top: 55px;
 	}
 	#DR-logo {
-		-webkit-transform: scale(0.75);
-		-webkit-transform-origin: 0 0;
+	
+	transform: scale(0.75);
+	-moz-transform: scale(0.75);
+	-ms-transform: scale(0.75);
+	-webkit-transform: scale(0.75);
+	-o-transform: scale(0.75);
+	
+	transform-origin:  0 0;
+	-moz-transform-origin:  0 0;
+	-ms-transform-origin:  0 0;
+	-webkit-transform-origin:  0 0;
+	-o-transform-origin:  0 0;
 	}
 	
 	#newest-post .post-summary,
@@ -731,14 +798,29 @@ top: -2px;
 
 @media screen and (max-width: 600px) {	
 	.title-header {
-		-webkit-transform: rotate(-16.4deg) scale(0.67); 
+	
+	transform: rotate(-16.4deg) scale(0.67);
+	-moz-transform: rotate(-16.4deg) scale(0.67);
+	-ms-transform: rotate(-16.4deg) scale(0.67);
+	-webkit-transform: rotate(-16.4deg) scale(0.67);
+	-o-transform: rotate(-16.4deg) scale(0.67); 
 		margin-bottom: 10px;
 		top: 10px;
 		left: -100px;
 	}
 	#DR-logo {
-		-webkit-transform: scale(0.6);
-		-webkit-transform-origin: 0 0;
+	
+	transform: scale(0.6);
+	-moz-transform: scale(0.6);
+	-ms-transform: scale(0.6);
+	-webkit-transform: scale(0.6);
+	-o-transform: scale(0.6);
+	
+	transform-origin:  0 0;
+	-moz-transform-origin:  0 0;
+	-ms-transform-origin:  0 0;
+	-webkit-transform-origin:  0 0;
+	-o-transform-origin:  0 0;
 		top: 10px;
 		left: 10px;
 	}
@@ -747,14 +829,29 @@ top: -2px;
 @media screen and (max-width: 480px),
 screen and (max-device-width: 480px) {
 	.title-header {
-		-webkit-transform: rotate(-16.4deg) scale(0.55); 
+	
+	transform: rotate(-16.4deg) scale(0.55);
+	-moz-transform: rotate(-16.4deg) scale(0.55);
+	-ms-transform: rotate(-16.4deg) scale(0.55);
+	-webkit-transform: rotate(-16.4deg) scale(0.55);
+	-o-transform: rotate(-16.4deg) scale(0.55); 
 		margin-bottom: 10px;
 		top: -10px;
 		left: -200px;
 	}
 	#DR-logo {
-		-webkit-transform: scale(0.5);
-		-webkit-transform-origin: 0 0;
+	
+	transform: scale(0.5);
+	-moz-transform: scale(0.5);
+	-ms-transform: scale(0.5);
+	-webkit-transform: scale(0.5);
+	-o-transform: scale(0.5);
+	
+	transform-origin:  0 0;
+	-moz-transform-origin:  0 0;
+	-ms-transform-origin:  0 0;
+	-webkit-transform-origin:  0 0;
+	-o-transform-origin:  0 0;
 		top: 10px;
 		left: 10px;
 	}
@@ -807,25 +904,55 @@ screen and (max-device-width: 480px) {
 
 @media screen and (max-device-width: 480px) and (orientation:landscape) {
     .title-header {
-    	-webkit-transform: rotate(-16.4deg) scale(0.65); 
+    
+	transform: rotate(-16.4deg) scale(0.65);
+	-moz-transform: rotate(-16.4deg) scale(0.65);
+	-ms-transform: rotate(-16.4deg) scale(0.65);
+	-webkit-transform: rotate(-16.4deg) scale(0.65);
+	-o-transform: rotate(-16.4deg) scale(0.65); 
     	margin-bottom: 70px;
     	top: 25px;
     	left: -100px;
     }
     #DR-logo {
-    	-webkit-transform: scale(0.6);
-    	-webkit-transform-origin: 0 0;
+    
+	transform: scale(0.6);
+	-moz-transform: scale(0.6);
+	-ms-transform: scale(0.6);
+	-webkit-transform: scale(0.6);
+	-o-transform: scale(0.6);
+    
+	transform-origin:  0 0;
+	-moz-transform-origin:  0 0;
+	-ms-transform-origin:  0 0;
+	-webkit-transform-origin:  0 0;
+	-o-transform-origin:  0 0;
     	top: 15px;
     	left: 15px;
     }
     #rss-link {
-    	-webkit-transform: scale(0.6);
-    	-webkit-transform-origin: 0% 100%;
+    
+	transform: scale(0.6);
+	-moz-transform: scale(0.6);
+	-ms-transform: scale(0.6);
+	-webkit-transform: scale(0.6);
+	-o-transform: scale(0.6);
+    
+	transform-origin:  0% 100%;
+	-moz-transform-origin:  0% 100%;
+	-ms-transform-origin:  0% 100%;
+	-webkit-transform-origin:  0% 100%;
+	-o-transform-origin:  0% 100%;
     	bottom: 15px;
     	left: 15px;
     }
     .post-footer {
-    	-webkit-transform: scale(0.65); 
+    
+	transform: scale(0.65);
+	-moz-transform: scale(0.65);
+	-ms-transform: scale(0.65);
+	-webkit-transform: scale(0.65);
+	-o-transform: scale(0.65); 
     	margin-bottom: 70px;
     	bottom: 150px;
     	left: 50px;
@@ -869,7 +996,12 @@ screen and (max-device-width: 480px) {
 
 @media screen and (max-device-width: 480px) and (orientation:portrait) {
     .title-header {
-    	-webkit-transform: rotate(-16.4deg) scale(0.45); 
+    
+	transform: rotate(-16.4deg) scale(0.45);
+	-moz-transform: rotate(-16.4deg) scale(0.45);
+	-ms-transform: rotate(-16.4deg) scale(0.45);
+	-webkit-transform: rotate(-16.4deg) scale(0.45);
+	-o-transform: rotate(-16.4deg) scale(0.45); 
     	margin-bottom: -30px;
     	top: -25px;
     	left: -250px;
@@ -879,19 +1011,44 @@ screen and (max-device-width: 480px) {
     	right: -120px;
     }
     #DR-logo {
-    	-webkit-transform: scale(0.4);
-    	-webkit-transform-origin: 0 0;
+    
+	transform: scale(0.4);
+	-moz-transform: scale(0.4);
+	-ms-transform: scale(0.4);
+	-webkit-transform: scale(0.4);
+	-o-transform: scale(0.4);
+    
+	transform-origin:  0 0;
+	-moz-transform-origin:  0 0;
+	-ms-transform-origin:  0 0;
+	-webkit-transform-origin:  0 0;
+	-o-transform-origin:  0 0;
     	top: 10px;
     	left: 10px;
     }
     #rss-link {
-    	-webkit-transform: scale(0.7);
-    	-webkit-transform-origin: 0% 100%;
+    
+	transform: scale(0.7);
+	-moz-transform: scale(0.7);
+	-ms-transform: scale(0.7);
+	-webkit-transform: scale(0.7);
+	-o-transform: scale(0.7);
+    
+	transform-origin:  0% 100%;
+	-moz-transform-origin:  0% 100%;
+	-ms-transform-origin:  0% 100%;
+	-webkit-transform-origin:  0% 100%;
+	-o-transform-origin:  0% 100%;
     	bottom: 15px;
     	left: 15px;
     }
     .post-footer {
-    	-webkit-transform: scale(0.65); 
+    
+	transform: scale(0.65);
+	-moz-transform: scale(0.65);
+	-ms-transform: scale(0.65);
+	-webkit-transform: scale(0.65);
+	-o-transform: scale(0.65); 
     	margin-bottom: 70px;
     	bottom: 170px;
     	left: 50px;
