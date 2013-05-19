@@ -323,6 +323,12 @@ article {
 	display: inline;
 }
 
+#cc-svg {
+	position: absolute;
+	right: 15px;
+	bottom: 15px;
+}
+
 #bottom-orange-rect {
 
 	transform: rotate(-16.4deg);
