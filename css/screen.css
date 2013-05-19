@@ -1,143 +1,6 @@
 
-#newest-post {
-	margin-top: 90px;
-}
 
-@media screen and (max-width: 1200px) {
-	#newest-post {
-		margin-top: 170px;
-	}
-}
-
-@media screen and (max-width: 550px), 
-screen and (max-device-width: 480px) {
-	#newest-post {
-		margin-top: 80px;
-	}
-}
-
-/*#newest-post .post-summary {
-	padding: 20px;
-}*/
-
-.post-summary {
-	background: hsl(238, 16%, 99%);
-	box-shadow: 0 0px 4px rgba(0,0,0,0.75);
-	min-width: 280px;
-	max-width: 400px;
-/*	max-height: 300px;*/
-	display: inline-block;
-	padding: 20px;
-	vertical-align:top;
-	position: relative;
-	margin: 40px 40px 0 0;
-	
-	border: 10px solid hsl(208, 8%, 75%);
-}
-
-#more-posts .post-link:last-child .post-summary {
-	margin-bottom: 100px;
-}
-
-#newest-post .post-summary,
-#more-posts .post-link:nth-child(4n+4) .post-summary {
-	border-color: #feba00;
-}
-
-#more-posts .post-link:nth-child(4n+1) .post-summary {
-	border-color: #40a4e5;
-}
-
-
-.post-summary h1 {
-	width: 100%;
-	line-height: 100%;
-	font-size: 24px;
-	text-align: left;
-	font-weight: 700;
-	color: #2f3741;
-	margin-bottom: 25px;
-}
-
-.post-link {
-	text-decoration: none;
-	color: #2f3741;
-	display: inline-block;
-}
-
-
-#newest-post h1 {
-	font-size: 34px;
-	letter-spacing: 100%;
-	font-weight: 800;
-	margin-bottom: 50px;
-/*	background: red;*/
-	width: 570px;
-	display: inline-block;
-	margin-top: 0;
-}
-
-#newest-post .post-summary {
-	font-size: 18px;
-	padding: 30px;
-}
-
-#newest-post, 
-#more-posts {
-	text-align: center;
-}
-
-#more-posts {
-	padding: 5px;
-	margin-top: 40px;
-}
-
-#newest-post .post-summary {
-	width: 100%;
-	max-width: 700px;
-	margin: auto;
-}
-
-.post-summary time {
-	float: right;
-	font-size: 24px;
-	font-weight: 400;
-	line-height: 120%;
-	text-align: right;
-	display: inline-block;
-}
-
-.center-shadow
-{
-	position:relative;
-}
-.center-shadow:after
-{
-	content:"";
-	position:absolute;
-	z-index:-1;
-	box-shadow:0 8px 10px rgba(0,0,15,1.0);
-	top:50%;
-	bottom:0;
-	left:10px;
-	right:10px;
-	border-radius:50% / 15px;
-}
-
-
-/* 
-All the styling above here is unfinished and deals with the start page
- */ 
-
-
-/*
-TODO:
- [ ] New design for index/archive page
- [ ] Adapt post style for iPad portrait and iPhone
- [ ] Less fancy print style for posts
-*/
-
-
+/* @group Global */
 
 html {
 	text-rendering: optimizeLegibility;
@@ -195,6 +58,8 @@ h1, h2, h3, h4 {
 
 /* @end */
 
+/* @group Text */
+
 p {
 	margin:0 0 24px 0;
 }
@@ -207,17 +72,169 @@ strong {
 	font-weight: 500;
 }
 
-
-
-/*--[ LINKS ]---------*/
 article a {
-text-decoration: none;
-color: hsl(208, 66%, 56%);
+	text-decoration: none;
+	color: hsl(208, 66%, 56%);
 }
 
 a:hover {
-text-decoration: underline;
+	text-decoration: underline;
 }
+
+.math {
+	background-color: #fcfcfc;
+	border-radius: 3px;
+	padding: 1px 3px;
+	-webkit-hyphens: none;
+}
+
+pre > .math {
+	padding: 7px 10px;
+	margin: 10px 15px;
+	font-size: 15px;
+	display: block;
+}
+
+/* @end */
+
+/* @end */
+
+/* @group Post summary */
+
+.post-summary {
+	background: hsl(238, 16%, 99%);
+	box-shadow: 0 0px 4px rgba(0,0,0,0.75);
+	min-width: 280px;
+	max-width: 400px;
+
+	display: inline-block;
+	padding: 20px;
+	vertical-align:top;
+	position: relative;
+	margin: 40px 40px 0 0;
+	
+	border: 10px solid hsl(208, 8%, 75%);
+}
+
+#more-posts .post-link:last-child .post-summary {
+	margin-bottom: 100px;
+}
+
+#newest-post .post-summary,
+#more-posts .post-link:nth-child(4n+4) .post-summary {
+	border-color: #feba00;
+}
+
+#more-posts .post-link:nth-child(4n+1) .post-summary {
+	border-color: #40a4e5;
+}
+
+.post-summary h1 {
+	width: 100%;
+	line-height: 100%;
+	font-size: 24px;
+	text-align: left;
+	font-weight: 700;
+	color: #2f3741;
+	margin-bottom: 25px;
+}
+
+.post-link {
+	text-decoration: none;
+	color: #2f3741;
+	display: inline-block;
+}
+
+#newest-post {
+	margin-top: 90px;
+}
+
+@media screen and (max-width: 1200px) {
+	#newest-post {
+		margin-top: 170px;
+	}
+}
+
+@media screen and (max-device-width: 480px) {
+	#newest-post {
+		margin-top: 80px;
+	}
+}
+
+#newest-post h1 {
+	font-size: 34px;
+	letter-spacing: 100%;
+	font-weight: 800;
+	margin-bottom: 50px;
+	width: 570px;
+	display: inline-block;
+	margin-top: 0;
+}
+
+#newest-post .post-summary {
+	font-size: 18px;
+	padding: 30px;
+}
+
+#newest-post, 
+#more-posts {
+	text-align: center;
+}
+
+#more-posts {
+	padding: 5px;
+	margin-top: 40px;
+}
+
+#newest-post .post-summary {
+	width: 100%;
+	max-width: 700px;
+	margin: auto;
+}
+
+.post-summary time {
+	float: right;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 120%;
+	text-align: right;
+	display: inline-block;
+}
+
+/* @group Shadow for the post summaries on the root page */
+
+.center-shadow
+{
+	position:relative;
+}
+.center-shadow:after
+{
+	content:"";
+	position:absolute;
+	z-index:-1;
+	box-shadow:0 8px 10px rgba(0,0,15,1.0);
+	top:50%;
+	bottom:0;
+	left:10px;
+	right:10px;
+	border-radius:50% / 15px;
+}
+
+/* @end */
+
+/* @end */
+
+
+
+
+/*
+TODO:
+ [ ] Less fancy print style for posts
+*/
+
+
+
+
 
 article {
 	text-align: justify;
@@ -253,6 +270,7 @@ article {
 	position: relative;
 	width: 700px;
 	margin-bottom: 200px;
+	z-index: -1;
 }
 
 .title-header > h1 {
@@ -277,8 +295,6 @@ article {
 	padding-top: 12px;
 }
 
-
- 
 /* @group Post header blue & orange rectangles */
 
 #top-blue-rect,
@@ -335,6 +351,8 @@ article {
 	background: #ffb900;
 	right: -700px;
 	top: 0px;
+	position: absolute;
+	z-index: -1;
 }
 
 /* Post date label */
@@ -373,27 +391,9 @@ article {
 	fill: #f3f3f7;
 }
 
-/* @end 
-
 /* @end */
 
-.math {
-/*	font-size: 14px;*/
-	background-color: #fcfcfc;
-	border-radius: 3px;
-	padding: 1px 3px;
-	-webkit-hyphens: none;
-	
-	
-}
-
-pre > .math {
-/*	width: %;*/
-	padding: 7px 10px;
-	margin: 10px 15px;
-	font-size: 15px;
-	display: block;
-}
+/* @end */
 
 /* @group Figures */
 
@@ -729,7 +729,22 @@ top: -2px;
 	}
 }
 
-@media screen and (max-width: 550px), 
+@media screen and (max-width: 600px) {	
+	.title-header {
+		-webkit-transform: rotate(-16.4deg) scale(0.67); 
+		margin-bottom: 10px;
+		top: 10px;
+		left: -100px;
+	}
+	#DR-logo {
+		-webkit-transform: scale(0.6);
+		-webkit-transform-origin: 0 0;
+		top: 10px;
+		left: 10px;
+	}
+}
+
+@media screen and (max-width: 480px),
 screen and (max-device-width: 480px) {
 	.title-header {
 		-webkit-transform: rotate(-16.4deg) scale(0.55); 
@@ -855,7 +870,7 @@ screen and (max-device-width: 480px) {
 @media screen and (max-device-width: 480px) and (orientation:portrait) {
     .title-header {
     	-webkit-transform: rotate(-16.4deg) scale(0.45); 
-    	margin-bottom: 0px;
+    	margin-bottom: -30px;
     	top: -25px;
     	left: -250px;
     }
@@ -931,8 +946,6 @@ screen and (max-device-width: 480px) {
 		-webkit-box-align:center;
 	} */   
 }
-
-
 
 @media screen and (min-width: 1600px) {
 	#top-blue-rect {
