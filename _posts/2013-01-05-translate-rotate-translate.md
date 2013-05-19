@@ -18,7 +18,7 @@ When you apply a transform to a view the coordinates of that views corners gets 
 
 Don’t worry! You don’t need to understand matrixes to apply transforms as long as you know that order matters. The animations below illustrate how the order of translating and rotating makes a difference.
 
-<figure id="transformBreakdown" style="height: 270px;"><div class="resetButton" onclick="resetAnimation(this)" style="-webkit-animation-delay: 11s;">◀◀</div>
+<figure id="transformBreakdown" class="pausedAnimation" style="height: 270px;"><div class="resetButton" onclick="resetAnimation(this)" style="-webkit-animation-delay: 11s;">◀◀</div>
 <div class="viewBox marking">begin</div>
 <div class="viewBox marking" style="-webkit-transform: translate(-2px, -2px) translateX(-200px) rotateZ(-30deg) translate(200px)">end</div>
 <svg><path d="M 322,80 a 40,120 0 0 1 27,100" fill="none" stroke="black" stroke-width="2" stroke-dasharray="5,5" transform="translate(-50,3)"></path><path d="M -5,8 L 0,0 L 5,8" fill="none" stroke="black" stroke-width="2" transform="translate(271, 81) rotate(-35 0 0)"></path></svg><div class="viewBox transformBreakdownAnimation">view</div>			
@@ -57,7 +57,7 @@ Being able to set a rotation transform is cool and all but we want to animate th
     
     [rotatingLayer addAnimation:rotate forKey:@"myRotationAnimation"];
 
-<figure style="height: 270px;"><div class="resetButton" onclick="resetAnimation(this)" style="-webkit-animation-delay: 3s;">◀◀</div>
+<figure style="height: 270px;" class="pausedAnimation" ><div class="resetButton" onclick="resetAnimation(this)" style="-webkit-animation-delay: 3s;">◀◀</div>
 <div class="viewBox marking">begin</div>
 <div class="viewBox marking" style="-webkit-transform: translate(-2px, -2px) translateX(-200px) rotateZ(-30deg) translate(200px)">end</div>
 <svg><path d="M 322,80 a 40,120 0 0 1 27,100" fill="none" stroke="black" stroke-width="2" stroke-dasharray="5,5" transform="translate(-50,3)"></path><path d="M -5,8 L 0,0 L 5,8" fill="none" stroke="black" stroke-width="2" transform="translate(271, 81) rotate(-35 0 0)"></path></svg><div class="viewBox apply45deg">view</div></figure>
@@ -65,7 +65,7 @@ Being able to set a rotation transform is cool and all but we want to animate th
    
 Something is not right. It may not look very strange for small rotation like this one but if we slow down the animation a little and make a rotation of more than <span class="math"><sup>π</sup>/<sub>2</sub></span> (90º) it will be obvious what is happening. The view moves from the start position to the end position in _a straight line_! It doesn't rotate around that point, it's just strange. 
 
-<figure style="height: 320px"><div class="resetButton" onclick="resetAnimation(this)" style="-webkit-animation-delay: 5s;">◀◀</div>
+<figure style="height: 320px" class="pausedAnimation" ><div class="resetButton" onclick="resetAnimation(this)" style="-webkit-animation-delay: 5s;">◀◀</div>
 <div style="-webkit-transform: translate(150px, 70px); height: 320px;">
 <div class="viewBox marking">begin</div>
 <div class="viewBox marking" style="-webkit-transform: translate(-2px, -2px) translateX(-200px) rotateZ(-135deg) translate(200px)">end</div>
@@ -109,7 +109,7 @@ Now that have changed the point we are transforming relative to, we don't have t
     
 And the view finally rotates around the point we were expecting it to.
 
-<figure style="height: 345px"><div class="resetButton" onclick="resetAnimation(this)" style="-webkit-animation-delay: 5s;">◀◀</div>
+<figure style="height: 345px" class="pausedAnimation" ><div class="resetButton" onclick="resetAnimation(this)" style="-webkit-animation-delay: 5s;">◀◀</div>
 <div style="-webkit-transform: translate(150px, 90px); height: 345px;">
 <div class="viewBox marking">begin</div>
 <div class="viewBox marking" style="-webkit-transform: translate(-2px, -2px) translateX(-200px) rotateZ(-135deg) translate(200px)">end</div>
@@ -119,8 +119,7 @@ And the view finally rotates around the point we were expecting it to.
 </div></figure>
 <figcaption>Finally rotating around the point we wanted.</figcaption>
 
-<script src="/script/script-translate-rotate-translate.js" type="text/javascript" onload="checkVisibility()"> </script>
-<script>var body = document.getElementsByTagName("body")[0]; body.onscroll=checkVisibility(); body.onresize=checkVisibility();</script>
+<script src="/script/script-translate-rotate-translate.js" type="text/javascript" onload="setUpBodyEvents()"> </script>
 
 [^idev]: You can read more about the anchor point in [my article for iDeveloper.tv](http://blog.ideveloper.tv/understanding-the-anchor-point/)
 
