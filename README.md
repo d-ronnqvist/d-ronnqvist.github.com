@@ -1,3 +1,18 @@
+[ronnqvi.st](http://ronnqvi.st) is an iOS and OSX developer blog written by David Rönnqvist. 
+
+The content behind the site is available here so that you can
+
+ * Access the material
+ * File issues for typos, technical mistakes etc.
+ * Play around with locally
+ 
+You may also request articles if you want to. Generally I write once a month and mostly about graphics and animation (2D or 3D) or accessibility. 
+
+This repository is _not_ here to use it's content in a way which violates it's [Creative Commons BY-NC License](http://creativecommons.org/licenses/by-nc/3.0/). (Note that sample code from the articles may be licensed under MIT in which case it will have a separate repository (under this account)).
+It is also not here to mirror somewhere else.
+
+------------
+
 # Jekyll-Bootstrap
 
 The quickest way to start and publish your Jekyll powered blog. 100% compatible with GitHub pages
@@ -39,4 +54,4 @@ The master and gh-pages branch do not share the same ancestry. Please treat them
 
 ## License
 
-[Creative Commons](http://creativecommons.org/licenses/by-nc-sa/3.0/)
+ronnqvi.st is licensed under [Creative Commons BY-NC](http://creativecommons.org/licenses/by-nc-sa/3.0/)
