@@ -1,3 +1,10 @@
+function setUpBodyEvents() {
+	window.onscroll=checkVisibility; 
+	window.onresize=checkVisibility;
+	
+	checkVisibility();
+}
+
 function resetAnimation(sender) {
     var figureContainer=sender.parentNode;
     figureContainer.className = "replayAnimation";
