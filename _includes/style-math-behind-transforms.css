@@ -6,6 +6,9 @@
 	display: inline-block;
 	border-spacing: 0;
 	padding: 4px;
+	
+	line-height: 140%;
+	font-size: 16px;
 }
 
 .matrixFigure * {
