@@ -995,8 +995,8 @@ screen and (max-device-width: 480px) {
     }
     .post-footer {
 /*    	margin-bottom: 70px;*/
-/*    	bottom: 150px;*/
-    	right: -25px;
+    	bottom: 160px;
+    	right: 15px;
     }
         
     #bottom-orange-rect {
