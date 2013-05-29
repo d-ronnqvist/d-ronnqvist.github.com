@@ -64,6 +64,13 @@ p {
 	margin:0 0 24px 0;
 }
 
+sup {
+	vertical-align: baseline;
+	line-height: 0;
+	position: relative;
+	top: -8px;
+}
+
 em {
 	padding: 0 2px;
 }
