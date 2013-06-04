@@ -240,7 +240,7 @@ One secondary lesson to take away from this is that you should either create you
 
 [surfaceNormal]: http://en.wikipedia.org/wiki/Surface_normal (Wikipedia article about Surface normals.)
 
-[sampleCode]: (The sample project seen in this article.)
+[sampleCode]: https://github.com/d-ronnqvist/blogpost-codesample-CustomGeometry (The sample project seen in this article.)
 
 [DRMesh]: https://github.com/d-ronnqvist/DRMeshGeometry (My project for generating custom geometry for 3D graphs.)
 
