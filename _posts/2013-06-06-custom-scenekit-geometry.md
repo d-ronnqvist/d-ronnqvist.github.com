@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Custom SceneKit geometry"
-description: ""
+description: "SceneKit offers a wide range of built in geometry like cubes, cylinders, pyramids, spheres, torus, etc., that can be used to for example create beautiful 3D bar charts. More advanced geometry (and even full scenes) like an environment for a game or an interior design application can be created by a designer in their favorite 3D modeling software to be modified and rendered by your application. In addition to these two options SceneKit can be used to generate geometry from a list of points. This comes in very handy when doing 3D graphs and visualizations."
 category: 
 tags: [SceneKit, Cocoa, 3D]
 ---
