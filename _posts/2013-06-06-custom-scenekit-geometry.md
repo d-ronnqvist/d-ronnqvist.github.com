@@ -15,7 +15,7 @@ A brief look at the documentation reveals that there is a method on `SCNGeometry
     + (id)geometryWithSources:(NSArray *)sources 
                      elements:(NSArray *)elements; 
 
-It takes two arrays of `SCNGeometrySource` objects and `SCNGeometryElement` objects. A brief look at these two classes can be a scary experience. It certainly isn’t obvious how to proceed unless you already know one or two things about 3D computer graphics[^notObvious]. Let us instead take a closer look at 3D geometry in general and see where that gets us.
+It takes two arrays of `SCNGeometrySource` objects and `SCNGeometryElement` objects. Looking at the documentation for these two classes can be a scary experience. It certainly isn’t obvious how to proceed unless you already know one or two things about 3D computer graphics[^notObvious]. Let us instead take a closer look at 3D geometry in general and see where that gets us.
 
 [^notObvious]: If you have some familiarity with for example OpenGL I hope that you will see the strong similarities in the rest of this article. 
 
@@ -203,7 +203,7 @@ If you add this to your scene you should first be glad that you managed to creat
 </figure>
 <figcaption>The first rendering of the custom geometry. It's all black.</figcaption>
 
-The problem with our geometry is that is has no normals so when light from the light sources hit our surface we can’t calculate the angle to determine how lit that up it should become. One of the other kinds of geometry sources we could create was a _source with normals_. It is created just like the source with vertices but first we need some normals.
+The problem with our geometry is that is has no normals so when light from the light sources hit our surface we can’t calculate the angle to determine how lit up it should become. One of the other kinds of geometry sources we could create was a _source with normals_. It is created just like the source with vertices but first we need some normals.
 
 # Normals
 
@@ -234,7 +234,9 @@ Now that our cube has proper normals we can give it proper lighting
 
 It may feel like we did very much for so little but what we learnt is a very powerful tool that can be used to generate _any_ geometry. Also, you may not have realized it but the entire discussion about triangles, front– and backside, surface normals and indices are very relevant when doing OpenGL.
 
-One secondary lesson to take away from this is that you should either create your geometry using 3D modeling software or have the program generate the vertices and normals for you. I have just started [a small project on GitHub that does the latter for 3D graphs][DRMesh]. Feel free to learn from it, use it to make graphs and give me feedback on how to improve it.
+One secondary lesson to take away from this is that you should either create your geometry using 3D modeling software or have the program generate the vertices and normals for you[^byHand]. I have just started [a small project on GitHub that does the latter for 3D graphs][DRMesh]. Feel free to learn from it, use it to make graphs and give me feedback on how to improve it.
+
+[^byHand]: You didn't have to figure out the cube indices by hand so maybe you never though of it as an issue.
 
 [Quadrilateral]: http://en.wikipedia.org/wiki/Quadrilateral (Wikipedia article about Quadrilaterals.)
 
