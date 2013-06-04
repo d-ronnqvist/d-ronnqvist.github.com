@@ -1,0 +1,10 @@
+
+.box-background {
+	padding: 50px;
+	background-color: white;
+	margin: 10px;	
+}
+
+.box-background img {
+	border: none !important;
+}
