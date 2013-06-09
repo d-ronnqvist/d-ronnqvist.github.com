@@ -760,7 +760,11 @@ top: -2px;
 .autoscaled-svg { 
 	position:absolute; top:0; left:0;
 	margin: 50px;
+	height:calc(100% - 100px);
+	height:-moz-calc(100% - 100px);
 	height:-webkit-calc(100% - 100px); 
+	width:calc(100% - 100px); 
+	width:-moz-calc(100% - 100px); 
 	width:-webkit-calc(100% - 100px);
 /*	background: rgba(25,250,120,0.5);*/
 }
@@ -978,7 +982,7 @@ screen and (max-device-width: 480px) {
 	-o-transform: rotate(-16.4deg) scale(0.55); 
     	margin-bottom: 70px;
     	top: 55px;
-/*    	right:-webkit-calc(-100% + 518px);*/
+/*    	right:calc(-100% + 518px);    	right:-moz-calc(-100% + 518px);    	right:-webkit-calc(-100% + 518px);*/
     }
     #DR-logo {
     
@@ -1049,7 +1053,11 @@ screen and (max-device-width: 480px) {
     .autoscaled-svg { 
     	position:absolute; top:0; left:0;
     	margin: 5px;
+    	height:calc(100% - 10px);
+    	height:-moz-calc(100% - 10px);
     	height:-webkit-calc(100% - 10px); 
+    	width:calc(100% - 10px); 
+    	width:-moz-calc(100% - 10px); 
     	width:-webkit-calc(100% - 10px);
     }
    
@@ -1066,6 +1074,8 @@ screen and (max-device-width: 480px) {
     	margin-bottom: -40px;
     	top: 40px;
 /*    	left: -250px;*/
+    	right:calc(-100% + 518px);
+    	right:-moz-calc(-100% + 518px);
     	right:-webkit-calc(-100% + 518px);
     }
     .title-header > h1 {
@@ -1144,7 +1154,11 @@ screen and (max-device-width: 480px) {
     .autoscaled-svg { 
     	position:absolute; top:0; left:0;
     	margin: 5px;
+    	height:calc(100% - 10px);
+    	height:-moz-calc(100% - 10px);
     	height:-webkit-calc(100% - 10px); 
+    	width:calc(100% - 10px); 
+    	width:-moz-calc(100% - 10px); 
     	width:-webkit-calc(100% - 10px);
 	}
 /*	
