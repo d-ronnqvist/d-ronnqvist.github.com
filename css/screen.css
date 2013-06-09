@@ -289,6 +289,8 @@ article {
 	-o-transform: rotate(-16.4deg);
 
 	top: 100px;
+	right: calc(-100% + 610px);
+	right: -moz-calc(-100% + 610px);
 	right: -webkit-calc(-100% + 610px);
 	position: relative;
 	width: 600px;
@@ -329,7 +331,9 @@ article {
 
 .post-footer {
 	bottom: 160px;
-/*	left: -webkit-calc(50% - 200px);*/
+/*	left: calc(50% - 200px);	left: -moz-calc(50% - 200px);	left: -webkit-calc(50% - 200px);*/
+	right: calc(-100% + 750px);
+	right: -moz-calc(-100% + 750px);
 	right: -webkit-calc(-100% + 750px);
 	
 	position: relative;
@@ -665,6 +669,8 @@ article > pre > code {
 /*	white-space: pre-line;*/
 	text-align: left;
 /*	width: 605px;*/
+	width: calc(100% - 5px);
+	width: -moz-calc(100% - 5px);
 	width: -webkit-calc(100% - 5px);
 	position: relative;
 	left: -5px;
@@ -878,6 +884,8 @@ screen and (max-device-width: 480px) {
 		margin-bottom: 80px;
 		top: 60px;
 /*		left: -200px;*/
+		right: calc(-100% + 550px);
+		right: -moz-calc(-100% + 550px);
 		right: -webkit-calc(-100% + 550px);
 	}
 	#DR-logo {
