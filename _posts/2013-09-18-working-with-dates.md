@@ -176,7 +176,7 @@ Another common date and time problem is to calculate the time between two dates.
 
 If you only pass the day calendar unit you will get the entire interval as days (97 days). 
 
-# When is the first Monday in May? What are the next 3 Wednesdays?
+# When is the first Monday in May? When is the next Wednesday?
 
 One last kind of common date problem is finding a date with a specific calendrical constraint, like being a monday. The first example (the first Monday in May) has three explicit pieces of information ("first", "Monday", "May") and one implicit piece (assumed this year). When creating date components for this it is important that you include *all* this information. 
 
