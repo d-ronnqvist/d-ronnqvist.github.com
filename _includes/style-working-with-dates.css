@@ -1,0 +1,20 @@
+table {
+	border-collapse: collapse;
+	margin: 20px auto;
+}
+
+table th {
+	border-bottom: 1px solid #777987;
+	font-weight: 500;
+}
+
+table td,
+table th {
+	padding: 0 12px;
+}
+
+table td:first-child,
+table th:first-child {
+	border-right: 1px solid #777987;
+}
+
