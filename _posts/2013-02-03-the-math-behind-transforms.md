@@ -27,7 +27,7 @@ In "normal" math, that everyone should be familiar with, we have numbers. Someti
 Addition of two numbers can be illustrated as drawing an arrow with the length of the first number from origo and another arrow with the length of the second number beginning at the end of the first arrow. The sum of the two numbers is the arrow that goes from origo to the end of the second arrow. This can be seen in the image below (with <span class="math">a = 2</span> and <span class="math">b = 3</span>). 
 
 <figure>
-<div style="margin-bottom: 45%;">
+<div role="img" aria-label="An illustration of how addition works. This is shown by drawing an arrow A and an arrow B and that start where A ends and then a third arrow with the length of A plus B." style="margin-bottom: 45%;">
 <div style="margin: auto; width: 100%; height: 0px;">
 <svg class="autoscaled-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 300 100" width="100%">
 <line x1="10" y1="30" x2="280" y2="30" stroke="#222E39" stroke-width="2"></line>
@@ -51,7 +51,7 @@ Addition of two numbers can be illustrated as drawing an arrow with the length o
 The same works for negative numbers (for example <span class="math">a = 4</span> and <span class="math">b = -6</span>) as can be seen below. 
 
 <figure><div style="margin-bottom: 50%;">
-<div style="margin: auto; width: 100%; height: 0px;">
+<div role="img" aria-label="An illustration of how subtraction works. This is shown by drawing an arrow A and an arrow B in the other direction and then a third arrow with the length of A minus B." style="margin: auto; width: 100%; height: 0px;">
 <svg class="autoscaled-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 300 100" width="100%">
 <line x1="10" y1="30" x2="280" y2="30" stroke="#222E39" stroke-width="2"></line>
 <line x1="30" y1="30" x2="280" y2="30" stroke="#222E39" stroke-width="10" stroke-dasharray="2, 23"></line>
@@ -76,7 +76,7 @@ In a similar fashion we can represent multiplication as taking either of the arr
 It gets a bit silly drawing numbers like this when we all know how to add simple numbers so let's take things one step further. If we call the line that we drew arrows along an _axis_ and we add another axis perpendicular to the one we already had then we get a _plane_. Any point on this plane can now be defined by two coordinates, one for each axis. We call the horizontal axis the x-axis and the vertical axis the y-axis. Now we can describe any point on this plane by its x and y value. This plane is just like the screen of our devices. 
 
 <figure>
-<div style="margin-bottom: 100%;">
+<div role="img" aria-label="An arrow in a 2 dimensinal coordinate system (x,y) that point to the coordinate x=3, y=4." style="margin-bottom: 100%;">
 <div style="margin: auto; width: 100%; height: 0px;">
 <svg class="autoscaled-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 300 300" width="100%">
 <line x1="10" y1="225" x2="280" y2="225" stroke="#222E39" stroke-width="2"></line>
@@ -104,7 +104,7 @@ The arrow in this plane is unlike the arrows along the line above since they req
 Just as we did with the scalars we can represent the addition of two vectors as placing either of them at the point of the other. The result of the addition is the vector that points to the same point as the second vector now does. You may notice that vector addition works by adding the two x components together into a new x component and the y components together into a new y component. It works in both directions, adding either vector to the other, you can try it on a piece of paper if you want to. 
 
 <figure>
-<div style="margin-bottom: 100%;">
+<div role="img" aria-label="An illustration of how addition works in a 2 dimensional coordinate system. This is shown by drawing a 2 dimensional arrow A to one point and another 2 dimensional that start where the first arrow ends. A third arrow is drawn from where the first arrow starts to where the second arrow ends.." style="margin-bottom: 100%;">
 <div style="margin: auto; width: 100%; height: 0px;">
 <svg class="autoscaled-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 300 300" width="100%">
 <line x1="10" y1="225" x2="280" y2="225" stroke="#222E39" stroke-width="2"></line><line x1="30" y1="225" x2="280" y2="225" stroke="#222E39" stroke-width="10" stroke-dasharray="2, 23"></line><line x1="80" y1="225" x2="280" y2="225" stroke="#222E39" stroke-width="20" stroke-dasharray="2, 123"></line><path d="M290 225 l-12 -8 l0 16 Z"></path><line x1="81" y1="300" x2="81" y2="30" stroke="#222E39" stroke-width="2"></line><line x1="81" y1="276" x2="81" y2="40" stroke="#222E39" stroke-width="10" stroke-dasharray="2, 23"></line><line x1="81" y1="226" x2="81" y2="40" stroke="#222E39" stroke-width="20" stroke-dasharray="2, 123"></line><path d="M81 20 l-8 12 l16 0 Z"></path><text x="20" y="250" fill="#222E39" style="word-spacing: 6px;" font-family="Avenir Next" font-weight="500">-2 -1</text><text x="101" y="250" fill="#222E39" style="word-spacing: 11px;" font-family="Avenir Next" font-weight="500">1&nbsp;2 3&nbsp;4 5&nbsp;6 7</text><text x="65" y="40" fill="#222E39" style="writing-mode: tb; glyph-orientation-vertical: 0;" font-family="Avenir Next" font-weight="500" letter-spacing="3px">7654321</text><text x="59" y="256" fill="#222E39" style="word-spacing: 9px;" font-family="Avenir Next" font-weight="500">-1</text><text x="59" y="280" fill="#222E39" style="word-spacing: 9px;" font-family="Avenir Next" font-weight="500">-2</text><line x1="81" y1="225" x2="176" y2="154" stroke="#4594D9" stroke-width="3"></line><path d="M180 151 l-12 -7 l0 14 Z" fill="#4594D9" transform="rotate(-36.86989 180 151)"></path><line x1="180" y1="151" x2="105" y2="101" stroke="#4594D9" stroke-width="3"></line><path d="M105 101 l-12 -7 l0 14 Z" fill="#4594D9" transform="rotate(-146.3099 105 101)"></path><text x="150" y="172" fill="#4594D9" font-family="Avenir Next" font-size="20" font-weight="500" style="writing-mode: tb; glyph-orientation-vertical: 0;" letter-spacing="-21px">→a</text><text x="147" y="90" fill="#4594D9" font-family="Avenir Next" font-size="20" font-weight="500" style="writing-mode: tb; glyph-orientation-vertical: 0;" letter-spacing="-17px">→b</text><line x1="81" y1="225" x2="105" y2="101" stroke="#4594D9" stroke-width="3"></line><circle cx="105" cy="101" r="4" fill="black"></circle><path d="M105 101 l-12 -7 l0 14 Z" fill="#4594D9" transform="rotate(-78.69 105 101)"></path><text x="46" y="154" fill="#4594D9" stroke="white" stroke-width="4" font-family="Avenir Next" font-size="20" font-weight="500" letter-spacing="5px">→→</text><text x="46" y="154" fill="#4594D9" font-family="Avenir Next" font-size="20" font-weight="500" letter-spacing="5px">→→</text><text x="50" y="165" fill="#4594D9" stroke="white" stroke-width="4" font-family="Avenir Next" font-size="20" font-weight="500">a+b</text><text x="50" y="165" fill="#4594D9" font-family="Avenir Next" font-size="20" font-weight="500">a+b</text>
@@ -136,7 +136,7 @@ Matrix multiplication on the other hand is where things get interesting. In matr
 The best way to understand matrix multiplication is to start with the empty result and fill in the value for each row and column one at a time. The resulting value for the first row and first column is the same as the dot product of the first row of <span class="math">M<sub>A</sub></span> and the first column of <span class="math">M<sub>B</sub></span>. Since we are calculating the dot product of <span class="math">M<sub>A</sub></span>’s rows and <span class="math">M<sub>B</sub></span>’s columns they need to have the same number of elements, i.e. <span class="math">M<sub>A</sub></span> needs to have the same number of columns and <span class="math">M<sub>B</sub></span> has rows. (No, that was not a typo. The number of elements in each row is the same as the number of columns and vice versa.) 
 
 <figure class="matrixFigure" style="width: 590px;">
-<div style="margin: 20px; width: 560px; height: 220px; display: inline-block; padding: 45px 0px 5px;">
+<div role="math" aria-label="An illustration of matrix multiplication. By hovering or tapping the cells in the matrix called C (to the right) the components that are part of the multiplication light up. For example: C 3 2 is equal to A 3 1 times B 1 2 plus A 3 2 times B 2 2. The first number is the row and the second number is the column."  style="margin: 20px; width: 560px; height: 220px; display: inline-block; padding: 45px 0px 5px;">
 <table id="matrixOne" class="matrixTable" style="margin-left: 50px;"><tbody><tr><td>A<sub>1,1</sub></td>
 <td>A<sub>1,2</sub></td>
 </tr><tr><td>A<sub>2,1</sub></td>
@@ -176,7 +176,7 @@ If we think of a  _vector_ as a matrix with only one column then we can multiply
 
 Before actually changing the points of our view, let us figure out how we can multiply a matrix with a vector and have it be transformed into the exact same vector. We could just multiply it with the scalar 1 but we really want to use a matrix for this. For each row-column combination in the matrix we put a value at <span class="math">i, j</span> where <span class="math">i</span> is the row and <span class="math">j</span> is the column. Since our vector has three rows we need to have three columns and since we want the result to have three rows we need to have three rows as well leaving us with a matrix with three rows and three columns, often referred to as a 3×3 matrix. 
 
-<figure class="matrixFigure"><div style="margin: auto; width: 500px; height: 160px; display: block; padding: 55px 0 5px;">
+<figure class="matrixFigure"><div role="math" aria-label="An illustration of how a matrix multiplied with a vector gives a new vector of the same size." style="margin: auto; width: 500px; height: 160px; display: block; padding: 55px 0 5px;">
 <table class="matrixTable" style="margin-left: 70px"><tbody><tr><td>M<sub>1,1</sub></td>
 <td>M<sub>1,2</sub></td>
 <td>M<sub>1,3</sub></td>
@@ -201,7 +201,7 @@ Before actually changing the points of our view, let us figure out how we can mu
 
 This matrix multiplication can also be described by these three equations.
 
-<figure class="matrixFigure"><div style="margin: auto; width: 520px; height: 160px; display: block; padding: 45px 0 5px;">
+<figure class="matrixFigure"><div role="math" aria-label="The three equations that are used to calculate the new vector in a matrix and vector multiplication." style="margin: auto; width: 520px; height: 160px; display: block; padding: 45px 0 5px;">
 <span style="font-size: 95px; line-height: 0; font-weight: 100; margin-left: 30px;">{</span>
 <table class="matrixTable" style="border: none;"><tbody><tr><td>x<sub>new</sub></td>
 <td>=</td>
@@ -251,7 +251,7 @@ Don’t run off being scared that we introduced a fourth dimension or something.
 
 Now we have a matrix of ones along the diagonal (we still want the fourth value of the vector to keeps its value after the multiplication) and three constants along the very right edge of the matrix. These three constants reflect the translation along each of the three axis. 
 
-<figure class="matrixFigure"><div style="margin: auto; width: 520px; height: 210px; display: block; padding: 65px 0 5px;">
+<figure class="matrixFigure"><div role="math" aria-label="A translation matrix multiplied with a point result in a translated point. The matrix has ones along the diagonal and the translation values in the last column. Everything else is zeroes." style="margin: auto; width: 520px; height: 210px; display: block; padding: 65px 0 5px;">
 <table class="matrixTable" style="margin-left: 90px"><tbody><tr><td>1</td>
 <td>0</td>
 <td>0</td>
@@ -302,7 +302,7 @@ The common flat rotation is done around the z-axis so z-values for the rotated p
 To figure out how the x and y values change in a rotation around the z-axis we look at the two vectors (1,0,0) and (0,1,0). If we draw a circle in the center of our x,y-plane with the same radius as the distance to our points, we expect the points to move along the edge of this circle. We can easily imagine a counter-clockwise rotation of θ for both of these vectors and draw two new vectors that point to our expected end result. Basic trigonometry (sine and cosine) helps us express how the new points relate to the old points. 
 
 <figure>
-<div style="margin-bottom: 95%;">
+<div role="img" aria-label="An illustration of how rotation works. This is shown by having a cirle in a 2 dimensional coordinate system and two arrows that point from the center to the edge of the circle. One arrow point along the x axis and the other point along the y axis. When these two arrows are rotated they still point to the edge of the circle but they are no longer aligned with the two axis." style="margin-bottom: 95%;">
 <div style="margin: auto; width: 100%; height: 0px;">
 <svg class="autoscaled-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 350 300" width="100%">
 <g transform="translate(35, 0)">
@@ -338,7 +338,7 @@ To figure out how the x and y values change in a rotation around the z-axis we l
 
 The transformed x-only-vector gives the values for the first column of our rotation matrix and the transformed y-only-vector gives us the values for the second column of our rotation matrix. The third or fourth columns don’t alter the transformed vector so these are the same as for an identity matrix. The resulting rotation matrix is thus:
 
-<figure class="matrixFigure"><div style="margin: auto; margin-top: 15px; width: 520px; height: 205px; display: block; padding: 45px 45px 5px;">
+<figure class="matrixFigure"><div role="math" aria-label="An 2 dimensional rotation matrix multiplied with a vector resulting in a rotated vector. The rotation matrix has sine and cosine of the angle in the four cells in the upper left." style="margin: auto; margin-top: 15px; width: 520px; height: 205px; display: block; padding: 45px 45px 5px;">
 <table class="matrixTable" style="margin-left: 10px"><tbody><tr><td>cos θ</td>
 <td>-sin θ</td>
 <td>0</td>
@@ -376,7 +376,7 @@ To verify that this matrix works for a vector with both x and y components is le
 
 By applying the same techniques to rotations around the x-axis and y-axis we can figure out their rotation transforms (seen below).
 
-<figure class="matrixFigure"><div style="margin: auto; width: 520px; height: 500px; display: block; padding: 45px 45px 5px;">
+<figure class="matrixFigure"><div role="math" aria-label="The three different rotation matrixes for a rotation around each axis." style="margin: auto; width: 520px; height: 500px; display: block; padding: 45px 45px 5px;">
 
 <span style="margin-left: 90px">R<sub>x</sub>(θ) = </span>
 <table class="matrixTable" style="margin-bottom: 30px"><tbody><tr><td>1</td>
@@ -441,7 +441,7 @@ One way of thinking about it is that the views we are transforming are a few hun
 Another way of thinking about this is to image that the screen is a certain distance, d, from where we are looking (abstractly speaking). The distance is in some made up unit which is not at all related to how far our eyes are from the screen in real life. Since the screen is two dimensional everything needs to be projected onto that screen. The point we are looking from and the point we are looking at stays fixed in 3D space but we can decide how far off the screen is. If we move the screen closer to us then we get more perspective  and if we move it away from us then we get less perspective.
 
 <figure>
-<div style="margin-bottom: 60%;">
+<div role="img" aria-label="An illustration of how perspective works. This is shown by drawing a distant object and then a screen that is a distance 'd' from us. If you look from the side and draw a straight line to the top of the object then the object on screen will look as high as the point where the line intersects the screen." style="margin-bottom: 60%;">
 <div style="margin: auto; width: 100%; height: 0px;">
 <svg class="autoscaled-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 360 180" width="100%">
 <line x1="10" y1="100" x2="350" y2="100" stroke="#222E39" stroke-width="2"></line><path d="M355 100 l-12 -8 l0 16 Z"></path><line x1="50" y1="100" x2="300" y2="40" stroke="rgb(255,171,25)" stroke-width="2" stroke-dasharray="8,10"></line><line x1="170" y1="125" x2="170" y2="20" stroke="rgb(255,171,25)" stroke-width="2"></line><line x1="300" y1="100" x2="300" y2="40" stroke="#4594D9" stroke-width="6"></line><line x1="170" y1="100" x2="170" y2="70" stroke="#4594D9" stroke-width="4"></line><text x="360" y="115" fill="#222E39" font-family="Avenir Next" font-size="20" font-weight="500">z</text><text x="290" y="115" fill="#4594D9" font-family="Avenir Next" font-size="20" font-weight="500" transform="rotate(45 290 115)">object</text><text x="170" y="115" fill="#4594D9" font-family="Avenir Next" font-size="20" font-weight="500" transform="rotate(45 170 115)">projection</text><text x="90" y="40" fill="rgb(255,171,25)" font-family="Avenir Next" font-size="20" font-weight="400">“screen”</text><circle cx="50" cy="100" r="5" fill="#222E39"></circle><text x="40" y="85" fill="#222E39" font-family="Avenir Next" font-size="20" font-weight="500">us</text><path d="M50 130 q0 10 30 10 q30 0 30 10 q0 -10 30 -10 q30 0 30 -10" stroke="#222E39" stroke-width="2" fill="none"></path><text x="103" y="170" fill="#222E39" font-family="Avenir Next" font-size="20" font-weight="500">d</text>
@@ -456,7 +456,7 @@ One of the truly powerful things with transformation matrices is how they can be
 
 Lets take an example. We want to translate, then rotate and then translate the four corners of a small view (the same transform we did in the previous post). The resulting matrix of the multiplication is
 
-<figure class="matrixFigure"><div style="margin: auto; margin-top: 15px; width: 480px; height: 200px; display: block; padding: 45px 0 5px;">
+<figure class="matrixFigure"><div role="math" aria-label="An example of a matrix that does both translate in one direction, then rotate and then translate back in the other direction."  style="margin: auto; margin-top: 15px; width: 480px; height: 200px; display: block; padding: 45px 0 5px;">
 <span style="margin-left: 10px">T<sub>x</sub>(-c) × R<sub>z</sub>(θ) × T<sub>x</sub>(c) = </span>
 <table class="matrixTable"><tbody><tr><td>cos θ</td>
 <td>-sin θ</td>

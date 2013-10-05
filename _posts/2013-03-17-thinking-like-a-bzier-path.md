@@ -27,7 +27,7 @@ Construction of a Bézier path is very similar to using pen and paper to draw th
  Lets start by drawing the full path. In my example I’m going to draw a rectangle with a smaller rounded corner in the upper left and a bigger rounded corner in the lower right.
 
 <figure>
-<div style="margin-bottom: 60%;">
+<div role="img" aria-label="The shape of a rectangle where the upper left corner has a small corner radius and the lower right corner has an almost twice as big corner radius." style="margin-bottom: 60%;">
 <div style="margin: auto; width: 100%; height: 0px;">
 <svg class="autoscaled-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 370 220" width="100%">
 <path d="M10 210 L 10 40 
@@ -45,7 +45,7 @@ The path consists of a few straight lines and two arcs. We start by sketching ou
 Now we have all the necessary points and can start translating out sketch into a Bézier path. You can visualize the path as we go on another sheet of paper. It should look something like this for now:
 
 <figure>
-<div style="margin-bottom: 60%;">
+<div role="img" aria-label="The different parts of same rectangular shape with two rounded corners above. First the base rectangle with no rounded corners. Then a small circle in the upper left corner and a large circle in the lower right corner. Finally all the intersections between the rectangle and the circles are highlighted." style="margin-bottom: 60%;">
 <div style="margin: auto; width: 100%; height: 0px;">
 <svg class="autoscaled-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 370 220" width="100%">
 
@@ -275,7 +275,7 @@ There is a little bit of math involved in how the path is drawn between the four
 Just like when adding a line to a path, the _curve_ starts off at the current point and ends up at the point we are moving to. Between the start and end points the curve first approaches one of the control points then slowly starts to steer off towards the second control point until it again starts steering off towards the end point. You can see an example curve in **Figure 5** below. Try dragging the two control points around to see how the curve changes.
 
 <figure>
-<div style="margin-bottom: 70%;">
+<div role="img" aria-label="A Bézier curve with fixed start and end points but two draggable handles for the two control points." style="margin-bottom: 70%;">
 <div style="margin: auto; width: 100%; height: 0px;">
 <svg id="interactive-curve" xmlns="http://www.w3.org/2000/svg" version="1.1" width="550" height="380" onmousemove="drag(event)" ontouchmove="dragTouch(event)" onmouseup="deselectElement()" ontouchend="deselectElement()">
 
@@ -321,7 +321,7 @@ Given a variable <span class="math">t</span>, that expresses how far long from s
  At this point the curve takes most of its value from the start point (that it is very close to), a little bit of its value from the first control point and almost nothing from the rest. Unless you are calculating the exact point for a given <span class="math">t</span> there is no need to do these calculations yourself but having seen them can be helpful when trying to understand curves. 
 
 <figure>
-<div style="margin-bottom: 70%;">
+<div role="img" aria-label="The same Bézier curve as above but with a slider to control the current point. This is an illustration to show the interpolation." style="margin-bottom: 70%;">
 <div style="margin: auto; width: 100%; height: 0px;">
 <svg id="interactive-slider" xmlns="http://www.w3.org/2000/svg" version="1.1" width="550" height="380" onmousemove="drag(event)" ontouchmove="dragTouch(event)" onmouseup="deselectElement()" ontouchend="deselectElement()">
 
@@ -367,7 +367,7 @@ Given a variable <span class="math">t</span>, that expresses how far long from s
 Curves fit nicely in the list of things that we can break down a path into. Just like a line it goes from the current point _to another point_. On its way there it approaches (but doesn't reach) the two control points. Just remember that two control points can at most do an “S”-shape. If the curve wiggles three times it’s actually more than one curve and need to be broken down into more than one curve. With curves added to our repertoire we would be able to break down a path that looks like this. 
  
  <figure>
-<div style="margin-bottom: 65%;">
+<div role="img" aria-label="A shape similar to the first rounded rectangle. This time the upper left corner has a small corner radius and the entire bottom (left and right) is a S shape created using a Bézier curve." style="margin-bottom: 65%;">
 <div style="margin: auto; width: 100%; height: 0px;">
 <svg class="autoscaled-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 370 240" width="100%">
  <path d="M10 210 L 10 40 
@@ -386,7 +386,7 @@ And if we did, our breakdown would look something like this. The method for crea
 - `CGPathAddCurveToPoint( ... )` for CGPath.
 
 <figure>
-<div style="margin-bottom: 73%;">
+<div role="img" aria-label="A breakdown of the path from above with the rectangle, the circle in the upper left corner and the curve that make up the entire shape." style="margin-bottom: 73%;">
 <div style="margin: auto; width: 100%; height: 0px;">
 <svg class="autoscaled-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 370 270" width="100%">
 

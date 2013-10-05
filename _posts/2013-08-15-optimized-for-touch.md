@@ -22,7 +22,7 @@ There are many ways for you to achieve the same thing with your own customized c
               forState:UIControlStateNormal];
               
 <figure>
-<div style="margin-bottom: 46%;">
+<div role="img" aria-label="An icon that looks like a gear. To the left, only the icon. To the right, the gear together with a minimal tappable area." style="margin-bottom: 46%;">
 <div style="margin: auto; width: 100%; height: 0px;">
 <svg class="autoscaled-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 217 99" width="100%">
 <path d="M36.1521201,52.3932622 C35.7787193,52.3932622 35.4120985,52.364445 35.0543921,52.3089289 L33.2067637,55.2944117 L29.8271816,53.6460794 L31.0784461,50.2539848 C30.6424803,49.8055166 30.2662914,49.2994043 29.9626151,48.7482893 L26.2724738,49.2175933 L25.4266287,45.5538356 L29.1914368,44.2756972 C29.2789656,43.7347476 29.428941,43.2145217 29.6337939,42.7225284 L26.7517507,39.8653114 L29.1180769,36.9431419 L32.6991597,39.2908096 C33.0613567,39.0884377 33.4433935,38.9169159 33.8416444,38.7798397 L34.2720553,34.507041 L38.0321849,34.507041 L38.4625957,38.7798397 C38.8608373,38.9169126 39.2428655,39.0884296 39.6050805,39.2908096 L43.1861633,36.9431419 L45.5524894,39.8653114 L42.6704467,42.7225281 C42.8752988,43.2145209 43.0252751,43.73475 43.1128031,44.2756971 L46.8776115,45.5538356 L46.0317664,49.2175933 L42.3416267,48.7482895 C42.0379488,49.2994037 41.6617593,49.8055151 41.2257929,50.2539817 L42.4770586,53.6460794 L39.0974765,55.2944117 L37.2498481,52.3089288 C36.8921394,52.3644452 36.5255197,52.3932622 36.1521201,52.3932622 Z M36.1521201,47.7272914 C37.450034,47.7272914 38.5022011,46.6827784 38.5022011,45.3943061 C38.5022011,44.1058338 37.450034,43.0613207 36.1521201,43.0613207 C34.8542062,43.0613207 33.8020391,44.1058338 33.8020391,45.3943061 C33.8020391,46.6827784 34.8542062,47.7272914 36.1521201,47.7272914 Z M36.1521201,47.7272914" id="Oval 1" fill="#303841"></path>
@@ -97,7 +97,7 @@ In some cases the touch area can't be in all directions as it might overlap with
 In my own experience, we as users make *slight* adjustments (only a few points) when trying to hit two small elements that are close to each other compared to if the same elements are far from each other. If there is plenty of space we tend to aim for the center but if they are close to each other we tend to over-compensate slightly and aim for the edge that is furthest away from the other element to avoid hitting it. 
 
 <figure>
-<div style="margin-bottom: 73%;">
+<div role="img" aria-label="An illustration that when two small icons are far from each other the user tend to aim for the center of each icon but if two small icons are close to each other then the user aims for the side that is furthest away from the other icon." style="margin-bottom: 73%;">
 <div style="margin: auto; width: 100%; height: 0px;">
 <svg class="autoscaled-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 180 131" width="100%">
 <path d="M38.9999997,41.5 L31.3587923,45.5172214 L32.8181327,37.0086107 L26.6362652,30.9827794 L35.1793971,29.7413886 L39.0000002,22 L42.8206055,29.7413906 L51.3637368,30.9827855 L45.1818667,37.0086123 L46.6412074,45.5172216 L38.9999997,41.5 Z M38.9999997,41.5" id="Star 1" fill="#FCB829"></path>
@@ -141,7 +141,7 @@ For users who do this we can extend the touch targets more on the side that is f
 The image below shows the break down of the nudge back and forth.
 
 <figure>
-<div style="margin-bottom: 79%;">
+<div role="img" aria-label="Two icons that are close to each other and have tappable areas that overlap. The tappable areas are then moved apart so that they don't overlap. The icons are then moved back together so that they end up in the initial position." style="margin-bottom: 79%;">
 <div style="margin: auto; width: 100%; height: 0px;">
 <svg class="autoscaled-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 280 220" width="100%">
 <path d="M80,6 L80,50 L124,50 L124,6 L80,6 Z M80,6" id="Rectangle 1" stroke="#FCB829" stroke-width="2" fill-opacity="0.502154182" fill="#FCB829"></path>

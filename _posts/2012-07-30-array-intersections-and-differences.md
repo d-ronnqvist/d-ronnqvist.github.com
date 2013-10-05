@@ -18,7 +18,7 @@ Imagine that we have two arrays: <span class="math">(3,4,5,6,7)</span> and  <spa
 The intersection of two collections is the entries that exist in both of them.
 
 <figure>
-<div style="margin-bottom: 67%;">
+<div role="img" aria-label="The intersection of (3,4,5,6,7) and (0,2,4,6,8) is (4,6) because both collections contain 4 and 6" style="margin-bottom: 67%;">
 <div style="margin: auto; width: 100%; height: 0px;">
 <svg class="autoscaled-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 300 220" width="100%">
 <defs>
@@ -63,7 +63,7 @@ For the relative complement (the difference) the order matters. It helps to thin
 
 
 <figure>
-<div style="margin-bottom: 67%;">
+<div role="img" aria-label="The difference of (3,4,5,6,7) and (0,2,4,6,8) is (3,5,7) because those are the the elements in the first collection that don't exist in the second collection" style="margin-bottom: 67%;">
 <div style="margin: auto; width: 100%; height: 0px;">
 <svg class="autoscaled-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 300 220" width="100%">
 <defs>
@@ -108,7 +108,7 @@ The union of two sets is the entires for both the first and the second set. Sets
 
 
 <figure>
-<div style="margin-bottom: 67%;">
+<div role="img" aria-label="The union of (3,4,5,6,7) and (0,2,4,6,8) is (0,2,3,4,5,6,7,8) because that is all the elements from the first and second collection." style="margin-bottom: 67%;">
 <div style="margin: auto; width: 100%; height: 0px;">
 <svg class="autoscaled-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 300 220" width="100%">
 

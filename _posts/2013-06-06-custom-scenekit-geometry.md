@@ -24,7 +24,7 @@ It takes two arrays of `SCNGeometrySource` objects and `SCNGeometryElement` obje
 Geometry in 3D (and 2D as well for that matter) can be defined through a series of points. A cube, for example, has one point for each corner, 8 different points in total (four on top and for below).
 
 <figure>
-<div style="margin-bottom: 90%;">
+<div role="img" aria-label="The eight corners of a cube in 3D. Only the corners are shown." style="margin-bottom: 90%;">
 <div style="margin: auto; width: 100%; height: 0px;">
 <svg class="autoscaled-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 384 347" width="100%">
 <path d="M66,64 C73.1797021,64 79,58.1797021 79,51 C79,43.8202979 73.1797021,38 66,38 C58.8202979,38 53,43.8202979 53,51 C53,58.1797021 58.8202979,64 66,64 Z M66,64" id="Oval 1" fill="#FFB900"></path>
@@ -48,7 +48,7 @@ These points in themselves do not make a cube. It is only through interpreting t
 Triangles are a central piece to 3D computer graphics since they are the smallest shape with a surface. A single point is just a point. Two points form a line. Three points form a surface. Four points (in a plane) form a bigger surface but that is really just two triangles. 
 
 <figure>
-<div style="margin-bottom: 65%;">
+<div role="img" aria-label="Two triangles that together form a surface with four corners. If there are four points 1,2,3,4 then the first triangle is the surface between 1,2,3 and the second triangel uses 2,3,4." style="margin-bottom: 65%;">
 <div style="margin: auto; width: 100%; height: 0px;">
 <svg class="autoscaled-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 294 192" width="100%">
 <path d="M0,187 L67.3046875,0.05859375 L243.632812,15.21875 L0,187 Z M0,187" id="Triangle 1" fill="#4AA5E3"></path>
@@ -68,7 +68,7 @@ Applied to our cube we will have two triangles for each side of the cube for a t
 We start by giving each point a number from 0 to 7 (we are programmers after all). The bottom surface has one triangle with the points <span class="math">0, 1, 2</span> and another with the points <span class="math">1, 2, 3</span>. In the same way the back of our cube has one triangle with the points <span class="math">2, 3, 6</span> and another with the points <span class="math">3, 6, 7</span>. 
 
 <figure>
-<div style="margin-bottom: 90%;">
+<div role="img" aria-label="The same eight corners of the cube as before but now they have indexes from 0 to 7. The bottom corners have 0 to 3 and the top corners have 4 to 7. The bottom of the cube has a surface defined by one triangle between 0,1,2 and another triangle between 1,2,3." style="margin-bottom: 90%;">
 <div style="margin: auto; width: 100%; height: 0px;">
 <svg class="autoscaled-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 384 347" width="100%">
 <path d="M66,64 C73.1797021,64 79,58.1797021 79,51 C79,43.8202979 73.1797021,38 66,38 C58.8202979,38 53,43.8202979 53,51 C53,58.1797021 58.8202979,64 66,64 Z M66,64" id="Oval 1" fill="#FFB900"></path>
@@ -193,7 +193,7 @@ After we have created both the source and the element with can finally create ou
 If you add this to your scene you should first be glad that you managed to create your custom 3D object and secondly be surprised of how bad it renders. It’s all black!
 
 <figure>
-<div style="margin-bottom: 85%;">
+<div role="img" aria-label="A filled cube in 3D but everythin is black so you can barely distinguish the individual sides." style="margin-bottom: 85%;">
 <div style="margin: auto; width: 100%; height: 0px;">
 <svg class="autoscaled-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 529 457" width="100%">
 <path d="M58.7863275,38.5143717 L295.190349,21.0473919 L480.688863,55.8287011 L435.993388,332.531057 L190.274995,433.677433 L91.8574127,282.188871 L58.7863275,38.5143717 Z M58.7863275,38.5143717" fill="#000000"></path>

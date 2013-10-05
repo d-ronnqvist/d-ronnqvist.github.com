@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<a id="DR-logo" class="post-logo" href="/">
+<a id="DR-logo" class="post-logo" href="/" aria-label="D R Logo. Goes back to the main page">
  <svg width="190px" height="130px" xmlns="http://www.w3.org/2000/svg" version="1.1">
  <path id="D" d="M1,1 L1,44 L24,44 L24,24 L33,24 C33,24 46,23 56,32 C61,37 66,44 66,55 C66,66 61,73 57,77 C49,86 38,87 34,87 C29,87 24,87 24,87 L24,67 L1,67 L1,109 C1,109 21,109 35,109 C49,110 63,103 73,93 C84,83 89,69 89,55 C89,41 84,26 71,15 C58,3 44,1 35,1 Z"></path>
  <path id="R" d="M66,1 C66,1 81,8 90,24 C94,24 122,24 125,24 C128,24 134,25 138,31 C142,36 143,44 139,51 C135,57 128,59 125,59 C121,59 101,59 101,59 L152,122 L182,122 C182,122 147,78 145,76 C148,74 155,69 160,60 C165,51 166,42 164,32 C162,22 155,13 146,7 C137,1 130,1 126,1 C121,1 66,1 66,1 Z M66,1"></path>
@@ -13,7 +13,7 @@ layout: default
 	<header class="title-header">
 		<div id="top-blue-rect"></div>
 		<h1>{{ page.title }}</h1>
-		<div id="top-orange-rect"><time pubdate="{{ page.date }}"><p>{{ page.date | date: "%B" }}<br />{{ page.date | date: "%Y" }}</p></time></div> 
+		<div id="top-orange-rect"><time pubdate="{{ page.date }}"><p aria-label="Posted on {{ page.date | date: "%B %Y" }}">{{ page.date | date: "%B" }}<br />{{ page.date | date: "%Y" }}</p></time></div> 
 	</header>
 	{{ content }}
 </article>

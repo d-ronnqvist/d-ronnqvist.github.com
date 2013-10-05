@@ -47,14 +47,14 @@ Next, we create the replicator layer and center it in our view. I want the repli
 	[spinnerReplicator setPosition:CGPointMake(CGRectGetMidX([self frame]), 
 	                                           CGRectGetMidY([self frame]))];
 
-All Spinner markers combined should make a complete circle in the activity indicator so we want the angle between them to be <sup>2π</sup>&frasl;<sub><em>N</em></sub> with _N_ = number of markers. 
+All Spinner markers combined should make a complete circle in the activity indicator so we want the angle between them to be <span class="math" aria-label="2 pi, divided by capital N"><sup>2π</sup>&frasl;<sub><em>N</em></sub></span> with _N_ = number of markers. 
 
 	CGFloat angle = (2.0*M_PI)/(kDefaultNumberOfSpinnerMarkers);
 	CATransform3D instanceRotation = CATransform3DMakeRotation(angle, 0.0, 0.0, 1.0);
 	[spinnerReplicator setInstanceCount:kDefaultNumberOfSpinnerMarkers];
 	[spinnerReplicator setInstanceTransform:instanceRotation];
 
-Finally, to create the animation we set the alpha of the spinner marker to 0 and set the instance delay to <sup><em>T</em></sup>&frasl;<sub><em>N</em></sub> with _T_ = animation time and _N_ = number of markers. Now we apply an opacity animation from one to zero (yes it may seem backwards but its what I meant).
+Finally, to create the animation we set the alpha of the spinner marker to 0 and set the instance delay to <span class="math" aria-label="capital T, divided by capital N"><sup><em>T</em></sup>&frasl;<sub><em>N</em></sub></span> with _T_ = animation time and _N_ = number of markers. Now we apply an opacity animation from one to zero (yes it may seem backwards but its what I meant).
 
 	[spinnerReplicator addSublayer:marker];
 	[[self layer] addSublayer:spinnerReplicator];
