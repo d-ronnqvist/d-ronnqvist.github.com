@@ -443,4 +443,4 @@ The sample pull-to-refresh project shown above can be found [on GitHub][sampleco
 
 [peeve]: https://www.explosm.net/comics/2676/ (Cyanide & Happiness #2676 - My pet peeve)
 
-[samplecode]:
+[samplecode]: https://github.com/d-ronnqvist/blogpost-codesample-PullToRefresh (Sample project)
