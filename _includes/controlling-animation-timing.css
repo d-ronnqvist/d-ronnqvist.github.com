@@ -1,0 +1,26 @@
+
+figure code {
+	margin-left: 50px;
+	top: 25px;
+	position: relative;
+	display: block;
+}
+
+.autoscaled-svg {
+	margin-top: 65px;
+	margin-bottom: 35px;
+}
+
+@media screen and (device-width : 320px) {
+	.autoscaled-svg {
+		margin-top: 8px;
+		margin-bottom: 2px;
+	}
+	
+	figure code {
+		top: 2px;
+		margin-left: 5px;
+		font-size: 12px !important;
+		text-align: left;
+	}
+}
