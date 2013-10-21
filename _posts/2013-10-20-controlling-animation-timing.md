@@ -104,7 +104,7 @@ duration=1.5, beginTime=1.0, fillMode=back
 </figure>
 <figcaption>Fill mode can be used to display the fromValue before the animation starts</figcaption>
 
-The `autoreverses` property causes the animation to go from the start value back to the end value and do the same animation in reverse taking it back to the end value. This means that if effectively takes twice as long.
+The `autoreverses` property causes the animation to go from the start value back to the end value and do the same animation in reverse taking it back to the start value. This means that if effectively takes twice as long.
 
 <figure>
 <code>
@@ -166,7 +166,7 @@ duration=1.5, repeatCount=2.0
 </figure>
 <figcaption>Repeat count causes the animation to run more than once</figcaption>
 
-Similar to repeat count but rarely ever used is repeat duration. It will simply repeat the animation for a given duration (2 seconds shown below) passing a repeat duration less than the animation duration result in ... .
+Similar to repeat count, but rarely ever used, is repeat duration. It will simply repeat the animation for a given duration (2 seconds shown below). Passing a repeat duration that is less than the animation duration will cause the animation to end early (after the repeat duration).
  
 <figure>
 <code>
@@ -263,22 +263,22 @@ duration=3.0, speed=2.0
 </div>
 </div>
 </figure>
-<figcaption>A speed of 2 makes animation go twice as fast so 3 seconds only take 1.5</figcaption>
+<figcaption>A speed of 2 makes animation go twice as fast so 3 seconds only take 1.5 seconds</figcaption>
 
-If only a simple animation was configured then you could have just divided the beginTime and duration yourself to get the same result but the power of the `speed` property comes from two facts. 
+If only a simple animation was configured then you could have just divided the beginTime and duration yourself to get the same result but the power of the `speed` property comes from two facts: 
 
  1. Animation speed is hierarchical
  2. CAAnimation is not the only class which implement CAMediaTiming
 
 ### Hierarchical speed
 
-An animation with the speed 1.5 that is part of an animation group with speed 2.0 will effectively run 3 times as fast. 
+An animation with the speed 1.5 that is part of an animation group with speed 2 will effectively run 3 times as fast. 
 
 ### Other implementations of CAMediaTiming 
 
 CAMediaTiming is a protocol that CAAnimation implements but the same protocol is also implemented by CALayer, the base class of all Core Animation layers. This means that you can set the speed of a layer to 2.0 and all animations that are added to it will run twice as fast. This also works with the timing hierarchy so an animation with speed 3 on a layer with speed 0.5 will run at 1.5 times normal.
 
-Controlling the speed of an animation or a layer can also be used to pause the animation (by setting the speed to 0). This can be used together with timeOffset to control an animation from an external mechanism like a slider which I will show below. 
+Controlling the speed of an animation or a layer can also be used to pause the animation (by setting the speed to 0). This can be used together with `timeOffset` to control an animation from an external mechanism like a slider which will be shown later in this article. 
 
 The `timeOffset` property is very strange at first. As the name suggests it offsets the time that is used to calculate the state of the animation. This is best visualized. Below is an animation with a 3 second duration that is offset 1 second. 
 
@@ -316,13 +316,13 @@ duration=3.0, timeOffset=1.0
 
 The animation starts off one second into the transition from orange to blue and runs the final two seconds until it becomes completely blue. Then it jumps back to be completely orange and does the first second of the color transition. It is as if we cut away the first second of the animation and moved it to the end. 
 
-This property in itself has almost no use but it can be used together with a paused animation (speed = 0) to control the "current time". A paused animation will only render the first frame. If you look at the very first color in the offset animation (above) you can see that it's the color value one second into the color transition. By setting the time offset to another value you get that time into the transition. 
+This property in itself has almost no use but it can be used together with a paused animation (speed = 0) to control the "current time". A paused animation is stuck at the first frame. If you look at the very first color in the offset animation (above) you can see that it's the color value one second into the color transition. By setting the time offset to another value you get that time into the transition. 
 
-This means that you can use some external mechanism like a slider or a gesture recognizer to control the progression of the animation. 
+This means that you can use some external mechanism like a slider or a gesture recognizer to control the progression of the animation by setting the time offset.. 
  
 # Controlling animation timing 
 
-Used together, `speed` and `timeOffset` can control the current "time" of an animation. There is almost no code involved but the concept can be tricky (I hope the illustrations helped you overcome that part). For convenience I set the duration of the animation to 1.0. This is because the time offset is in absolute values. Doing this means that a time offset of 0 is at 0% into the animation (at the beginning) and a time offset of 1.0 is at 100% into the animation (at the end). 
+Used together, `speed` and `timeOffset` can control the current "time" of an animation. There is almost no code involved but the concept can be tricky (I hope the illustrations helps with that part). For convenience I set the duration of the animation to 1.0. This is because the time offset is in absolute values. Doing this means that a time offset of 0 is at 0% into the animation (at the beginning) and a time offset of 1.0 is at 100% into the animation (at the end). 
 
 ## Slider
 
@@ -343,17 +343,17 @@ Then in the action method for when the slider is dragged we set the current valu
 - (IBAction)sliderChanged:(UISlider *)sender {    self.myLayer.timeOffset = sender.value; // Update "current time"}
 {% endhighlight %}
 
-This very simple example looks like this
+This gives the effect that as we drag the slider the current value of the animation changes and updates the background color of the layer.
 
-<figure><div class="box-background"><img src="/images/slider.gif" alt="The color of the view changes as the value of the slider changes"></div>
+<figure><div class="box-background"><img src="/images/slider.gif" alt="The color of the layer changes as the value of the slider changes"></div>
 </figure>
-<figcaption>The color of the view changes as the value of the slider changes</figcaption>
+<figcaption>The color of the layer changes as the value of the slider changes</figcaption>
 
 ## Pull to refresh
 
-You can also use other things like scroll events to control animation timing. This can for example be used to create a very custom pull to refresh animation where the animation is progressing as the user pulls down until a threshold value where you start loading new data. The animation that the scroll event will control is the stroking a path (animating the `strokeEnd` property of a shape layer) and when it reaches a threshold it will start another animations to signal that new data is loading. 
+You can also use other mechanisms like scroll events to control animation timing. This can  be used to create a very custom pull to refresh animation where the animation is progressing as the user pulls down until a threshold value where you start loading new data. The animation that the scroll event in my example will control is the stroking a path (animating the `strokeEnd` property of a shape layer) and when it reaches a threshold it will start another animations to signal that new data is loading. 
 
-Instead of a slider to control the timing we use the amount that the scroll view is dragged down. This value will be in points so it has to be normalized to be used as a time offset but that is fine because we need a drag threshold to know when to load more data anyway. The new code looks like this
+Instead of a slider to control the timing we use the amount that the scroll view is dragged down. This value will be in points so it has to be normalized to be used as a time offset but that is fine because we need a drag threshold to know when to load more data anyway. The code that handles pulling down the scroll view looks like this
 
 	- (void)scrollViewDidScroll:(UIScrollView *)scrollView
 	{
@@ -387,14 +387,14 @@ and the animation being controlled looks like this
     group.duration = 1.0;
     group.animations = @[writeText, move];
     
-The result is that as you pull down you have direct control over the progress of the animation (i.e. the further you pull the more of the word "Load" is written). 
+The result is that as you pull down you have direct control over the progress of the animation (i.e. the further you pull the more of the word "Load" is written). If you pull up again then the animation will move backwards. 
 
-<figure><div class="box-background"><img src="/images/peak.gif" max-width="181px !important" alt="An animating scene with a rotating box lit by a spotlight that changes color"></div>
+<figure><div class="box-background"><img src="/images/peak.gif" max-width="181px !important" alt="Directly controlling the pull to refresh control using scroll events"></div>
 </figure>
-<figcaption>An animating scene with a rotating box lit by a spotlight that changes color</figcaption>
+<figcaption>Directly controlling the pull to refresh control using scroll events</figcaption>
 
-Then once you pass the threshold you start the actual load<em>ing</em> animation and load more data. My code for doing this looks like this.
-I set that I'm loading to prevent timeOffset from being set in `scrollViewDidScroll:`, start the loading animation and adjust the content inset to prevent the scrollview from scrolling up past the loading indicator. Then I load more data. 
+Once you pass the threshold you start the actual load<em>ing</em> animation and load more data. My code for doing this looks like this.
+I set that I'm loading to prevent timeOffset from being set in `scrollViewDidScroll:`, start the loading animation and adjust the content inset to prevent the scrollview from scrolling up past the loading indicator.
 
 {% highlight objc %}
 self.isLoading = YES;
@@ -433,7 +433,9 @@ The end result when you scroll down past the threshold looks like this
 
 
 
-Controlling an animation like that is a nice little detail to add to your application and you can do some advanced group animations like this one without writing crazy amounts of code. I haven't show it here but you can do the same kind of control with a gesture recognizer.
+Controlling an animation like that is a nice little detail to add to your application and you can do some advanced group animations like this one without writing crazy amounts of code. I didn't show it here but you can do the same kind of control with a gesture recognizer or any other direct control mechanism.
+
+The sample pull-to-refresh project shown above can be found [on GitHub][samplecode].
 
 [^fun]: Fun fact: a negative speed (like -1) will cause the animation to go backwards in "time".
 
@@ -441,4 +443,4 @@ Controlling an animation like that is a nice little detail to add to your applic
 
 [peeve]: https://www.explosm.net/comics/2676/ (Cyanide & Happiness #2676 - My pet peeve)
 
-
+[samplecode]:
