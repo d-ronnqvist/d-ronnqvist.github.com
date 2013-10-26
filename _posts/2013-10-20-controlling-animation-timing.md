@@ -317,6 +317,8 @@ duration=3.0, timeOffset=1.0
 The animation starts off one second into the transition from orange to blue and runs the final two seconds until it becomes completely blue. Then it jumps back to be completely orange and does the first second of the color transition. It is as if we cut away the first second of the animation and moved it to the end. 
 
 This property in itself has almost no use but it can be combined with a paused animation (speed = 0) to control the "current time". A paused animation is stuck at the first frame. If you look at the very first color in the offset animation (above) you can see that it's the color value one second into the color transition. By setting the time offset to another value you get that time into the transition.  
+
+If you want more of these timing illustrations, I made a little [cheat sheet][cheatsheet].
  
 # Controlling animation timing 
 
@@ -442,3 +444,5 @@ The sample pull-to-refresh project shown above can be found [on GitHub][sampleco
 [peeve]: https://www.explosm.net/comics/2676/ (Cyanide & Happiness #2676 - My pet peeve)
 
 [samplecode]: https://github.com/d-ronnqvist/blogpost-codesample-PullToRefresh (Sample project)
+
+[cheatsheet]: http://d.pr/i/ysTq (CAMediaTiming cheat sheet)
