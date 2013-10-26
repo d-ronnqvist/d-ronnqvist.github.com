@@ -180,7 +180,7 @@ duration=1.5, repeatDuration=2.0
             <stop stop-color="#ffb900" offset="0%"></stop>
             <stop stop-color="#4aa5e3" offset="100%"></stop>
         </linearGradient>
-        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-2">
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-2a">
             <stop stop-color="#ffb900" offset="0%"></stop>
             <stop stop-color="rgb(172,176,125)" offset="100%"></stop>
         </linearGradient>
@@ -192,7 +192,7 @@ duration=1.5, repeatDuration=2.0
         <path d="M352.5,0 L352.5,74" ></path>
     </g>
     <rect id="path-2" x="4" y="4" width="175" height="65" stroke="none" fill="url(#linearGradient-1)"></rect>
-    <rect id="path-2" x="179" y="4" width="58" height="65" stroke="none" fill="url(#linearGradient-2)"></rect>
+    <rect id="path-2" x="179" y="4" width="58" height="65" stroke="none" fill="url(#linearGradient-2a)"></rect>
 </svg>
 </div>
 </div>
