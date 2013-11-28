@@ -431,6 +431,15 @@ article {
 	z-index: 10;
 }
 
+#book-logo {
+	position: absolute;
+	left: calc(28%);
+	left: -moz-calc(28%);
+	left: -webkit-calc(28%);
+	top: 20px;
+	z-index: 10;
+}
+
 #rss-link {
 	position: absolute;
 	left: 20px;
@@ -803,7 +812,7 @@ top: -2px;
 		margin-bottom: 160px;
 /*		top: 55px;*/
 	}
-	#DR-logo {
+	.head-logo {
 	
 	transform: scale(0.75);
 	-moz-transform: scale(0.75);
@@ -863,7 +872,7 @@ top: -2px;
 		top: 80px;
 /*		left: -100px;*/
 	}
-	#DR-logo {
+	.head-logo {
 		transform: scale(0.6);
 		-moz-transform: scale(0.6);
 		-ms-transform: scale(0.6);
@@ -876,6 +885,8 @@ top: -2px;
 		-webkit-transform-origin: 0% 0%;
 		-o-transform-origin: 0% 0%;
 		top: 10px;
+	}
+	#DR-logo {
 		left: 10px;
 	}
 }
@@ -896,7 +907,7 @@ screen and (max-device-width: 480px) {
 		right: -moz-calc(-100% + 550px);
 		right: -webkit-calc(-100% + 550px);
 	}
-	#DR-logo {
+	.head-logo {
 	
 	transform: scale(0.5);
 	-moz-transform: scale(0.5);
@@ -910,6 +921,8 @@ screen and (max-device-width: 480px) {
 	-webkit-transform-origin:  0 0;
 	-o-transform-origin:  0 0;
 		top: 10px;
+	}
+	#DR-logo {
 		left: 10px;
 	}
 	
@@ -988,7 +1001,7 @@ screen and (max-device-width: 480px) {
     	top: 55px;
 /*    	right:calc(-100% + 518px);    	right:-moz-calc(-100% + 518px);    	right:-webkit-calc(-100% + 518px);*/
     }
-    #DR-logo {
+    .head-logo {
     
 	transform: scale(0.6);
 	-moz-transform: scale(0.6);
@@ -1002,6 +1015,8 @@ screen and (max-device-width: 480px) {
 	-webkit-transform-origin:  0 0;
 	-o-transform-origin:  0 0;
     	top: 15px;
+    }
+    #DR-logo {
     	left: 15px;
     }
     #rss-link {
@@ -1083,11 +1098,11 @@ screen and (max-device-width: 480px) {
     	right:-webkit-calc(-100% + 518px);
     }
     .title-header > h1 {
-    	width: 400px;
-    	right: -180px;
+    	width: 470px;
+    	right: -110px;
 /*    	font-size: 74px;*/
     }
-    #DR-logo {
+    .head-logo {
     
 		transform: scale(0.4);
 		-moz-transform: scale(0.4);
@@ -1101,6 +1116,8 @@ screen and (max-device-width: 480px) {
 		-webkit-transform-origin:  0 0;
 		-o-transform-origin:  0 0;
     	top: 10px;
+    }
+    #DR-logo {
     	left: 10px;
     }
     #rss-link {
