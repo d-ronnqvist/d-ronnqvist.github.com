@@ -22,7 +22,7 @@ p {
 	margin-top: 10px;
 	margin-bottom: 20px;
 	font-size: 16px;
-	font-weight: lighter;
+	font-weight: 200;
 	line-height: 26px;
 }
 
@@ -46,7 +46,7 @@ li {
 	margin: 0px;
 	padding-bottom: 5px;
 	font-size: 14px;
-	font-weight: lighter;
+	font-weight: 200;
 }
 
 li strong {
@@ -78,7 +78,7 @@ a:hover {
 	padding: 0px;
 	/*color: #303841;*/
 	font-size: 19px;
-	font-weight: normal;
+	font-weight: 400;
 	text-align: left;
 }
 
