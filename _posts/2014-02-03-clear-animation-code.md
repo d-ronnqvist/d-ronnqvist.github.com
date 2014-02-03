@@ -12,11 +12,11 @@ This post is going to be a little bit different. Instead of showing some niche a
 
 [^forMe]
 
-I welcome anyone to follow any number of "guidelines" or "best practices"  (or whatever you want to call it) that I mention for any reason, <span style="font-weight: 700;">except for the fact that I said them</span>[^boldAndItalics]. If the only reason that you do something is that *someone else* said so, then you are missing the point. There is never a rule without an exception and if you don't understand the reasoning that led to that rule then you may end up following it like a religion when it doesn't make any sense doing so. Information gets outdated, new API is introduced and what was the recommended way yesterday may not be the recommended way tomorrow.
+I welcome anyone to follow any number of "guidelines" or "best practices"  (or whatever you want to call it) that I mention for any reason, <span style="font-weight: 700;">except for the fact that I said them</span>[^bold]. If the only reason that you do something is that *someone else* said so, then you are missing the point. There is never a rule without an exception and if you don't understand the reasoning that led to that rule then you may end up following it like a religion when it doesn't make any sense doing so. Information gets outdated, new API is introduced and what was the recommended way yesterday may not be the recommended way tomorrow.
 
 Remember, the point is to write clear, concise and readable code. If it the code doesn't read clearly to you, then you should find something else that works better for you[^bestForYou].
 
-[^boldAndItalics]: Yes, that deserves the emphasis of being very bold (and the paragraph of text that follows it).
+[^bold]: Yes, that deserves the emphasis of being very bold (and the paragraph of text that follows it).
 
 [^bestForYou]: Did I mention that these tips are what work for *me* and that you should evaluate them before jumping head first?
 
