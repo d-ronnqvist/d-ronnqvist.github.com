@@ -6,13 +6,13 @@ category:
 tags: [Objective-C, Core Animation, Keyframe animation]
 ---
 
-**tl;dr** hit test the [presentation layer][] instead. 
+**tl;dr** hit test the [presentation layer][presentationlayer] instead. 
 
 ---------------------------------------
 
 At the core of Core Animation[^1] is the fact that it changes the animated property right away (or not at all[^2]) but smoothly animates the change visually over time. If you inspect the value of the animated property during the animation it will already have been set to its final value (or never been changed at all[^2]). Knowing this, what do you do when you need to know the values that is being used to render the layer during the animation? How do you hit test a moving layer?
 
-**Spoiler:** The answer is simply to *look at the value of the [presentation layer][]* instead. 
+**Spoiler:** The answer is simply to *look at the value of the [presentation layer][presentationlayer]* instead. 
 
 #Make a small experiment
 
@@ -88,9 +88,9 @@ Now, run the application again and see the cool smooth curve that your layer is 
 
 #Bug or feature?
 
-The [documentation for the presentation layer][presentation layer] clearly states that it provides "a close approximation to the version of the layer that is currently being displayed", _not_ the exact value. This approximation seems extremely good as long as you don't mess with the animation timings. If you set the [calculation mode][] on a key-frame animation to any of the paced modes (`kCAAnimationPaced` or `kCAAnimationCubicPaced`) then it seems to be off, by _a lot_. In fact, it seems to me like the values you get back from the presentation mode is being calculated linearly (the default calculation mode). 
+The [documentation for the presentation layer][presentationlayer] clearly states that it provides "a close approximation to the version of the layer that is currently being displayed", _not_ the exact value. This approximation seems extremely good as long as you don't mess with the animation timings. If you set the [calculation mode][calculationmode] on a key-frame animation to any of the paced modes (`kCAAnimationPaced` or `kCAAnimationCubicPaced`) then it seems to be off, by _a lot_. In fact, it seems to me like the values you get back from the presentation mode is being calculated linearly (the default calculation mode). 
 
-The following can quite nicely be illustrated by slowly animating the position of two identical layers, one using the default calculation mode and one using a paced calculation mode. Trying to hit the linearly moving layer also hits the paced layer but trying to hit the paced layer hits nothing. I of course did the responsible thing and filed a [radar][]. I'll post an update when I know its in fact the intended behavior (part of the approximation) or a real bug.  
+The following can quite nicely be illustrated by slowly animating the position of two identical layers, one using the default calculation mode and one using a paced calculation mode. Trying to hit the linearly moving layer also hits the paced layer but trying to hit the paced layer hits nothing. I of course did the responsible thing and filed a [radar][radar]. I'll post an update when I know its in fact the intended behavior (part of the approximation) or a real bug.  
 
 
 
@@ -98,11 +98,11 @@ The following can quite nicely be illustrated by slowly animating the position o
 
 [^2]: Explicit animations (like [`CABasicAnimation`][basic] or [`CAKeyFrameAninmation`][keyframe]) doesn't change the value of the animated property. Only implicit animations (setting the value of an animatable layer property changes the value).
 
-[presentation layer]: http://developer.apple.com/library/ios/#DOCUMENTATION/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction.html#//apple_ref/occ/instm/CALayer/presentationLayer "presentationLayer documentation"
+[presentationlayer]: http://developer.apple.com/library/ios/#DOCUMENTATION/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction.html#//apple_ref/occ/instm/CALayer/presentationLayer "presentationLayer documentation"
 
 [basic]: https://developer.apple.com/library/mac/#documentation/GraphicsImaging/Reference/CABasicAnimation_class/Introduction/Introduction.html "CABasicAninmation"
 
-[calculation mode]: https://developer.apple.com/library/mac/#documentation/GraphicsImaging/Reference/CAKeyframeAnimation_class/Introduction/Introduction.html#//apple_ref/occ/instp/CAKeyframeAnimation/calculationMode "calculationMode documentation"
+[calculationmode]: https://developer.apple.com/library/mac/#documentation/GraphicsImaging/Reference/CAKeyframeAnimation_class/Introduction/Introduction.html#//apple_ref/occ/instp/CAKeyframeAnimation/calculationMode "calculationMode documentation"
 
 [keyframe]: https://developer.apple.com/library/mac/#documentation/GraphicsImaging/Reference/CAKeyframeAnimation_class/Introduction/Introduction.html "CAKeyFrameAninmation documentation"
 
