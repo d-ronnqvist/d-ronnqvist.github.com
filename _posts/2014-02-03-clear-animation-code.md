@@ -204,6 +204,7 @@ Here are two examples of this thinking applied:
 
 Separating the animation from the change in model data like this matches my understanding of how Core Animation works and how it was meant to be used.
 
+-------------
 
 [^longProgrammingGuides]: At close to a hundred pages long, these guides can seem like a chore to get through, but they contain some good information if you are interested in the technologies.
 
