@@ -14,11 +14,11 @@ At the core of Core Animation[^1] is the fact that it changes the animated prope
 
 **Spoiler:** The answer is simply to *look at the value of the [presentation layer][presentationlayer]* instead. 
 
-#Make a small experiment
+# Make a small experiment
 
 You can learn a lot about Core Animation by writing a small piece of code where you hit test a moving layer and its presentations layer. While we are at it, we will have a poke at key-frame animations as well.
 
-##Write some code
+## Write some code
 
 First we create a layer and add it to our views layer. Don't forget to keep a reference to the layer, we'll need it when we hit test it later.
 
@@ -34,7 +34,7 @@ Next we set up the key-frame animation for the position and add it to our layer.
 
     CAKeyframeAnimation * moveLayerAnimation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
     [moveLayerAnimation setValues:[NSArray arrayWithObjects: /* some NSValue-wrapped CGPoints */, nil]];
-	
+    
 	[moveLayerAnimation setDuration:10.0];
     [moveLayerAnimation setRepeatCount:HUGE_VALF];
     [moveLayerAnimation setTimingFunction: [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear]];
@@ -43,13 +43,13 @@ Next we set up the key-frame animation for the position and add it to our layer.
 To be able to tap the layer we need to add a [tap gesture recognizer][tap] and connect it to an action method that is hit testing both the layer and its presentation layer, like this.
 
 	- (IBAction)pressedLayer:(UIGestureRecognizer *)gestureRecognizer {
-    	CGPoint touchPoint = [gestureRecognizer locationInView:[self view]];
-	
-	    if ([[[self movingLayer] presentationLayer] hitTest:touchPoint]) {
-	        [self blinkLayerWithColor:[UIColor yellowColor]];
-	    } else if ([[self movingLayer] hitTest:touchPoint]) {
-	        [self blinkLayerWithColor:[UIColor redColor]];
-	    }
+        CGPoint touchPoint = [gestureRecognizer locationInView:[self view]];
+        
+        if ([[[self movingLayer] presentationLayer] hitTest:touchPoint]) {
+            [self blinkLayerWithColor:[UIColor yellowColor]];
+        } else if ([[self movingLayer] hitTest:touchPoint]) {
+            [self blinkLayerWithColor:[UIColor redColor]];
+        }
 	}
 
 Blinking the layer is done by setting the background color in a swift animation and reversing to the current value:
@@ -64,7 +64,7 @@ Blinking the layer is done by setting the background color in a swift animation 
 	    [[self movingLayer] addAnimation:blinkAnimation forKey:@"blink"];
 	}
 
-##Make observations
+## Make observations
 
 When you run the application you will see a moving orange layer.
 
@@ -78,7 +78,7 @@ Also note that the layer actually blinks in a yellow tone when you are tapping i
 
 ![](http://media.tumblr.com/tumblr_m2lccryqBg1r8dzrp.png)
 
-##Have some extra fun
+## Have some extra fun
 
 Go back to the key-frame animation code and change the calculation mode by adding this line of code.
 
@@ -86,7 +86,7 @@ Go back to the key-frame animation code and change the calculation mode by addin
 
 Now, run the application again and see the cool smooth curve that your layer is animating along. No more of this boring straight-line movement. Awesome! Also note that even though the layer is moving along this curve, you can still tap on it. Amazing!
 
-#Bug or feature?
+# Bug or feature?
 
 The [documentation for the presentation layer][presentationlayer] clearly states that it provides "a close approximation to the version of the layer that is currently being displayed", _not_ the exact value. This approximation seems extremely good as long as you don't mess with the animation timings. If you set the [calculation mode][calculationmode] on a key-frame animation to any of the paced modes (`kCAAnimationPaced` or `kCAAnimationCubicPaced`) then it seems to be off, by _a lot_. In fact, it seems to me like the values you get back from the presentation mode is being calculated linearly (the default calculation mode). 
 
@@ -98,15 +98,15 @@ The following can quite nicely be illustrated by slowly animating the position o
 
 [^2]: Explicit animations (like [`CABasicAnimation`][basic] or [`CAKeyFrameAninmation`][keyframe]) doesn't change the value of the animated property. Only implicit animations (setting the value of an animatable layer property changes the value).
 
-[presentationlayer]: http://developer.apple.com/library/ios/#DOCUMENTATION/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction.html#//apple_ref/occ/instm/CALayer/presentationLayer "presentationLayer documentation"
+[presentationlayer]: http://developer.apple.com/library/ios/#DOCUMENTATION/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction.html#//apple_ref/occ/instm/CALayer/presentationLayer (presentationLayer documentation)
 
-[basic]: https://developer.apple.com/library/mac/#documentation/GraphicsImaging/Reference/CABasicAnimation_class/Introduction/Introduction.html "CABasicAninmation"
+[basic]: https://developer.apple.com/library/mac/#documentation/GraphicsImaging/Reference/CABasicAnimation_class/Introduction/Introduction.html (CABasicAninmation)
 
-[calculationmode]: https://developer.apple.com/library/mac/#documentation/GraphicsImaging/Reference/CAKeyframeAnimation_class/Introduction/Introduction.html#//apple_ref/occ/instp/CAKeyframeAnimation/calculationMode "calculationMode documentation"
+[calculationmode]: https://developer.apple.com/library/mac/#documentation/GraphicsImaging/Reference/CAKeyframeAnimation_class/Introduction/Introduction.html#//apple_ref/occ/instp/CAKeyframeAnimation/calculationMode (calculationMode documentation)
 
-[keyframe]: https://developer.apple.com/library/mac/#documentation/GraphicsImaging/Reference/CAKeyframeAnimation_class/Introduction/Introduction.html "CAKeyFrameAninmation documentation"
+[keyframe]: https://developer.apple.com/library/mac/#documentation/GraphicsImaging/Reference/CAKeyframeAnimation_class/Introduction/Introduction.html (CAKeyFrameAninmation documentation)
 
-[tap]:http://developer.apple.com/library/ios/#documentation/uikit/reference/UITapGestureRecognizer_Class/Reference/Reference.html "UITapGestureRecognizer documentation"
+[tap]: http://developer.apple.com/library/ios/#documentation/uikit/reference/UITapGestureRecognizer_Class/Reference/Reference.html (UITapGestureRecognizer documentation)
 
-[radar]: rdar://11251219
+[radar]: rdar://11251219 (Radar #11251219)
 
