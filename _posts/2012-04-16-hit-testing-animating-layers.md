@@ -32,25 +32,29 @@ First we create a layer and add it to our views layer. Don't forget to keep a re
 
 Next we set up the key-frame animation for the position and add it to our layer.
 
-    CAKeyframeAnimation * moveLayerAnimation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
-    [moveLayerAnimation setValues:[NSArray arrayWithObjects: /* some NSValue-wrapped CGPoints */, nil]];
-    
+{% highlight obj-c %}
+CAKeyframeAnimation * moveLayerAnimation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+[moveLayerAnimation setValues:[NSArray arrayWithObjects: /* some NSValue-wrapped CGPoints */, nil]];
+
 	[moveLayerAnimation setDuration:10.0];
-    [moveLayerAnimation setRepeatCount:HUGE_VALF];
-    [moveLayerAnimation setTimingFunction: [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear]];
-    [[self movingLayer] addAnimation:moveLayerAnimation forKey:@"move"];
+[moveLayerAnimation setRepeatCount:HUGE_VALF];
+[moveLayerAnimation setTimingFunction: [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear]];
+[[self movingLayer] addAnimation:moveLayerAnimation forKey:@"move"];
+{% endhighlight %}
 
 To be able to tap the layer we need to add a [tap gesture recognizer][tap] and connect it to an action method that is hit testing both the layer and its presentation layer, like this.
 
-	- (IBAction)pressedLayer:(UIGestureRecognizer *)gestureRecognizer {
-        CGPoint touchPoint = [gestureRecognizer locationInView:[self view]];
-        
-        if ([[[self movingLayer] presentationLayer] hitTest:touchPoint]) {
-            [self blinkLayerWithColor:[UIColor yellowColor]];
-        } else if ([[self movingLayer] hitTest:touchPoint]) {
-            [self blinkLayerWithColor:[UIColor redColor]];
-        }
-	}
+{% highlight obj-c %}
+- (IBAction)pressedLayer:(UIGestureRecognizer *)gestureRecognizer {
+    CGPoint touchPoint = [gestureRecognizer locationInView:[self view]];
+    
+    if ([[[self movingLayer] presentationLayer] hitTest:touchPoint]) {
+        [self blinkLayerWithColor:[UIColor yellowColor]];
+    } else if ([[self movingLayer] hitTest:touchPoint]) {
+        [self blinkLayerWithColor:[UIColor redColor]];
+    }
+}
+{% endhighlight %}
 
 Blinking the layer is done by setting the background color in a swift animation and reversing to the current value:
 

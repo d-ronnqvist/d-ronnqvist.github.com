@@ -48,12 +48,14 @@ Just as with "M" and "MM", you can control the padding with zeroes for "dd", "HH
 
 Creating these two formatters is as easy as creating a new formatter and assigning a `dateFormat` string. Then you can use `stringFromDate:` to format the date as a string.
 
-	NSDateFormatter *resonableFormatter = [NSDateFormatter new];
-	resonableFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
-	
-	NSDateFormatter *avoidThisFormatter = [NSDateFormatter new];
-	avoidThisFormatter.dateFormat = @"h:mm a dd/MMM (yy)";
-	
+{% highlight obj-c %}
+NSDateFormatter *resonableFormatter = [NSDateFormatter new];
+resonableFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+
+NSDateFormatter *avoidThisFormatter = [NSDateFormatter new];
+avoidThisFormatter.dateFormat = @"h:mm a dd/MMM (yy)";
+{% endhighlight %}
+
 Parsing a date from a string (or converting from one formatter string to another) can be done with a similar method `dateFromString:`. For example, todays date one the second (sort of crazy) format above can be converted to the more reasonable format like this:
 
 {% highlight objc %}
@@ -89,15 +91,17 @@ Note the usage of `weekOfYear`. There is some ambiguity to the term "week" since
 
 As far as calculations go: let's start small and add one day to the current date and time. When presenting the results of all these computations I'm using the Gregorian calendar with Swedish locale where applicable (like for daylight savings time). 
 
-    NSDateComponents *oneDay = [NSDateComponents new];
-    oneDay.day  = 1;
-    
-    NSDate *now = [NSDate date];
-    NSCalendar *calender = [NSCalendar currentCalendar];
-    NSDate *sameTimeTomorrow = [calender dateByAddingComponents:oneDay
-                                                         toDate:now
-                                                        options:0];
-    
+{% highlight obj-c %}
+NSDateComponents *oneDay = [NSDateComponents new];
+oneDay.day  = 1;
+
+NSDate *now = [NSDate date];
+NSCalendar *calender = [NSCalendar currentCalendar];
+NSDate *sameTimeTomorrow = [calender dateByAddingComponents:oneDay
+                                                     toDate:now
+                                                    options:0];
+{% endhighlight %}
+
 When I run this today (September 18 20:10) the output is (September 19 20:10) just as expected. Similarly if I were to add the `oneDay` component to October 26 12:34 (thus crossing the end of daylight saving time (2013-10-27 03:00)) the result would be October 27 12:34, also as expected. However, adding 24 hours to October 26 12:34 will give you October 27 **11**:34 because that does not take daylight savings into account. Point is, when adding one day you should be adding *one day*.
 
 # Is it today?

@@ -10,8 +10,6 @@ tags: [Core Animation]
 
 This post is going to be a little bit different. Instead of showing some niche animation technique or giving detailed explanations of how it works, it's about how to write clear animation code. More precisely it's about what *I* think is clear, readable code and how I approach writing it. 
 
-[^forMe]
-
 I welcome anyone to follow any number of "guidelines" or "best practices"  (or whatever you want to call it) that I mention for any reason, <span style="font-weight: 700;">except for the fact that I said them</span>[^bold]. If the only reason that you do something is that *someone else* said so, then you are missing the point. There is never a rule without an exception and if you don't understand the reasoning that led to that rule then you may end up following it like a religion when it doesn't make any sense doing so. Information gets outdated, new API is introduced and what was the recommended way yesterday may not be the recommended way tomorrow.
 
 Remember, the point is to write clear, concise and readable code. If it the code doesn't read clearly to you, then you should find something else that works better for you[^bestForYou].
@@ -188,7 +186,7 @@ When Apple introduced Core Animation in 2007, they used this (in [session 211][W
 
 The reason why it's not a problem to keep an animation that is for example fading out a layer, is that the layer itself isn't going to stick around. The animation delegate is going to remove it from the layer hierarchy all together and this is just a more convenient way to prevent an accidental frame where the layer would be fully visible before being removed.
 
-In cases where the layer remains in the layer hierarchy, not removing the animation can have some severe side effect, like for example [not being able to tap on a button][so]. The reason is that there is no button where the user tapped, it is really positioned somewhere else. It just looks like it's there.
+In cases where the layer remains in the layer hierarchy, not removing the animation can have some severe side effect, like for example [not being able to tap on a button][1]. The reason is that there is no button where the user tapped, it is really positioned somewhere else. It just looks like it's there.
 
 I've been thinking about this, trying to come up with the root cause of these problems, and I think it has to do with treating the animation *as* the change itself, which as I just explained, is not how Core Animation works. I've [previously][slides] given this recommendation to these problems:
 
@@ -211,6 +209,8 @@ Separating the animation from the change in model data like this matches my unde
 
 [^banned]: You all know what I'm talking about.
 
+[^stopSpreading]: I'm [trying][so-edit] to at least stop if from spreading further.
+ 
 [basic-no-from-to]: http://stackoverflow.com/a/21318589/608157 (Moving a CALayer with position, not to and from values?)
 
 [KVC-CA-extensions]: https://developer.apple.com/library/ios/Documentation/Cocoa/Conceptual/CoreAnimation_guide/Key-ValueCodingExtensions/Key-ValueCodingExtensions.html#//apple_ref/doc/uid/TP40004514-CH12-SW2 (Core Animation: Key-Value Coding Extensions)
@@ -219,10 +219,8 @@ Separating the animation from the change in model data like this matches my unde
 
  [basics]: https://developer.apple.com/library/ios/documentation/cocoa/conceptual/coreanimation_guide/CoreAnimationBasics/CoreAnimationBasics.html (Core Animation Basics)
  
- [so]: http://stackoverflow.com/q/21159500/608157 (A question that I answered on why hit testing didn't work when an animation wasn't removed.)
- 
- [^stopSpreading]: I'm [trying][so-edit] to at least stop if from spreading further.
- 
+ [1]: http://stackoverflow.com/q/21159500/608157 (A question that I answered about broken hit testing.)
+
  [so-edit]: http://stackoverflow.com/posts/8021051/revisions (An edit on on of my most popular questions to try and stop removedOnCompletion=NO from spreading further.)
  
  [petPeeve]: http://explosm.net/comics/2676/ (Cyanide & Happiness #2676 - Pet peeve)
