@@ -445,4 +445,4 @@ The sample pull-to-refresh project shown above can be found [on GitHub][sampleco
 
 [samplecode]: https://github.com/d-ronnqvist/blogpost-codesample-PullToRefresh (Sample project)
 
-[cheatsheet]: http://d.pr/i/ysTq (CAMediaTiming cheat sheet)
+[cheatsheet]: http://ronnqvi.st/images/CAMedaiTiming%20cheat%20sheet.pdf (CAMediaTiming cheat sheet)
