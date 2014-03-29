@@ -93,6 +93,7 @@ a:hover {
 	border-radius: 3px;
 	padding: 1px 3px;
 	-webkit-hyphens: none;
+	font-family: "Lucida Grande", "Avenir", "Arial";
 }
 
 pre > .math {
