@@ -22,7 +22,9 @@ But that wont work if we only want to round one corner. The `cornerRadius` prope
 But what if we wanted to round two corners with two different radii? Looking at [the documentation for `UIBezierPath`][uibezierpath] there is no convenience method that seems to do that for us. We need to construct the path ourselves and to do that we need to think like a Bézier path.
 
 # Break down of a Bézier path
-Construction of a Bézier path is very similar to using pen and paper to draw the same shape[^pen&paper]. So if you want to follow along at home I suggest you grab a pen and paper.
+Construction of a Bézier path is very similar to using pen and paper to draw the same shape[^penPaper]. So if you want to follow along at home I suggest you grab a pen and paper.
+
+[^penPaper]: _Constructing_ a Bézier path is like drawing it. Drawing the shape (filling or stroking it) is somehting slightly different.
 
  Lets start by drawing the full path. In my example I’m going to draw a rectangle with a smaller rounded corner in the upper left and a bigger rounded corner in the lower right.
 
@@ -425,12 +427,10 @@ And if we did, our breakdown would look something like this. The method for crea
 
 Taking the code above and modifying it to use a curve instead of the second arc is left as an exercise for the reader. While you are at it, draw a shape of your own on a piece of paper and break it down into its basic components and see if you can translate _that_ into code. 
 
+[calayer]: https://developer.apple.com/library/ios/documentation/graphicsimaging/reference/CALayer_class/Introduction/Introduction.html (CALayer documentation)
 
-[calayer]: http://www.apple.com “CALayer documentation”
+[uibezierpath]: https://developer.apple.com/library/ios/documentation/uikit/reference/UIBezierPath_class/Reference/Reference.html (UIBezierPath documentation)
 
-[uibezierpath]: http://www.apple.com “UIBezierPath documentation”
-
-[^pen&paper]: _Constructing_ a Bézier path is like drawing it. Drawing the shape (filling or stroking it) is somehting slightly different.
 
 <script src="/script/script-thinking-like-a-bezier-path.js" type="text/javascript" onload="correctInstructions()"> </script>
 
