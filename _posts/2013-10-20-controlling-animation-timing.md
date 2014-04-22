@@ -441,8 +441,8 @@ The sample pull-to-refresh project shown above can be found [on GitHub][sampleco
 
 [^removedOnCompletion]: You *can* use the fillMode property to fill forwards and get the animation to show the `toValue` after the duration has passed but the animation is going to be removed upon completion so only setting the fillMode would not be enough. You would also have to configure the animation to not be removed on completion by setting `removedOnCompletion = NO`. Just be aware that the animation only affects the visuals (the presentation layer) so [by doing these two things you have introduced a difference between the model and the view][peeve]. The same data (the animated property) exists in two places (the value of the property and what appears on screen) but now they are out of sync.
 
-[peeve]: https://www.explosm.net/comics/2676/ (Cyanide & Happiness #2676 - My pet peeve)
+[peeve]: https://www.explosm.net/comics/2676/ "Cyanide & Happiness #2676 - My pet peeve"
 
-[samplecode]: https://github.com/d-ronnqvist/blogpost-codesample-PullToRefresh (Sample project)
+[samplecode]: https://github.com/d-ronnqvist/blogpost-codesample-PullToRefresh "Sample project"
 
 [cheatsheet]: http://ronnqvi.st/images/CAMediaTiming%20cheat%20sheet.pdf 
