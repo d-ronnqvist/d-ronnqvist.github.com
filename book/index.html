@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   
-  <title>3D Graphics with SceneKit</title>
+  <title>3D Graphics with Scene Kit</title>
   
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width; initial-scale=1.0">
@@ -13,63 +13,221 @@
   <link rel="stylesheet" href="/css/book.css">
   <link rel="icon" type="image/ico" href="/images/favicon.ico">
 
-  <meta content="3D Graphics with SceneKit" property="og:site_name">
+  <meta content="3D Graphics with Scene Kit" property="og:site_name">
   <meta content="http://ronnqvi.st/images/bookOGimage.png" property="og:image">
-  <meta content="3D Graphics with SceneKit" property="og:title">
-  <meta content="http://scenekitbook.com" property="og:url">
-  <meta content="This is the website for the upcoming book, 3D Graphics with SceneKit. It is a book about Apple's 3D rendering framework for Mac OS X." property="og:description">
+  <meta content="3D Graphics with Scene Kit" property="og:title">
+  <meta content="http://Scene Kitbook.com" property="og:url">
+  <meta content="This is the website for the upcoming book, 3D Graphics with Scene Kit. It is a book about Apple's 3D rendering framework for Mac OS X and iOS." property="og:description">
+  
+  
+<style>
+/* Header styling */
+  body {
+    background: white;
+  	background-image: 
+  	  linear-gradient(
+  	    to bottom,
+  	    #055cf9 40px,
+  	    #1684fb 220px,
+  	    white 221px
+  	  );
+  }
+  
+  .backgroundGrid {
+  	background-image: 
+  	  url('./../images/book grid.svg');
+	width: 100%;
+	height: 310px;
+	margin: 0; padding: 0;
+	position: absolute;
+	top: 0; left: 0;
+	opacity: 0.25;
+	z-index: -1;
+  }
+
+/* Content styling */
+body {
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+	margin: auto auto 40px;
+	max-width: 550px;
+	padding: 5px;
+}
+
+h1 {
+	font-size: 64px;
+	text-align: center;
+	margin: 35px auto 25px;
+}
+#title {
+	font-family: Avenir Next;
+	font-weight: 300;
+	line-height: 1.1;
+	color: white;
+	padding-bottom: 70px;
+}
+
+h2 {
+	font-size: 30px;
+	text-align: center;
+	margin: 20px auto;
+}
+
+p {
+	margin: 0px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	font-size: 16px;
+	font-weight: 200;
+	line-height: 26px;
+}
+
+h3 {
+	margin-top: 40px;
+	text-align: center;
+	margin-bottom: 5px;
+	font-weight: 400;
+}
+
+ul {
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	padding: 10px 40px;
+	margin: 5px 20px;
+	margin-bottom: 30px;
+	list-style: upper-roman;
+}
+
+li {
+	margin: 0px;
+	padding-bottom: 5px;
+	font-size: 14px;
+	font-weight: 200;
+}
+
+li strong {
+	font-weight: 500;
+}
+
+a {
+	text-decoration: none;
+	color: hsl(211, 15%, 40%);
+	font-weight: 400;
+}
+
+a:hover {
+	color: #4aa5e3;
+}
+
+.QandA h1 {
+	margin: 30px 0px 0px;
+	padding: 0px;
+	/*color: #303841;*/
+	font-size: 19px;
+	font-weight: 400;
+	text-align: left;
+}
+
+form {
+	margin: auto;
+	margin-top: 20px;
+	text-align: right;
+	max-width: 300px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	padding: 10px;
+	height: 100px;
+}
+
+input[type=text],
+input[type=email] {
+	width: 230px;
+}
+
+.button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	
+	margin-top: 10px;
+	background: #777;
+	color: white;
+	padding: 5px 10px;
+	text-align: center;
+	border: none;
+	border-radius: 3px;
+}
+
+</style>
   
 </head>
 <body>
-<h1>3D Graphics with SceneKit</h1>
+<div class="backgroundGrid">
+</div>
 
-<p>This is the website for the upcoming book, 3D Graphics with SceneKit. It is a book about Apple&#8217;s 3D rendering framework for Mac OS X.</p>
+<h1 id="title">3D Graphics with Scene Kit</h1>
 
+<p>This is the website for the upcoming book, 3D Graphics with Scene Kit. It is a book about Apple&#8217;s high level 3D rendering framework for Mac OS X and iOS.</p>
 
-<h3>Current table of contents:</h3>
+<p>The book is written by me, <a href="http://ronnqvi.st">David Rönnqvist</a> and will only be available as an iBook from the iBooks Store. The iBooks format makes it possible for the book to contain rich illustrations, links to sample code, and even interactive 3D models. Having iBooks on both iOS and OS X means that many readers will be able to experience the book right next to their IDE.</p>
+
+<p>Scene Kit was originally introduced at WWDC 2012 and has existed for 2 years on OS X. This year it was made public that Scene Kit is coming to iOS later this fall. Since this isn&#8217;t yet released, the first version of the book will cover Scene Kit as it is currently available to the public. Later this year, the book will be updated to also cover Scene Kit for iOS and the new features. Another benefit of being an all digital book is that this new content will become available to you, even if you buy the book before the update.</p>
+
+ <p>Apple also introduced a new programming language for iOS and OS X. Since this language is brand new and many Cocoa developers are still used to Objective-C, the examples and sample code in this book will all be written in Objective-C. Next year, the book and the sample code will be updated to also cover programming with Scene Kit in Swift.</p>
+
+<h3>Table of contents (first release):</h3>
 
 <ul>
-<li><strong>Starting out</strong> – From setting up a project to getting a 3D scene on screen.</li>
-<li><strong>Why things look the way they do</strong> – Covers how lights and materials cause geometry to look shaded.</li>
-<li><strong>More of a Scene</strong> – How to use the node hierarchy to create a scene with more geometry, text and animations.</li>
-<li><strong>Adding detail with images</strong> – Using textures, how they work and the effects they can bring.</li>
-<li><strong>From a point of view</strong> – Cameras, looking around in a scene, zooming in on objects.</li>
-<li><strong>Special effects</strong> – A chapter dedicated to effects.</li>
-<li><strong>Generating geometry</strong> – How to generate geometry data to use in SceneKit.</li>
-<li><strong>Morphing</strong> – Setup and morph geometries between multiple targets.</li>
-<li><strong>Skinning</strong> – Bend and move 3D models rigged to skeletons.</li>
-<li><strong>Performance</strong> – How to find and solve common performance problems.</li>
+<h3>Scene Kit Foundations</h3>
+<li><strong>Starting Put</strong> – From setting up a project to getting a 3D scene on screen.</li>
+<li><strong>A Closer Look at Lights</strong> – What makes a surface bright? How do lights and materials make a material matte or shiny?</li>
+<li><strong>More of a Scene</strong> – Showing how to make good use of the node hierarchy to deal with the complexity of a larger scene containing with more geometry, text and animations.</li>
+<li><strong>Adding Detail with Images</strong> – Explains how an 2D image is applied to a 3D object and what effects that can bring to the scene.</li>
+<li><strong>Under the Cursor</strong> – A look at how mouse clicks can be used to interact with objects in the scene.</li>
+
+<h3>Advanced Scene Kit</h3>
+<li><strong>Generating Geometry</strong> – How to generate geometry data to use in Scene Kit.</li>
+<li><strong>Bending a Mesh</strong> – Two different approaches to making a 3D object that isn&#8217;t static: morphing between multiple targets and skinning of a 3D model with a 'skeleton'.
+
+<h3>Lower Level Functionality in Scene Kit</h3>
 <li><strong>The rendering pipeline</strong> – An overview of the underlying rendering pipeline.</li>
 <li><strong>GLSL</strong> – An introduction to the OpenGL Shading Language.</li>
-<li><strong>Custom shading</strong> – How to shade geometry using custom shaders.</li>
-<li><strong>Shader modifiers</strong> – Inject your shader code at certain points to make modifications.</li>
+<li><strong>Custom Shading</strong> – How to shade geometry using custom shaders.</li>
+<li><strong>Shader Modifiers</strong> – Inject your shader code at certain entry points to make modifications.</li>
 <li><strong>OpenGL and the render delegate</strong> – Using OpenGL to do completely custom rendering.</li>
+
+<h3>Wrapping up</h3>
+<li><strong>Performance</strong> – Solutions to common performance problems.</li>
+<li><strong>Math Appendix</strong> – An approachable introduction to the necessary math that is used in 3D graphics.</li>
+
 </ul>
 
-<p>Chapter names and content is not final and many smaller topics are covered within these chapters but are not mentioned above.</p>
+<p>There is more to cover about Scene Kit than what is listed above. Some of it is too small to have a chapter of its own but is covered within the scope of another chapter. Some of it is useful, but not essential for working with Scene Kit. </p>
 
-<p>The book is written by me, <a href="http://ronnqvi.st">David Rönnqvist</a> and will only be available as an iBook from the iBooks Store. I&#8217;m excited over the possibilities with interactive books and having iBooks on OS X Mavericks means that many readers will be able to experience the book right next to their IDE.</p>
+<p>Such topics are: cameras, advanced mouse interaction, and using layers as textures. These topics will be covered in two chapters that will be added in an update. This update is estimated to be released late this year.</p>
+
 
 <div class="QandA">
 <h2>Q&amp;A</h2>
 
-<h1>I&#8217;m a iOS developer, is this books not for me?</h1>
+<h1>I&#8217;m a iOS developer, is this books not for me (yet)?</h1>
 
-<p>SceneKit is not available for iOS but if you want to learn about 3D graphics then I&#8217;m not going to stop you. </p>
+<p>While the first version of the book won&#8217;t cover iOS specifically, everything you learn is still relevant for both platforms. Later, this book will be updated and  </p>
 
-<p>Being a Mac developer is a not a prerequisite. In fact, I&#8217;ve done quite a lot of iOS development myself. As long as you are familiar with Objective-C, Foundation and know a little bit about Core Graphics or Core Animation then you should be fine.</p>
+<h1>Isn&#8217;t Scene Kit just for games?</h1>
+
+<p>Some of the new additions to Scene Kit makes it suitable for causal 3D games but that is not <em>all</em> that it&#8217;s good for. Part of what I think makes Scene Kit so attractive is how well it integrates with other frameworks. This makes it a good candidate for casual 3D in a 'regular' application as well. </p>
 
 <h1>I&#8217;ve never done 3D graphics before, will it be to difficult for me?</h1>
 
-<p>SceneKit is very easy to get started with and I will explain the concepts behind 3D graphics as the book progresses. You don&#8217;t need any 3D experience but it&#8217;s good if you have done some basic graphics programming on either OS X or iOS.</p>
+<p>Scene Kit is very easy to get started with and I will explain the concepts behind 3D graphics as the book progresses. You don&#8217;t need any 3D experience but it&#8217;s good if you have done some basic graphics programming on either OS X or iOS.</p>
 
 <h1>I have done 3D graphics before, will this be to basic for me?</h1>
 
-<p>Part of SceneKit is the simplicity and part is the integration with other frameworks like AppKit, Core Animation, etc. Even if you&#8217;ve done 3D graphics before, using it together with these frameworks will be new and interesting. You may also note that almost a third of the book covers advanced topics like GLSL and OpenGL. I&#8217;m sure you&#8217;ll find something that you like there. </p>
+<p>Part of Scene Kit is the simplicity and part is the integration with other frameworks like AppKit, Core Animation, etc. Even if you&#8217;ve done 3D graphics before, using it together with these frameworks will be new and interesting. You may also note that almost a third of the book covers advanced topics like GLSL and OpenGL. I&#8217;m sure you&#8217;ll find something that you like there. </p>
 
 <h1>Will there be maths?</h1>
 
-<p>Yes, a little bit. There is always going to be some maths involved and I will do my best to explain it.</p>
+<p>Yes, a little bit. There is always going to be some maths involved and I will do my best to explain it. If you have never learnt linear algebra or it was just a long time since you used it, there is an appendix to get you up to speed.</p>
 
 <h1>I&#8217;m convinced. When can I get it?</h1>
 
