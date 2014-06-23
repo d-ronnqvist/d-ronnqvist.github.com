@@ -219,7 +219,7 @@ It's actually a trick question because the answer it both neither place and eith
 
 #### Update:
 
-As pointed out [on twitter][cancelImplicit], another way to achieve the correct behavior is to update the model first and use the key path as the key when adding the explicit animation. This works because the implicit animations already uses the key paths when added to the layer, meaning that the explicit animation cancel out the implicit animation. While this behavior has been consistent for years, I can't recall having seen it being documented anywhere. 
+As pointed out [on twitter][cancelImplicit], another way to achieve the correct behavior is to update the model first and use the key path as the key when adding the explicit animation. This works because the implicit animations already uses the key paths when added to the layer, meaning that the explicit animation cancel out the implicit animation. 
 
 I still prefer to use a transaction because I think that it's clearer what it does. The task is to disable the implicit animation and the transaction does that directly by disabling the actions. To me, that is pretty much self documenting code. 
 
