@@ -217,6 +217,12 @@ It's actually a trick question because the answer it both neither place and eith
 
 	view.layer.addAnimation(myAnimation, forKey: "move along X")
 
+#### Update:
+
+As pointed out [on twitter][cancelImplicit], another way to achieve the correct behavior is to update the model first and use the key path as the key when adding the explicit animation. This works because the implicit animations already uses the key paths when added to the layer, meaning that the explicit animation cancel out the implicit animation. While this behavior has been consistent for years, I can't recall having seen it being documented anywhere. 
+
+I still prefer to use a transaction because I think that it's clearer what it does. The task is to disable the implicit animation and the transaction does that directly by disabling the actions. To me, that is pretty much self documenting code. 
+
 # Additive animations
 
 It can seem odd to allow multiple animations for the same key path when it results in either strange animations or calculated values that are never seen, but it is actually what enables one of the more flexible and powerful features of CAAnimations: "additive" animations. Instead of overwriting the value in the render tree, an additive animation _adds_ to the value. It wouldn't make sense to configure this one animation to be additive and change the model value at the same time. The model would update to its new value right away and the additive animation would add to that:
@@ -512,3 +518,4 @@ Just because I couldn't resists doing so, this is a visualization of what happen
 [BackBoard]: http://iphonedevwiki.net/index.php/Backboardd
 [overhead]: https://twitter.com/andy_matuschak/status/464799423785336832
 [playground]: https://github.com/d-ronnqvist/Additive-Animations-Playground
+[cancelImplicit]: https://twitter.com/jlpiedrahita/status/481143435651715073
