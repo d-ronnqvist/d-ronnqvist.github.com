@@ -431,6 +431,8 @@ There really isn't much code to such a complex animation but you can imagine how
 
 Additive animations isn't used all that often but can be a great tool both for rich interaction and complex animations. The new playgrounds in Xcode 6 is a great way of experimenting with additive animations. Until XCPlayground becomes available for iOS, you can create an OS X playground and use `XCPShowView()` to display a live preview of the animating view. Note that views behave differently on iOS and OS X, but stand alone layers work the same.
 
+If you want to use the playground with heart and circle animations as a starting point, it can be downloaded from [here][playground].
+
 ---
 
 Just because I couldn't resists doing so, this is a visualization of what happens when an animation isn't removed upon completion. That is _one_ reason to avoid `removedOnCompletion` in the common case but the main reason is still that it the model value no longer reflects what't on screen, something that can lead to many strange bugs:
@@ -509,3 +511,4 @@ Just because I couldn't resists doing so, this is a visualization of what happen
 [myObjc.ioArticle]: http://www.objc.io/issue-12/view-layer-synergy.html
 [BackBoard]: http://iphonedevwiki.net/index.php/Backboardd
 [overhead]: https://twitter.com/andy_matuschak/status/464799423785336832
+[playground]: https://github.com/d-ronnqvist/Additive-Animations-Playground
