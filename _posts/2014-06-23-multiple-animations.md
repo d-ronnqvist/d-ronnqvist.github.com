@@ -480,11 +480,11 @@ What makes this so powerful is that if the model value changes during the animat
             <rect id="Rectangle-7" fill="url(#linearGradient-3)" sketch:type="MSShapeGroup" x="0" y="102" width="21" height="3"></rect>
         </g>
         <path d="M462.5,79.5 L562.5,58.5" id="Path-27" stroke="#BFBFBF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="15" sketch:type="MSShapeGroup"></path>
-        <path d="M463.5,58.5 L536.141721,43.0636344" id="Path-25" stroke="#BFBFBF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="15" sketch:type="MSShapeGroup"></path>
+        <path d="M463.5,58.5 L563,37.5" id="Path-25" stroke="#BFBFBF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="15" sketch:type="MSShapeGroup"></path>
         <path d="M322.5,109.500002 L322.5,58.5 L462.623047,58.5 L462.623047,7.5 L736.123047,7.5" id="Path-22" stroke="#BFBFBF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="15" sketch:type="MSShapeGroup"></path>
         <g id="Rectangle-8-+-Path-1-+-Rectangle-16" sketch:type="MSLayerGroup" transform="translate(209.000000, 6.000000)">
             <rect id="Rectangle-8" fill="url(#linearGradient-2)" sketch:type="MSShapeGroup" x="605" y="0" width="21" height="3"></rect>
-            <path d="M21,103.5 L113.5,103.500002 L253.5,74 L325.623047,37.5 L493.623047,1.5 L605,1.5" id="Path-1" stroke="#2F3842" stroke-width="3" stroke-linejoin="round" sketch:type="MSShapeGroup"></path>
+            <path d="M21,103.5 L113.5,103.500002 L253.5,74 L354.5,31.5 L493.623047,1.5 L605,1.5" id="Path-1" stroke="#2F3842" stroke-width="3" stroke-linejoin="round" sketch:type="MSShapeGroup"></path>
             <rect id="Rectangle-7" fill="url(#linearGradient-3)" sketch:type="MSShapeGroup" x="0" y="102" width="21" height="3"></rect>
         </g>
         <path d="M322.5,471.5 L562.5,420.5" id="Path-11" stroke="#2F3842" stroke-width="3" stroke-linecap="round" sketch:type="MSShapeGroup"></path>
