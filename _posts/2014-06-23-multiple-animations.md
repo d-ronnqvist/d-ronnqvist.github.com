@@ -433,6 +433,100 @@ There really isn't much code to such a complex animation but you can imagine how
 	layer.addAnimation(followHeartShape, forKey: "follow a heart shape")
 	layer.addAnimation(circleAround,     forKey: "loop around")
 
+#### Update:
+
+For some inexplicable reason I completely missed Session 236: "Building Interruptible and Responsive Interactions" (from WWDC 2014) when I first wrote this post. It also talks about additive animations and the role they play in iOS 8 to create UIKit animations that can seamlessly transition from one to the other. As mentioned in that video, the very same technique can be applied to any CAAnimation. 
+
+This works by updating the model value and creating additive animations that animate to zero from minus the difference between the new and old values. The result of _one_ such animation looks just like the regular, smooth transition. When the animation starts out, the model value is updated by full change is subtracted meaning that the rendered value is back at its old value. As the animation progresses the subtracted value becomes smaller and smaller until it becomes zero when the animation finishes and the rendered value is the new model value.
+
+What makes this so powerful is that if the model value changes during the animation, the first animation can continue until it's contribution becomes zero while a new, similarly constructed additive animation is added on top of it. During the time that both animations are running, the contribution from the first animation becomes smaller and smaller while the contribution from the second animation becomes larger and larger. This makes it look like the animation is adjusting it's target on the fly while maintaing momentum, taking some time to fully change its course.
+
+<figure>
+<div role="img" aria-label="A breakdown of how additive animations can be used to seemlsly transition from one animation to the other." style="margin-bottom: 75%;">
+<div style="margin: auto; width: 100%; height: 0px;">
+<svg class="autoscaled-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 835 597" width="100%">
+    <defs>
+        <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#F4F4F7" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#F4F4F7" offset="8.39736632%"></stop>
+            <stop stop-color="#F4F4F7" offset="91.3127%"></stop>
+            <stop stop-color="#F4F4F7" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-2">
+            <stop stop-color="#2F3842" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#2F3842" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-3">
+            <stop stop-color="#2F3842" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#2F3842" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <rect id="Rectangle-10" fill="#26A3E6" sketch:type="MSShapeGroup" x="315" y="359" width="257" height="70" rx="3"></rect>
+        <rect id="Rectangle-22" fill="url(#linearGradient-1)" sketch:type="MSShapeGroup" x="207" y="479" width="628" height="118"></rect>
+        <rect id="Rectangle-23" fill="url(#linearGradient-1)" sketch:type="MSShapeGroup" x="207" y="0" width="628" height="118"></rect>
+        <text id="model-value-5" sketch:type="MSTextLayer" font-family="Avenir Next" font-size="36" font-weight="420" sketch:alignment="right" fill="#1F2326">
+            <tspan x="-1.94135974" y="546">model value</tspan>
+        </text>
+        <text id="additive" sketch:type="MSTextLayer" font-family="Avenir Next" font-size="36" font-weight="420" sketch:alignment="right" fill="#1F2326">
+            <tspan x="65.504" y="402.824097">additive</tspan>
+        </text>
+        <text id="composite-5" sketch:type="MSTextLayer" font-family="Avenir Next" font-size="36" font-weight="420" sketch:alignment="right" fill="#1F2326">
+            <tspan x="25.76" y="64">composite</tspan>
+        </text>
+        <g id="Rectangle-8-+-Path-1-+-Rectangle-15" sketch:type="MSLayerGroup" transform="translate(209.000000, 487.000000)">
+            <rect id="Rectangle-8" fill="url(#linearGradient-2)" sketch:type="MSShapeGroup" x="605" y="0" width="21" height="3"></rect>
+            <path d="M21,103.5 L113.5,103.500002 L113.5,52.5 L253.623047,52.5 L253.623047,1.5 L605,1.5" id="Path-1" stroke="#2F3842" stroke-width="3" stroke-linejoin="round" sketch:type="MSShapeGroup"></path>
+            <rect id="Rectangle-7" fill="url(#linearGradient-3)" sketch:type="MSShapeGroup" x="0" y="102" width="21" height="3"></rect>
+        </g>
+        <path d="M462.5,79.5 L562.5,58.5" id="Path-27" stroke="#BFBFBF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="15" sketch:type="MSShapeGroup"></path>
+        <path d="M463.5,58.5 L536.141721,43.0636344" id="Path-25" stroke="#BFBFBF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="15" sketch:type="MSShapeGroup"></path>
+        <path d="M322.5,109.500002 L322.5,58.5 L462.623047,58.5 L462.623047,7.5 L736.123047,7.5" id="Path-22" stroke="#BFBFBF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="15" sketch:type="MSShapeGroup"></path>
+        <g id="Rectangle-8-+-Path-1-+-Rectangle-16" sketch:type="MSLayerGroup" transform="translate(209.000000, 6.000000)">
+            <rect id="Rectangle-8" fill="url(#linearGradient-2)" sketch:type="MSShapeGroup" x="605" y="0" width="21" height="3"></rect>
+            <path d="M21,103.5 L113.5,103.500002 L253.5,74 L325.623047,37.5 L493.623047,1.5 L605,1.5" id="Path-1" stroke="#2F3842" stroke-width="3" stroke-linejoin="round" sketch:type="MSShapeGroup"></path>
+            <rect id="Rectangle-7" fill="url(#linearGradient-3)" sketch:type="MSShapeGroup" x="0" y="102" width="21" height="3"></rect>
+        </g>
+        <path d="M322.5,471.5 L562.5,420.5" id="Path-11" stroke="#2F3842" stroke-width="3" stroke-linecap="round" sketch:type="MSShapeGroup"></path>
+        <rect id="Rectangle-27" fill="#26A3E6" sketch:type="MSShapeGroup" x="456" y="239" width="257" height="70" rx="3"></rect>
+        <text id="additive-5" sketch:type="MSTextLayer" font-family="Avenir Next" font-size="36" font-weight="420" sketch:alignment="right" fill="#1F2326">
+            <tspan x="66.050984" y="283">additive</tspan>
+        </text>
+        <path d="M463.5,351.5 L703.5,300.5" id="Path-12" stroke="#2F3842" stroke-width="3" stroke-linecap="round" sketch:type="MSShapeGroup"></path>
+        <rect id="Rectangle-26" fill="url(#linearGradient-3)" sketch:type="MSShapeGroup" x="209" y="108" width="21" height="3"></rect>
+    </g>
+</svg></div></div></figure>
+<figcaption>A breakdown of how additive animations can be used to seamlessly transition from one animation to the other</figcaption>
+
+The result is pretty astonishing and a great example of the kind of interaction that can be created using additive animations. 
+
+_Note: the animations in the above illustration (and all the other illustrations) are linear. Visualizing easing would have made the illustrations more complex, but without easing there will be a noticeable change in velocity when transitioning between animations. The animations below uses easing to show what the real end result looks like._
+
+<figure><div class="box-background"><img src="/images/additive-interaction.gif" alt="The difference between regular and additive animations for transitioning between animations."></div>
+</figure>
+<figcaption>The difference between regular and additive animations for transitioning between animations.</figcaption>
+
+Perhaps what's most impressive is how little code it takes. We calculate the difference between the old and new value and use the negative difference as the from values (in this case I calculated the negative difference directly by subtracting the new value from the old value) and the use "zero" as the to value.
+    
+{% highlight objc %}
+let animation      = CABasicAnimation(keyPath: "position")
+animation.additive = true // an additive animation
+            
+let negativeDifference = CGPoint(
+    x: layer.position.x - touchPoint.x,
+    y: layer.position.y - touchPoint.y
+)
+
+// from "-(new-old)" to "zero" (additive)
+animation.fromValue = NSValue(CGPoint: negativeDifference)
+animation.toValue   = NSValue(CGPoint: CGPointZero)
+
+animation.duration       = 1.5 
+animation.timingFunction = CAMediaTimingFunction(name: "easeInEaseOut") 
+{% endhighlight %}
+
+I made a small sample project that can be downloaded from [here][playground] if you want to compare the interaction for yourself.
+
 ---
 
 Additive animations isn't used all that often but can be a great tool both for rich interaction and complex animations. The new playgrounds in Xcode 6 is a great way of experimenting with additive animations. Until XCPlayground becomes available for iOS, you can create an OS X playground and use `XCPShowView()` to display a live preview of the animating view. Note that views behave differently on iOS and OS X, but stand alone layers work the same.
