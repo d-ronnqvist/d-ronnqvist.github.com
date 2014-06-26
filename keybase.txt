@@ -1,0 +1,65 @@
+==================================================================
+https://keybase.io/ronnqvist
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://ronnqvi.st
+  * I am ronnqvist (https://keybase.io/ronnqvist) on keybase.
+  * I have a public key with fingerprint 710B 9F42 55FC B0E9 DB06  9C2A 563F 6E00 ACB3 4F92
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "710b9f4255fcb0e9db069c2a563f6e00acb34f92",
+            "host": "keybase.io",
+            "key_id": "563f6e00acb34f92",
+            "uid": "3cccde0b17ecb2b09c675e33e2091300",
+            "username": "ronnqvist"
+        },
+        "service": {
+            "hostname": "ronnqvi.st",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1403788832,
+    "expire_in": 157680000,
+    "prev": "89a04379f63208711a7bfc39dec06fab535a32c11a39fadf2edcd8a0c8df4868",
+    "seqno": 3,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v0.1.22
+Comment: https://keybase.io/crypto
+
+yMHlAnicbZFtSBRbHMZXs9KN4Aa9YkSOZMgucmbO7rxs6hXSZaVAQTHEi8vMmTM7
+c2/N7M6M6zt6kbqByWWx4gZGKBJmluQXPwjlKwYr3A9LhtXtFkKgdknqwy208IzU
+h6Dz5XCe83ue5xz+s3t3uNxpcaP+1Z6hxEpacnK9wVU1cux4KyUZcjMVaKV+w9ub
+oukRbEZNTbepAMXRQBIUH+P3K0gCWJAlwAqIEf0sVFgMgIgk6FMEhvJSqmE5DhIj
+iRYu0AyikUNYk4n6A75h+wIihGQMJJrDSGIkICCW82MIMQMEGgLggBY2dfECJrRp
+6HosrpGidi9F5LiGiNy63f09UkAYLxU1DdtAxnmiq7YdDTg2uznqcI1YCn9NCEua
+LpNvE0Mcm5Zm6FSAJiSyNSeS9gHI8TwPGS+Fm6KaicOaQ/g5lgdkOTU4TiJ5QQQ+
+yAkKCxnAczQtcpKCoCBjBFhFlPzQL0IGER0KiigrDJaRzIsA8bLi41me9Fs4phtU
+AJJnihESaWkRXbQbTEy1T0/+kuFKc7t27Ux3BudyZ/30bZz3Q5muP9X3bbmzXZQ0
+cejnTwtsxFM58k/62KZ1caUw8a7oap9nTb3TXTx6sPP68on616nURt3vsHGiS6r5
+GCztuJk/DrX+ZDCj9/LkwtgBZvc5fenF+ofqpWhx7uE69TFXvc4mLxXFLHW4onjV
+nTWs5DRVhfKLesb3ex++XawIDd5dPtOZ3zH67O+RqcqpR4m8BBjMKZmKPR8K5p2s
+DYZii33doO0/z42h27dc8/oXtTDxa3yjMLsMdfWn79ssHT76QP1r7t/UqeTcG3Na
+9dADAzNLLdNH+PJsuzq7p+XzTG3vH3jsSup0y//zNatrTzO5lwVnO57cK+NK8Owa
+vla+BbR/FQQ=
+=jXLL
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/ronnqvist
+
+==================================================================
