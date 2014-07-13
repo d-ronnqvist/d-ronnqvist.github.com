@@ -32,7 +32,8 @@ This is what these things mean in code:
 The table view data source needs to return YES for `tableView:canEditRowAtIndexPath:`. If this doesn't work well together with the custom implementation, we can return `NO` when VoiceOver is off and return `YES` otherwise for rows that should be deletable.
 
 {% highlight objc %}
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (BOOL)       tableView:(UITableView *)tableView 
+   canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // If this conflicts with the custom gesture / control 
     // you can return NO when VoiceOver is not running.
@@ -40,14 +41,15 @@ The table view data source needs to return YES for `tableView:canEditRowAtIndexP
         return NO;
     }
     
-    BOOL shouldBeEditable = /* Determine if the cell should be deletable or not (based on your business logic) */;
+    BOOL shouldBeEditable = // Determine if the cell should be deletable or not (based on your business logic)
     return shouldBeEditable;
 }
 {% endhighlight %}
 
 # 2. There needs to be able a way to handle the deletion.
 
-If there isn't a way to handle the deletion, UIKit will not add the Actions to the Rotor. Unsurprisingly, this is done in just the same way that the swipe-to-delete feature, by implementing `-tableView:commitEditingStyle:forRowAtIndexPath:`. It's even documented in (not the Rotor part, but the swipe-to-delete part)
+If there isn't a way to handle the deletion, UIKit will not add the Actions to the Rotor. Unsurprisingly, this is done in just the same way that the swipe-to-delete feature, by implementing 
+`tableView:commitEditingStyle:forRowAtIndexPath:`. It's even documented in (not the Rotor part, but the swipe-to-delete part)
 
 > To enable the swipe-to-delete feature of table views (wherein a user swipes horizontally across a row to display a Delete button), you must implement this method.
 

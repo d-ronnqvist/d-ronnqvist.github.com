@@ -79,7 +79,8 @@ Doing only this will not give the full behavior of the standard slider. The user
     if (rating == 1) {
         self.accessibilityValue = @"1 star";
     } else {
-        self.accessibilityValue = [NSString stringWithFormat:@"%ld stars", (long)rating];
+        self.accessibilityValue = 
+          [NSString stringWithFormat:@"%ld stars", (long)rating];
     }
 }
 {% endhighlight %}
