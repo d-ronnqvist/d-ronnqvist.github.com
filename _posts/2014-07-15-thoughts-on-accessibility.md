@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "Thoughts on Accessibility"
+title: "Thoughts on iOS Accessibility"
 description: "
-In between the discussion on custom controls versus standard controls and if Apple is doing enough to make iOS fully accessible, I wanted to contribute with my experiences and my thoughts on all of this as a developer in Apple's ecosystem. "
+With discussions on custom controls versus standard controls and if Apple is doing enough to make iOS fully accessible, I wanted to contribute with my experiences and my thoughts on all of this as a developer in Apple's ecosystem. "
 category: 
 tags: [Opinions, Accessibility] 
 ---
 
-In between the discussion on custom controls versus [standard controls][standard] and [if Apple is doing enough to make iOS fully accessible][review], I wanted to contribute with my experiences and my thoughts on all of this as a developer in Apple's ecosystem. 
+With discussions on custom controls versus [standard controls][standard] and [if Apple is doing enough to make iOS fully accessible][review], I wanted to contribute with my experiences and my thoughts on all of this as a developer in Apple's ecosystem. 
 
 Some resources online will tell you that all you need to do to be accessible is to label all your elements and you will be fine, while others will tell you that it's a lot of work to make an app accessible. In reality it's never black and white like that. An app isn't either accessible or not. There are many ways for an app to be unaccessible to the point where it's completely unusable but there is also a difference between usable, easy to use, and intuitive. I'll get back to that last one.
 
@@ -37,7 +37,7 @@ There are of course lots of subtleties that are hard to get right the first, or 
 
 ---
 
-My point when writing this is to do what I can to spread the word that this is something we need to care about in the developer community. 
+My point in writing this is to do what I can to spread the word that this is something we need to care about in the developer community. 
 
 If you are new to accessibility on iOS, there are plenty of good resources out there. Matt Gemmell wrote [a great overview][gemmell] a couple of years back, Mattt Thompson has [a more developer focused overview][nshipster], there are [plenty of WWDC sessions][videos] about accessibility, and there is of course the [Accessibility Programming Guide for iOS][programmingGuide].
 
