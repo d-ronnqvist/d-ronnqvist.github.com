@@ -10,10 +10,11 @@ In maths and computer science we sometimes use sets, unordered collections of un
 
 The other extremely common data type is an array, an ordered collection of entries. We don't usually talk about "array intersections" or "array complements" but they can sometimes come to good use. While there is no built in methods for this, [`NSPredicate`][predicate] makes it really easy.
 
-It is not clearly defined if the union of two arrays should be contain duplicates or not. As we will see, we can easily achieve both. 
+It is not clearly defined if the union of two arrays should contain duplicates or not. As we will see, we can easily achieve both. 
 
 # Examples
 Imagine that we have two arrays: <span class="math">(3,4,5,6,7)</span> and  <span class="math">(0,2,4,6,8)</span> and what to know the intersection and the relative complement between these.
+
 ## Array intersection
 The intersection of two collections is the entries that exist in both of them.
 

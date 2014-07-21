@@ -20,7 +20,7 @@ The interaction of the slider comes from the "adjustable" trait and the way that
 
 ---
 
-Let's say that we have a custom star rating control where the user can slider their finger across to select either 1, 2, 3, 4, or 5 stars and we've decided to make it work just as well as the native slider. It's a completely custom control and we decided to subclass UIControl when we originally built it.
+Let's say that we have a custom star rating control where the user can slide their finger across to select either 1, 2, 3, 4, or 5 stars and we've decided to make it work just as well as the native slider. It's a completely custom control and we decided to subclass UIControl when we originally built it.
 
 We start off by making the control accessible and giving it a label to describe what the values represent:
 
