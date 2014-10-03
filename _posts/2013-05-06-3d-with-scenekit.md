@@ -147,20 +147,20 @@ If you haven’t already, I recommend that you take a look at [what Jeff LaMache
 
 
 
-[LaMarchePost]: http://iphonedevelopment.blogspot.se/2012/08/an-introduction-to-scenekit.html (An Introduction to SceneKit by Jeff LaMarche)
+[LaMarchePost]: http://iphonedevelopment.blogspot.se/2012/08/an-introduction-to-scenekit.html  "An Introduction to SceneKit by Jeff LaMarche"
 
-[LaMarcheCode]: https://github.com/jlamarche/SceneKitFun (SceneKit example code by Jeff LaMarche)
+[LaMarcheCode]: https://github.com/jlamarche/SceneKitFun  "SceneKit example code by Jeff LaMarche"
 
-[LaMarchePresentation]: http://iphonedevelopment.blogspot.se/2013/04/scenekitfun-project-and-presentation.html (Jeff LaMarche’s blog post about his CocoaConf San Jose presentation on SceneKit)
+[LaMarchePresentation]: http://iphonedevelopment.blogspot.se/2013/04/scenekitfun-project-and-presentation.html  "Jeff LaMarche’s blog post about his CocoaConf San Jose presentation on SceneKit"
 
-[RonnqvistMathTransforms]: http://ronnqvi.st/the-math-behind-transforms (The Math Behind Transforms by David Rönnqvist)
+[RonnqvistMathTransforms]: http://ronnqvi.st/the-math-behind-transforms  "The Math Behind Transforms by David Rönnqvist"
 
-[SO-scenekit]: http://stackoverflow.com/questions/tagged/scenekit (SceneKit questions on Stack Overflow)
+[SO-scenekit]: http://stackoverflow.com/questions/tagged/scenekit  "SceneKit questions on Stack Overflow"
 
-[deliciousLibrary3]: http://www.delicious-monster.com/nerd-stuff/ (Delicious Library 3 - Nerdy Stuff)
+[deliciousLibrary3]: http://www.delicious-monster.com/nerd-stuff/  "Delicious Library 3 - Nerdy Stuff"
 
-[skeuomorphism]: http://sachagreif.com/flat-pixels/ (Flat Pixels by Sacha Greif)
+[skeuomorphism]: http://sachagreif.com/flat-pixels/  "Flat Pixels by Sacha Greif"
 
-[sceneKitSession]: http://adcdownload.apple.com//wwdc_2012/wwdc_2012_session_pdfs/session_504__introducing_scene_kit.pdf (WWDC12 Session 504: Introducing SceneKit)
+[sceneKitSession]: http://adcdownload.apple.com//wwdc_2012/wwdc_2012_session_pdfs/session_504__introducing_scene_kit.pdf  "WWDC12 Session 504: Introducing SceneKit"
 
-[myCode]: https://github.com/d-ronnqvist/blogpost-samplecode-SimpleScene (The sample code for this blog post on GitHub)
+[myCode]: https://github.com/d-ronnqvist/blogpost-samplecode-SimpleScene  "The sample code for this blog post on GitHub"
