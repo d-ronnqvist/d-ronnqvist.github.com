@@ -17,8 +17,9 @@ The "other" way is to update the model value by setting the property being anima
 {% highlight objc %}
 // 1. Before configuring the animation?
 var myAnimation = CABasicAnimation(keyPath: "position.x")
-myAnimation.toValue  = 250
-myAnimation.duration = 1.0
+myAnimation.fromValue = oldValue 
+myAnimation.toValue   = newValue 
+myAnimation.duration  = 1.0
 
 // 2. Before adding the animation?
 view.layer.addAnimation(myAnimation, forKey: "move to the right")
@@ -206,16 +207,19 @@ So, which of the two is it best practice to update the model value?
 
 It's actually a trick question because the answer it both neither place and either place. The best practice is actually to do the same thing as UIView is doing and disable the implicit animation. If we do that, then it doesn't matter it we update the model before or after. It's just personal preference. That said: I still like to update the model first:
 
-	var myAnimation = CABasicAnimation(keyPath: "position.x")
-	myAnimation.toValue  = newValue
-	myAnimation.duration = 1.0
-	
-	CATransaction.begin()
-	CATransaction.setDisableActions(true)
-	view.layer.position.x = newValue
-	CATransaction.commit()
+{% highlight objc %}
+var myAnimation = CABasicAnimation(keyPath: "position.x")
+myAnimation.fromValue = oldValue // still the current model value
+// if you want to be explicit about the toValue you can set it here
+myAnimation.duration  = 1.0
 
-	view.layer.addAnimation(myAnimation, forKey: "move along X")
+CATransaction.begin()
+CATransaction.setDisableActions(true)
+view.layer.position.x = newValue // now there is a new model value
+CATransaction.commit()
+
+view.layer.addAnimation(myAnimation, forKey: "move along X")
+{% endhighlight %}
 
 #### Update:
 
