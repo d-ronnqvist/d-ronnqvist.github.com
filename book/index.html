@@ -28,28 +28,42 @@
   	  linear-gradient(
   	    to bottom,
   	    #055cf9 40px,
-  	    #1684fb 220px,
-  	    white 221px
+  	    #055cf9 220px,
+  	    white 220.1px
   	  );
   }
   
   .backgroundGrid {
+    /*background: #055cf9;*/
+   /* background: -webkit-radial-gradient(10% 30%, white, black);*/
   	background-image: 
   	  url('./../images/book grid.svg');
 	width: 100%;
-	height: 310px;
+	height: 220px;
 	margin: 0; padding: 0;
 	position: absolute;
 	top: 0; left: 0;
-	opacity: 0.25;
+	/*opacity: 0.20;*/
+	-webkit-mask: -webkit-radial-gradient(center 40%, 600 250, rgba(0,0,0,0.3), rgba(0,0,0,0));
+		
+	/*-webkit-gradient(radial-gradient, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));*/
 	z-index: -1;
   }
+
+.interactive,
+.platforms,
+.sample_code, 
+.download {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 /* Content styling */
 body {
 	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 	margin: auto auto 40px;
-	max-width: 550px;
+	max-width: 620px;
 	padding: 5px;
 }
 
@@ -74,11 +88,11 @@ h2 {
 
 p {
 	margin: 0px;
-	margin-top: 10px;
-	margin-bottom: 20px;
-	font-size: 16px;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	font-size: 18px;
 	font-weight: 200;
-	line-height: 26px;
+	line-height: 29px;
 }
 
 h3 {
@@ -127,6 +141,12 @@ a:hover {
 	text-align: left;
 }
 
+.QandA p {
+	margin-top: 20px;
+}
+
+
+
 form {
 	margin: auto;
 	margin-top: 20px;
@@ -157,6 +177,31 @@ input[type=email] {
 	border-radius: 3px;
 }
 
+
+hr {
+   border: 0;
+   width: 75%;
+   height: 1px;
+   color: #ddd;
+   background-color: #ddd;
+   margin-top: 60px;
+   margin-bottom: 60px;
+ }
+ 
+ .two_col {
+ 	margin-bottom: 100px;
+ 	margin-top: 100px;
+ 	width: 110%;
+ 	position: relative;
+ 	left: -5%;
+ }
+ 
+ .table_code {
+ 	width: 122%;
+ 	position: relative;
+ 	left: -10%;
+ }
+ 
 </style>
   
 </head>
@@ -166,15 +211,44 @@ input[type=email] {
 
 <h1 id="title">3D Graphics with Scene Kit</h1>
 
-<p>This is the website for the upcoming book, 3D Graphics with Scene Kit. It is a book about Apple&#8217;s high level 3D rendering framework for Mac OS X and iOS.</p>
 
-<p>The book is written by me, <a href="http://ronnqvi.st">David Rönnqvist</a> and will only be available as an iBook from the iBooks Store. The iBooks format makes it possible for the book to contain rich illustrations, links to sample code, and even interactive 3D models. Having iBooks on both iOS and OS X means that many readers will be able to experience the book right next to their IDE.</p>
+<p><em>3D Graphics with Scene Kit</em> is an interactive book about Apple&#8217;s high level 3D rendering framework for Mac OS X and iOS. It is written by me, <a href="http://ronnqvi.st">David Rönnqvist</a>, and is available for <a href="https://itunes.apple.com/us/book/3d-graphics-with-scene-kit/id936235049?ls=1&amp;mt=11">pre-order</a> from the iBooks Store. </p>
 
-<p>Scene Kit was originally introduced at WWDC 2012 and has existed for 2 years on OS X. This year it was made public that Scene Kit is coming to iOS later this fall. Since this isn&#8217;t yet released, the first version of the book will cover Scene Kit as it is currently available to the public. Later, the book will be updated to also cover Scene Kit for iOS and the new features. Another benefit of being an all digital book is that this new content will become available to you, even if you buy the book before the update.</p>
+<hr>
 
-<p>Apple also introduced a new programming language for iOS and OS X. Since this language is brand new and many Cocoa developers are still used to Objective-C, the examples and sample code in this book will all be written in Objective-C. Later, the book and the sample code will be updated to also cover programming with Scene Kit in Swift.</p>
+<p>Scene Kit is a high-level, Objective-C framework for 3D rendering. It is a peer technology to other graphics technologies like Core Image and Core Animation. As an OS X or iOS developer, this means that you get to work with a lot of familiar concepts and frameworks. </p>
 
-<p>I&#8217;ve been working on this book for quite some time now and have come to realize that making a comprehensive first release means that it will take longer before <em>any</em> of the content gets into the your hands. Instead I&#8217;m intending to make a first release with the content that I consider essential and then, through the wonders of digital only publishing, release updates with more content over time. This doesn&#8217;t mean a sacrifice in quality. I&#8217;m still trying to realize my vision of a book on 3D graphics programming.</p>
+<p>Scene Kit is built on top of OpenGL (Open Graphics Library), the open standard for 3D graphics. Even though it’s a high-level framework, it allows you to drop down to lower abstractions when you want more detailed control, all while still using higher abstractions everywhere else.</p>
+
+<hr>
+
+<img class="platforms" src="../images/book/Platforms.png" width="540" alt="Available on iPad and Mac" />
+
+
+<p>You can read the book on your iPad and your Mac. If you are running the latest developer tools, then you can also read this book on your Mac. If you are running iOS 7 or later on you iPad, then you can enjoy this book on-the-go.</p>
+
+<table class="two_col">
+<tr><td>
+<p>It is a Multi-Touch book about 3D graphics, <em>with</em> 3D graphics. Having interactive 3D objects on the pages, right next to the text that explains them can be both fun and illustrative.</p>
+</td><td><img class="interactive" src="../images/book/Interactive.png" width="246" alt="Contains interactive 3D objects" /></td></tr>
+</table>
+
+
+<table class="two_col table_code">
+<tr><td><img class="interactive" src="../images/book/Code.png" width="380" alt="Available sample code" /></td><td>
+<p>Full sample code for all of the chapters are available both <a href="https://github.com/d-ronnqvist/SCNBook-code">online</a> and in the book, at the end of each chapter. You can end the chapter by seeing how the pieces tie together and work with the book right next to your IDE.</p>
+</td></tr>
+</table>
+
+
+
+<a href="https://itunes.apple.com/us/book/3d-graphics-with-scene-kit/id936235049?ls=1&amp;mt=11"><img class="download" src="../images/book/iBooks_Badge.svg" width="140" alt="Download on iBooks" /></a>
+
+<hr>
+
+<p>I&#8217;ve been working on this book for quite some time now and have realized that making a comprehensive first release meant that it would take longer before <em>any</em> of the content would get into your hands. Instead I&#8217;m making a first release with the content that I consider essential and then, through the wonders of digital only publishing, plan on releasing updates with more content over time. This doesn&#8217;t mean that the first version will sacrifice on quality. I&#8217;m still trying to realize my vision of a book on 3D graphics programming.</p>
+
+<p>Scene Kit got many exciting additions this year: physics simulation, particle effects, support for deferred rendering and perhaps most excitingly iOS support. These new significant additions but not essential for the first release of the book. Even though the first release of book doesn&#8217;t explicitly deal with Scene Kit on iOS, almost everything what the book covers work the same on both OS X and iOS (mouse events vs. touch events being one exception).</p>
 
 <h3>Table of contents (first release):</h3>
 
@@ -194,16 +268,11 @@ input[type=email] {
 <li><strong>GLSL</strong> – An introduction to the OpenGL Shading Language.</li>
 <li><strong>Custom Shading</strong> – How to shade geometry using custom shaders.</li>
 
-<h3>Wrapping up</h3>
-<li><strong>Math Appendix</strong> – An approachable introduction to the necessary math that is used in 3D graphics.</li>
 </ul>
 
 <div class="QandA">
 <h2>Q&amp;A</h2>
 
-<h1>I&#8217;m a iOS developer, is this books not for me (yet)?</h1>
-
-<p>While the first version of the book won&#8217;t cover iOS specifically, everything you learn is still relevant for both platforms. Later, this book will be updated and you will be able to read about Scene Kit for iOS. </p>
 
 <h1>Isn&#8217;t Scene Kit just for games?</h1>
 
@@ -217,22 +286,17 @@ input[type=email] {
 
 <p>Part of Scene Kit is the simplicity and part is the integration with other frameworks like AppKit, Core Animation, etc. Even if you&#8217;ve done 3D graphics before, using it together with these frameworks will be new and interesting. You may also note that almost a third of the book covers advanced topics like GLSL and OpenGL. I&#8217;m sure you&#8217;ll find something that you like there. </p>
 
-<h1>Will there be maths?</h1>
+<h1>Will there be math?</h1>
 
-<p>Yes, a little bit. There is always going to be some maths involved and I will do my best to explain it. If you have never learnt linear algebra or it was just a long time since you used it, there is an appendix to get you up to speed.</p>
+<p>Yes, a little bit. There is always going to be some maths involved and I will do my best to explain it.</p>
 
 <h1>I&#8217;m convinced. When can I get it?</h1>
 
-<p>If you want to find out when the book is available for purchase then you can sign up below.</p>
+<p>You can pre-order it today from the iBooks Store. The first release is expected just in time for Christmas.</p>
 
-<form action="https://madmimi.com/signups/subscribe/91253" method="post">
-		<p>
-			<label for="signup_name">Name: </label><input id="signup_name" name="signup[name]" type="text"><br>
-			<label for="signup_email">Email: </label><input id="signup_email" name="signup[email]" type="email"><br>
-			<input name="commit" class="button" type="submit" value="Let me know when it's available">
-		</p>
-	</form>
-</div>
+<a href="https://itunes.apple.com/us/book/3d-graphics-with-scene-kit/id936235049?ls=1&amp;mt=11"><img class="download" src="../images/book/iBooks_Badge.svg" width="140" alt="Download on iBooks" /></a>
+
+<p></p>
 
 <script type="text/javascript">
   var _gauges = _gauges || [];
