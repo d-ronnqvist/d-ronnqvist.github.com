@@ -121,6 +121,6 @@ And the view finally rotates around the point we were expecting it to.
 
 <script src="/script/script-translate-rotate-translate.js" type="text/javascript" onload="setUpBodyEvents()"> </script>
 
-[^idev]: You can read more about the anchor point in [my article for iDeveloper.tv](http://blog.ideveloper.tv/understanding-the-anchor-point/)
+[^idev]: You can read more about the anchor point in [my article for iDeveloper.tv (now hosted here)](http://ronnqvi.st/about-the-anchorpoint/)
 
 [SO-autolayout]: http://stackoverflow.com/q/12943107/608157 "How do I adjust the anchor point of a CALayer, when Auto Layout is being used? (Stack Overflow)"
