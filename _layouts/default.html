@@ -8,7 +8,6 @@
   <title>{{ page.title }}</title>
   {% endif %}
   <meta name="description" content="{{ site.description | strip_html }}"/>
-  <meta name="viewport" content="width=device-width; initial-scale=1.0"/>
   <meta name="author" content="David Rönnqvist"/>
   <meta name="revisit-after" content="3 days"/>
   <link rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/"/>
@@ -36,11 +35,11 @@
 
 <body>
   <div id="container" role="container">
-    <header>
       {% unless page.id %}
+    <header>
       <div id="logo">
-        <a href="/" aria-label="DR logo. Goes back to main page.">
-          <svg id="DR-logo" class="head-logo" width="190px" height="130px" xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <a id="DR-logo" class="head-logo" href="/" aria-label="D R Logo. Goes back to the main page">
+         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewbox="0 0 190 130" width="100%">
               		<defs>
           			    <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
           			        <stop offset="0%" style="stop-color:hsl(218,25%,88%); stop-opacity:1.0"></stop>			        
@@ -52,14 +51,12 @@
           		</svg>
         </a>
       </div>
-      {% endunless %}
-
     </header>
+      {% endunless %}
 
     <div id="main" role="main">
       {{ content }}
     
-
     <footer style="height: 55px;">
       <a aria-label="RSS" id="rss-link" href="http://ronnqvi.st/atom.xml" aria-hidden="true" title="RSS">
         <svg id="rss-logo" width="55px" height="55px" xmlns="http://www.w3.org/2000/svg" version="1.1">
@@ -88,13 +85,6 @@
     		<svg width="24px" height="24px" viewBox="0 0 24 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     		    <g stroke="#2E363E" stroke-width="1.3" fill="none" fill-rule="evenodd" stroke-linejoin="round">
     		        <path d="M20.3613281,7.13427734 C20.5273124,9.69103726 19.131869,13.8828552 16.8437498,15.8686521 C14.5556309,17.8544492 9.25668317,21.3406761 1.29158574,16.1354549 C1.29158574,16.1354549 6.68873911,16.3917741 8.18359375,14.0444336 C7.04818584,13.3270828 4.20234925,12.3167923 3.59790045,9.69799782 C3.59790045,9.69799782 4.73860365,10.1046035 6.34204084,10.1046035 C6.34204084,10.1046035 2.42352444,6.76787401 3.0005795,2.07528464 C3.0005795,2.07528464 7.66926457,6.80103331 11.0625,7.0234375 C10.188943,3.8610991 11.9675476,1.72524742 14.6166792,1.3448875 C17.2658108,0.964527824 19.0190532,1.86821664 19.3219929,3.75713124 C22.528731,3.28707453 22.9370115,3.48486329 22.9370115,3.48486329 C22.9370115,3.48486329 23.6750004,4.0481705 20.3613281,7.13427734 Z M20.3613281,7.13427734" id="bird" ></path>
-    		    </g>
-    		</svg></a>
-    		<a aria-label="App Dot Net" class="alpha" href="https://alpha.app.net/ronnqvist">@ronnqvist
-    		<svg width="24px" height="24px" viewBox="0 0 24 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    		    <g id="Page 1" stroke="#2E363E" stroke-width="1.3" fill="none" fill-rule="evenodd" stroke-linejoin="round">
-    		        <path d="M14.092041,6.21508776 C14.092041,6.21508776 16.7068977,1.18466552 18.4406815,1.56787109 C20.1744652,1.95107663 21.0463219,3.02111005 19.9177246,4.18286144 C18.7891273,5.34461278 15.9621582,9.00703648 15.9621582,9.79931595 C15.9621582,9.79931595 17.1268037,12.906383 18.4406818,13.4158101 C19.7545598,13.9252372 20.8380285,10.2029394 22.5552829,11.9731384 C24.2725375,13.7433372 21.7675422,17.3595252 19.4617293,17.3595252 C17.1559165,17.3595255 15.9621585,16.5028968 14.0920413,14.3802905 C14.0920413,14.3802905 12.6004438,17.3595251 8.10718551,17.359525 C3.61392717,17.3595244 1.48167123,14.7722354 1.48167068,9.45331767 C1.48167036,4.13439992 4.57209346,1.56787157 8.65136727,1.56787109 C12.7306411,1.5678706 14.092041,6.21508776 14.092041,6.21508776 Z M14.092041,6.21508776" id="alpha out" ></path>
-    		        <path d="M11.9238281,9.99438482 C11.9238281,9.99438482 10.5270408,5.44805103 8.49052796,5.44805103 C6.45401517,5.44805103 5.60717756,8.18351404 5.60717773,9.6076942 C5.60717785,11.0318744 5.98956493,13.7673374 8.49052796,13.7673374 C10.991491,13.7673374 11.9238281,9.99438482 11.9238281,9.99438482 Z M11.9238281,9.99438482" id="alpha in" ></path>
     		    </g>
     		</svg></a>
     		</div>
