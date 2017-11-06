@@ -92,17 +92,15 @@ Go back to the key-frame animation code and change the calculation mode by addin
 
 Now, run the application again and see the cool smooth curve that your layer is animating along. No more of this boring straight-line movement. Awesome! Also note that even though the layer is moving along this curve, you can still tap on it. Amazing!
 
-# Bug or feature?
+# A past bug 
 
-The [documentation for the presentation layer][presentationlayer] clearly states that it provides "a close approximation to the version of the layer that is currently being displayed", _not_ the exact value. This approximation seems extremely good as long as you don't mess with the animation timings. If you set the [calculation mode][calculationmode] on a key-frame animation to any of the paced modes (`kCAAnimationPaced` or `kCAAnimationCubicPaced`) then it seems to be off, by _a lot_. In fact, it seems to me like the values you get back from the presentation mode is being calculated linearly (the default calculation mode). 
-
-The following can quite nicely be illustrated by slowly animating the position of two identical layers, one using the default calculation mode and one using a paced calculation mode. Trying to hit the linearly moving layer also hits the paced layer but trying to hit the paced layer hits nothing. I of course did the responsible thing and filed a [radar][radar]. I'll post an update when I know its in fact the intended behavior (part of the approximation) or a real bug.  
-
-
+The [documentation for the presentation layer][presentationlayer] clearly states that it provides "a close approximation to the version of the layer that is currently being displayed", _not_ the exact value. This approximation seems extremely good <s>as long as you don't mess with the animation timings</s>. Many OS versions ago there was a bug where this approximation was inaccurate if the [calculation mode][calculationmode] on a key-frame animation was set to either of the paced modes (`kCAAnimationPaced` or `kCAAnimationCubicPaced`). This bug has since been fixed[^3] and the radar I️ filed when first writing this post has been closed.
 
 [^1]: No pun intended. 
 
 [^2]: Explicit animations (like [`CABasicAnimation`][basic] or [`CAKeyFrameAninmation`][keyframe]) doesn't change the value of the animated property. Only implicit animations (setting the value of an animatable layer property changes the value).
+
+[^3]: Actually this bug was fixed quite a while ago, I’m just slow at updating old posts.
 
 [presentationlayer]: http://developer.apple.com/library/ios/#DOCUMENTATION/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction.html#//apple_ref/occ/instm/CALayer/presentationLayer (presentationLayer documentation)
 
