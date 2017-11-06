@@ -2,8 +2,8 @@ permalink: /:title
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 auto: true
-pygments: true
 markdown: kramdown
+highlighter: rouge
 
 url: http://ronnqvi.st
 
