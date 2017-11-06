@@ -90,19 +90,19 @@ Believe it or not, that's actually it. Run the above code and you will have your
 
 If you run the above code you will see an indicator that looks something like this.
 
-![Custom Activity Indicator](http://dl.dropbox.com/u/852042/Bilder/custom%20activity%20indicator.png)
+![Custom Activity Indicator](/images/custom-activity-indicator.png)
 
 If you look closely at the beginning of the animation, you can see that it actually starts of with no visible indicators and then shows them one by one on the first "rotation".
 
-![Beginning of animation](http://dl.dropbox.com/u/852042/Bilder/indicator%20start.png)
+![Beginning of animation](/images/indicator-start.png)
 
 ## Changing the marker layer
 
 You can easily customize the activity indicator by changing some colors around or adding your own layer as the spinner marker layer. If you use a [`CAShapeLayer`][shapeLayer], you can easily create some really funny indicators for your own app.
 
-![Waiting for love indicator](http://dl.dropbox.com/u/852042/Bilder/waiting%20for%20love%20indicator.png)
+![Waiting for love indicator](/images/waiting-for-love-indicator.png)
 
-![Night sky indicator](http://dl.dropbox.com/u/852042/Bilder/star%20loader.png)
+![Night sky indicator](/images/star-loader.png)
 
 
 [^1]: It's actually even a better visual effect since you get the nice starting animation on the first "rotation" and the spinner markers fade more smoothly.

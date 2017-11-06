@@ -22,13 +22,15 @@ You can learn a lot about Core Animation by writing a small piece of code where 
 
 First we create a layer and add it to our views layer. Don't forget to keep a reference to the layer, we'll need it when we hit test it later.
 
-    CALayer * movingLayer = [CALayer layer];
-    [movingLayer setBounds: CGRectMake(0, 0, layerSize, layerSize)];
-    [movingLayer setBackgroundColor:[UIColor orangeColor].CGColor];
-    [movingLayer setPosition:CGPointMake(layerCenterInset, layerCenterInset)];
-    // Additional styling of the layer ...
-    [[[self view] layer] addSublayer:movingLayer];
-    [self setMovingLayer:movingLayer];
+{% highlight obj-c %}
+CALayer * movingLayer = [CALayer layer];
+[movingLayer setBounds: CGRectMake(0, 0, layerSize, layerSize)];
+[movingLayer setBackgroundColor:[UIColor orangeColor].CGColor];
+[movingLayer setPosition:CGPointMake(layerCenterInset, layerCenterInset)];
+// Additional styling of the layer ...
+[[[self view] layer] addSublayer:movingLayer];
+[self setMovingLayer:movingLayer];
+{% endhighlight %}
 
 Next we set up the key-frame animation for the position and add it to our layer.
 
@@ -36,7 +38,7 @@ Next we set up the key-frame animation for the position and add it to our layer.
 CAKeyframeAnimation * moveLayerAnimation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
 [moveLayerAnimation setValues:[NSArray arrayWithObjects: /* some NSValue-wrapped CGPoints */, nil]];
 
-	[moveLayerAnimation setDuration:10.0];
+[moveLayerAnimation setDuration:10.0];
 [moveLayerAnimation setRepeatCount:HUGE_VALF];
 [moveLayerAnimation setTimingFunction: [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear]];
 [[self movingLayer] addAnimation:moveLayerAnimation forKey:@"move"];
@@ -72,15 +74,15 @@ Blinking the layer is done by setting the background color in a swift animation 
 
 When you run the application you will see a moving orange layer.
 
-![](http://media.tumblr.com/tumblr_m2lcca1pBb1r8dzrp.png)
+![](/images/moving-orange-layer.png)
 
 If you tap the where the layer originated that will cause it to blink red, even when the layer is far away from where you are tapping. This is what happens if you inspect "real" values during an animation. 
 
-![](http://media.tumblr.com/tumblr_m2lccjWn3Z1r8dzrp.png)
+![](/images/taping-original-position.png)
 
 Also note that the layer actually blinks in a yellow tone when you are tapping it. We hit the moving layer. Success!
 
-![](http://media.tumblr.com/tumblr_m2lccryqBg1r8dzrp.png)
+![](/images/taping-presentation-layer.png)
 
 ## Have some extra fun
 
