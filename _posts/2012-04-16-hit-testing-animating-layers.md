@@ -94,7 +94,7 @@ Now, run the application again and see the cool smooth curve that your layer is 
 
 # A past bug 
 
-The [documentation for the presentation layer][presentationlayer] clearly states that it provides "a close approximation to the version of the layer that is currently being displayed", _not_ the exact value. This approximation seems extremely good <s>as long as you don't mess with the animation timings</s>. Many OS versions ago there was a bug where this approximation was inaccurate if the [calculation mode][calculationmode] on a key-frame animation was set to either of the paced modes (`kCAAnimationPaced` or `kCAAnimationCubicPaced`). This bug has since been fixed[^3] and the radar I️ filed when first writing this post has been closed.
+The [documentation for the presentation layer][presentationlayer] clearly states that it provides "a close approximation to the version of the layer that is currently being displayed", _not_ the exact value. This approximation seems extremely good <s>as long as you don't mess with the animation timings</s>. Many OS versions ago there was a bug where this approximation was inaccurate if the [calculation mode][calculationmode] on a key-frame animation was set to either of the paced modes (`kCAAnimationPaced` or `kCAAnimationCubicPaced`). This bug has since been fixed[^3] and the radar I filed when first writing this post has been closed.
 
 [^1]: No pun intended. 
 
